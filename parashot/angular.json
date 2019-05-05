@@ -37,7 +37,7 @@
               "node_modules/@ionic/angular/css/text-transformation.css",
               "node_modules/@ionic/angular/css/flex-utils.css",
               "node_modules/@ionic/angular/css/display.css",
-              "src/styles.scss"
+              "src/assets/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -90,7 +90,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles.scss"
             ],
             "scripts": [],
             "assets": [
