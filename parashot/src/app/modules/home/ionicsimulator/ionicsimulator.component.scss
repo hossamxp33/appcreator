@@ -1,0 +1,25 @@
+.d-flex button {
+  background-color: transparent;
+  border: none;
+  border-radius: 16px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  margin: 0px 3px;
+  padding: 0 9px;
+  text-transform: uppercase;
+  -webkit-transition: 200ms background-color ease,
+  200ms color ease;
+  transition: 200ms background-color ease,
+  200ms color ease;
+}
+.selected {
+  background-color: #000 !important;
+  color: white !important;
+}
+.connect-level {
+  background: url(../../../../assets/images/levels-of-connection.png)
+}
