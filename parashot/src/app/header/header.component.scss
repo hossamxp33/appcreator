@@ -1,5 +1,62 @@
-div{
+header {
   width: 100%;
   height: 75px;
   background: #000000
+}
+
+.logo {
+  i {
+    color: #5a5a5a;
+    font-size: 50px;
+
+    padding: 10px;
+  }
+
+  span {
+    color: #5a5a5a;
+    font-size: 20px;
+  }
+}
+
+ul {
+  list-style: none;
+  display: flex;
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  li {
+
+    a {
+      color: #5a5a5a;
+      cursor: pointer;
+    }
+
+
+
+    .dropdown-menu a {
+      color: #000000;
+      text-align: right;
+      &:active {
+        background: #ccc;
+      }
+    }
+
+    .dropdown-toggle::after {
+
+      display: none;
+    }
+  }
+
+}
+.navbar-light .navbar-brand {
+  color: #5a5a5a;
+  font-size: 30px;
+}
+
+.navbar-light .navbar-toggler {
+
+  background: #ccc;
+  border-color: rgba(0, 0, 0, .1);
 }

@@ -1,3 +1,4 @@
+import { ColorPickerModule } from 'ngx-color-picker';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicsimulatorComponent } from './ionicsimulator/ionicsimulator.component';
@@ -9,7 +10,8 @@ import { HomeRoutingModule } from './home-routing.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    ColorPickerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -20,6 +20,23 @@
   background-color: #000 !important;
   color: white !important;
 }
-.connect-level {
-  background: url(../../../../assets/images/levels-of-connection.png)
+
+.docs-demo-device__md-bar {
+  display: block;
+  fill: #090a0d;
+  opacity: 0.1;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+
+ion-header{
+  background: #1e56a0;
+}
+ion-icon {
+  margin: auto;
+  margin-left: 6px;
+  color: #fff;
 }

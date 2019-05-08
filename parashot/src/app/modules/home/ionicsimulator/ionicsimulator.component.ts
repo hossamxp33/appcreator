@@ -8,9 +8,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class IonicsimulatorComponent implements OnInit {
   text$ = new BehaviorSubject<string | null>("Initial Text");
-  iosref: boolean = true ;
-  mdref: boolean = false;
-
+  iosref: boolean = false;
+  mdref: boolean = true;
+  colorHeader = '#1e56a0';
+  colorSearch = '#fff';
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400
+  };
   constructor() { }
 
   ngOnInit() {

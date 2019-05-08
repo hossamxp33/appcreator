@@ -5,8 +5,6 @@ import { IonicsimulatorComponent } from './ionicsimulator/ionicsimulator.compone
 const routes: Routes = [{
   path: '',
   component: IonicsimulatorComponent,
-  redirectTo: '',
-  pathMatch: 'full'
 }];
 
 @NgModule({
