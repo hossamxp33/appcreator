@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+$ionicons-font-path: "~ionicons/dist/fonts";
+@import "~ionicons/dist/scss/ionicons.scss";
+
+
+
+
+
+
+
 .searchbar-input.sc-ion-searchbar-md {
-  padding-left: 57%;
+  padding-left: 50%;
   padding-right: 0;
   padding-top: 0;
   padding-bottom: 0;
@@ -35,13 +44,13 @@
 }
 
 .searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios {
-  padding-left: 100px !important;
+  padding-left: 58px !important;
   padding-right: 0px !important;
 }
 
 .searchbar-left-aligned.sc-ion-searchbar-ios-h {
 
-  background: rgb(180, 128, 128) none repeat scroll 0% 0%;
+  background: #fff;
 
   height: 36px;
 
@@ -50,4 +59,93 @@
   border-radius: 9px;
 
   margin: 11px 3px;
+}
+
+[dir=rtl] .sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md {
+  left: 88%;
+}
+
+// .swiper-pagination.swiper-pagination-bullets{
+//   display : none;
+// }
+#slide-1 {
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    height: 2px !important;
+  }
+
+  .owl-theme .owl-dots .owl-dot span {
+    width: 30px;
+    height: 2px;
+  }
+}
+
+#slide-2 {
+  .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: -25px;
+    // z-index: 99999999999;
+    position: relative;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: #86979166;
+  }
+
+  .owl-theme .owl-dots .owl-dot span {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+#slide4 {
+  .owl-theme .owl-nav.disabled+.owl-dots {
+    text-align: left;
+    position: absolute;
+    top: 155px;
+    left: 13%;
+  }
+
+  .owl-theme .owl-dots .owl-dot span {
+    width: 6px;
+    height: 6px;
+    margin: 5px;
+    background: rgba(255, 252, 252, 0.44);
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background: #FFFCFC;
+  }
+
+  .owl-dot:nth-child(2) span {
+    width: 20px !important;
+    height: 6px !important;
+  }
+
+  .owl-stage {
+    margin: 24px 0;
+    overflow: visible;
+  }
+
+  .owl-item {
+    box-shadow: 0;
+    transition: 1s all;
+    webkit-transition: 1s all;
+  }
+
+  .active {
+    box-shadow: -1px 22px 31px -21px rgba(237, 130, 237, 1);
+  }
+
+}
+
+.swiper-pagination-bullet {
+  background: #D6D6D6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #86979166 !important;
 }

@@ -27,29 +27,26 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@ionic/angular/css/core.css",
-              "node_modules/@ionic/angular/css/normalize.css",
-              "node_modules/@ionic/angular/css/structure.css",
-              "node_modules/@ionic/angular/css/typography.css",
-              "node_modules/@ionic/angular/css/padding.css",
-              "node_modules/@ionic/angular/css/float-elements.css",
-              "node_modules/@ionic/angular/css/text-alignment.css",
-              "node_modules/@ionic/angular/css/text-transformation.css",
-              "node_modules/@ionic/angular/css/flex-utils.css",
-              "node_modules/@ionic/angular/css/display.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "src/assets/scss/hams.scss",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/owl.carousel/dist/owl.carousel.min.js",
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -59,13 +56,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -124,12 +119,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }]
             }
           }
         }

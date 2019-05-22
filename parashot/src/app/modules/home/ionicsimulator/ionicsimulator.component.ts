@@ -1,24 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-ionicsimulator',
   templateUrl: './ionicsimulator.component.html',
-  styleUrls: ['./ionicsimulator.component.scss', './device.component.scss']
+  styleUrls: ['./device.component.scss', './ionicsimulator.component.scss']
 })
 export class IonicsimulatorComponent implements OnInit {
+  @Input() headerColor: any;
+  @Input() sliderId: number = 1;
+  source = 'sim';
+  color = '#1e56a0';
+
   text$ = new BehaviorSubject<string | null>("Initial Text");
   iosref: boolean = false;
   mdref: boolean = true;
   colorHeader = '#1e56a0';
   colorSearch = '#fff';
-  slideOpts = {
-    initialSlide: 1,
-    speed: 400
-  };
+
   constructor() { }
 
   ngOnInit() {
+    // console.log(this.sliderId, this.source);
   }
   loadText() {
     this.text$.next(null);

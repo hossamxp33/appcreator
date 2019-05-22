@@ -1,0 +1,198 @@
+<div *ngIf="source === 'page'">
+  <div id="slide-1" (click)="getSliderId(1)" class="slider  mb-4">
+    <!-- <div class="d-flex head justify-content-between">
+      <img src="../../../../assets/images/user-icon.png" />
+      <span style='color: purple'>&#8211;</span>
+      <span>User Name</span>
+      <button class="hamburger hamburger--spin" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div> -->
+    <owl-carousel
+      [options]="{
+        items: 1,
+        autoplay: true,
+        dots: true,
+        nav: false,
+        rtl: true
+      }"
+      [items]="images"
+      [carouselClasses]="['owl-carousel owl-theme sliding']"
+    >
+      <div class="item" *ngFor="let image of images; let i = index">
+        <div class="thumbnail-image">
+          <a><img src="{{ image }}"/></a>
+          <img src="{{ image }}" />
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+  <div id="slide-2" (click)="getSliderId(2)" class="slider  mb-4 p-0">
+    <owl-carousel
+      [options]="{
+        items: 1,
+        autoplay: true,
+        dots: true,
+        nav: false,
+        rtl: true
+      }"
+      [items]="images"
+      [carouselClasses]="['owl-theme sliding']"
+    >
+      <div class="item" *ngFor="let image of images1; let i = index">
+        <div class="thumbnail-image">
+          <a><img src="{{ image }}"/></a>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+  <div id="slide-3" (click)="getSliderId(3)" class="slider  mb-4 p-0">
+    <owl-carousel
+      [options]="{
+        items: 1,
+        autoplay: true,
+        dots: false,
+        nav: false,
+        rtl: true
+      }"
+      [items]="images"
+      [carouselClasses]="['owl-theme sliding']"
+    >
+      <div class="item" *ngFor="let image of images2; let i = index">
+        <div class="thumbnail-image">
+          <a><img src="{{ image }}"/></a>
+          <img src="{{ image }}" />
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+  <div id="slide4" (click)="getSliderId(4)" class="slider  mb-4 p-0">
+    <owl-carousel
+      [options]="{
+        items: 1,
+        autoplay: true,
+        dots: true,
+        nav: false,
+        rtl: true,
+        items: 1,
+        autoplay: true,
+        loop: true,
+        margin: 10,
+        stagePadding: 30
+      }"
+      [items]="images"
+      [carouselClasses]="['owl-theme sliding']"
+    >
+      <div class="item" *ngFor="let image of images3; let i = index">
+        <div class="thumbnail-image">
+          <a><img src="{{ image }}"/></a>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+</div>
+<div *ngIf="source === 'sim'">
+  <div
+    *ngIf="id == 1"
+    id="slide-1"
+    (click)="getSliderId(1)"
+    class="slider  mb-4"
+  >
+    <!-- <div class="d-flex head justify-content-between">
+      <img src="../../../../assets/images/user-icon.png" />
+       <span style='color: purple'>&#8211;</span>
+      <span>User Name</span>
+      <button class="hamburger hamburger--spin" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div> -->
+    <owl-carousel
+      [options]="{
+        items: 1,
+        autoplay: true,
+        dots: true,
+        nav: false,
+        rtl: true
+      }"
+      [items]="images"
+      [carouselClasses]="['owl-carousel owl-theme sliding']"
+    >
+      <div class="item" *ngFor="let image of images; let i = index">
+        <div class="thumbnail-image">
+          <a><img src="{{ image }}"/></a>
+          <img src="{{ image }}" />
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+  <div
+    *ngIf="id == 2"
+    id="slide-2"
+    (click)="getSliderId(2)"
+    class="slider  mb-4 p-0"
+  >
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let image of images1; let i = index">
+        <a><img src="{{ image }}"/></a>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div
+    *ngIf="id == 3"
+    id="slide-3"
+    (click)="getSliderId(3)"
+    class="slider  mb-4 p-0"
+  >
+    <owl-carousel
+      [options]="{
+        items: 1,
+        autoplay: true,
+        dots: false,
+        nav: false,
+        rtl: true
+      }"
+      [items]="images"
+      [carouselClasses]="['owl-theme sliding']"
+    >
+      <div class="item" *ngFor="let image of images2; let i = index">
+        <div class="thumbnail-image">
+          <a><img src="{{ image }}"/></a>
+          <img src="{{ image }}" />
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+  <div
+    *ngIf="id == 4"
+    id="slide4"
+    (click)="getSliderId(4)"
+    class="slider  mb-4 p-0"
+  >
+    <owl-carousel
+      [options]="{
+        items: 1,
+        autoplay: true,
+        dots: true,
+        nav: false,
+        rtl: true,
+        items: 1,
+        autoplay: true,
+        loop: true,
+        margin: 10,
+        stagePadding: 30
+      }"
+      [items]="images"
+      [carouselClasses]="['owl-theme sliding']"
+    >
+      <div class="item" *ngFor="let image of images3; let i = index">
+        <div class="thumbnail-image">
+          <a><img src="{{ image }}"/></a>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+</div>

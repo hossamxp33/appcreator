@@ -1,3 +1,4 @@
+import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,15 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SplashComponent } from './splash/splash.component';
 import { IonicModule } from '@ionic/angular';
-
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { OwlModule } from 'ngx-owl-carousel';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SplashComponent
+    ColorPickerComponent,
+    SidebarComponent
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -25,8 +28,9 @@ import { IonicModule } from '@ionic/angular';
     TransferHttpCacheModule,
     HttpClientModule,
     NgtUniversalModule,
-    IonicModule.forRoot()
-  ],
+    IonicModule.forRoot(),
+    OwlModule
+    ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
