@@ -2,8 +2,8 @@
   <button [class.selected]="iosref" (click)="ios()">IOS</button>
   <button [class.selected]="mdref" (click)="md()">MD</button>
 </div>
-<div class="ios-em" *ngIf="iosref"></div>
-<div *ngIf="iosref" class="marvel-device iphone-x mt-4">
+<!-- <div class="ios-em" *ngIf="iosref"></div> -->
+<div *ngIf="iosref" class="marvel-device iphone-x">
   <div class="screen">
     <ion-header class="pt-4" [(colorPicker)]="color" [style.background]="color">
       <div class="d-flex justify-content-between">

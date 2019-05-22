@@ -1,14 +1,31 @@
-<div class="container pt-5">
-  <div class="row justify-content-between mt-5">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-12 sliders ">
-      <div class="col-md-10">
-        <app-headers (sliderId)="getId($event)" [source]='source'></app-headers>
-      </div>
-    </div>
-    <div class="col-lg-5 col-md-6 col-sm-12 col-12 ">
-      <app-ionicsimulator
-        [sliderId]="id"
-      ></app-ionicsimulator>
-    </div>
+<div class="col-md-4">
+  <div class="head"><i class="top-bar"></i> الشريط العلوي</div>
+  <div class="body">
+    <ul>
+      <li>
+        <span>لون الخلفية</span
+        ><span class="color-span"
+          ><input [(colorPicker)]="color" [style.background]="color"
+        /></span>
+      </li>
+      <li>
+        صورة السلة
+        <label>
+          <input type="file" accept="image/*" #file class="d-none" />
+          <i class="fas fa-shopping-cart"></i>
+          <!-- <button (click)="file.click()"></button
+        > -->
+        </label>
+      </li>
+      <li>
+        صورة شريط البحث
+        <label>
+          <input type="file" accept="image/*" #file class="d-none" />
+          <i class="fas fa-search"></i>
+          <!-- <button (click)="file.click()"></button
+        > -->
+        </label>
+      </li>
+    </ul>
   </div>
 </div>

@@ -9,20 +9,25 @@ import { IonicsimulatorComponent } from './ionicsimulator/ionicsimulator.compone
 import { IonicModule } from '@ionic/angular';
 import { HomeRoutingModule } from './home-routing.module';
 import { SplashComponent } from './splash/splash.component';
-
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SlidersComponent } from './sliders/sliders.component';
 @NgModule({
   declarations: [
     StoreComponent,
     IonicsimulatorComponent,
     HeadersComponent,
     HeadersPageComponent,
-    SplashComponent],
+    SplashComponent,
+    SidebarComponent,
+    SlidersComponent,
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     IonicModule.forRoot(),
     ColorPickerModule,
     OwlModule
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

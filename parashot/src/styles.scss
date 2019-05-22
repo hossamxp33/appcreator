@@ -149,3 +149,76 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 .swiper-pagination-bullet-active {
   background: #86979166 !important;
 }
+
+.home {
+  background: url(./assets/images/homepage.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+
+  span {
+    padding: 37px;
+  }
+}
+
+.more {
+  background: url(./assets/images/more.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
+.top-bar {
+  background: url(./assets/images/adress-bar.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
+.slider-ico {
+  background: url(./assets/images/slider.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
+.dep {
+  background: url(./assets/images/dep.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
+.products {
+  background: url(./assets/images/box.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
+.footer-ico {
+  background: url(./assets/images/footer.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
+.color-picker .cursor {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: #c6c6c680 solid 2px !important;
+  border-radius: 50%;
+  cursor: cell;
+}
+
+.color-picker {
+
+  top: 110px !important;
+  right: 123px !important;
+  left: 0 !important;
+
+  .arrow.arrow-right {
+    display: none;
+  }
+}

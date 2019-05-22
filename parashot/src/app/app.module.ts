@@ -10,7 +10,6 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { IonicModule } from '@ionic/angular';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { OwlModule } from 'ngx-owl-carousel';
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { OwlModule } from 'ngx-owl-carousel';
     HeaderComponent,
     FooterComponent,
     ColorPickerComponent,
-    SidebarComponent
 
   ],
   imports: [

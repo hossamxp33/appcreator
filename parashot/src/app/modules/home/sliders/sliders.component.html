@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-between mt-5">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 sliders ">
+      <div class="col-md-10">
+        <app-headers (sliderId)="getId($event)" [source]="source"></app-headers>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 col-12 ">
+      <app-ionicsimulator [sliderId]="id"></app-ionicsimulator>
+    </div>
+  </div>
+</div>
