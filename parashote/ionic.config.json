@@ -1,7 +1,0 @@
-{
-  "name": "parashote",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
