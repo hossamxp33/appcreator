@@ -266,8 +266,8 @@ button:focus+.page {
   // margin-right: -5px; // remove the gap so it doesn't close
 }
 
-.dropdown-menu:hover,
-.dropdown-menu a:active+.page {
+// .dropdown-menu:hover,
+.dropdown-menu a:focus+.page {
   display: block;
 
 }

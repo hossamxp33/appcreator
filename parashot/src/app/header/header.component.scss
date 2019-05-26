@@ -53,9 +53,10 @@ header {
   margin: 0 !important;
 }
 
-.form-group{
+.form-group {
   text-align: start;
 }
+
 .btn.focus,
 .btn:focus {
   outline: 0;
@@ -204,5 +205,27 @@ header {
 
   .nav-item>a {
     display: block;
+  }
+}
+
+.card-block {
+  text-align: center;
+
+  button {
+    padding: 0 !important;
+  }
+
+  .fa-google {
+    background: #dd4b39;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .fa-facebook-f {
+    background: #3b5998;
+    padding: 10px 13px;
+    color: #fff;
+    border-radius: 5px;
   }
 }

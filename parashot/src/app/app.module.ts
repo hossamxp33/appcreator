@@ -11,6 +11,24 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { IonicModule } from '@ionic/angular';
 import { OwlModule } from 'ngx-owl-carousel';
+import { SocialLoginModule, AuthServiceConfig, AuthService } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+
+
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("549753125776-tol8on9q0o1nrtkr1v1q44ifsl9gre7b.apps.googleusercontent.com")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("2065583860235146")
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +45,13 @@ import { OwlModule } from 'ngx-owl-carousel';
     HttpClientModule,
     NgtUniversalModule,
     IonicModule.forRoot(),
-    OwlModule
-    ],
-  providers: [],
+    OwlModule,
+    SocialLoginModule
+  ],
+  providers: [{
+    provide: AuthServiceConfig,
+    useFactory: provideConfig
+  }, AuthService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

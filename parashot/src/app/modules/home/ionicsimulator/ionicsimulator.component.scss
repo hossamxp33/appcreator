@@ -46,20 +46,23 @@ ion-content {
   flex-basis: 0;
   flex-grow: 1;
   max-width: 20%;
-  padding: 0 ;
+  padding: 0;
 }
 
-.col {.icon {
-  border-radius: 50%;
-  background: #fff;
-  padding: 15px;
+.col {
+  .icon {
+    border-radius: 50%;
+    background: #fff;
+    padding: 15px;
 
+  }
+
+  label {
+    font-size: .9vw;
+    padding: 19px 13px;
+  }
 }
-label{
-  font-size: .9vw;
-  padding: 19px 13px;
-}
-}
+
 .icon {
   font-size: 20px;
 }
@@ -83,10 +86,12 @@ ion-tabs {
 
 
 }
+
 ion-tab-bar {
   background: transparent;
 }
-ion-tab-button{
+
+ion-tab-button {
   background: #ffffffe6;
 
 }
@@ -154,4 +159,10 @@ ion-tab-button{
       font-size: 10px;
     }
   }
+}
+
+ion-slide {
+  width: 100%;
+  padding: 10px;
+  display: block;
 }
