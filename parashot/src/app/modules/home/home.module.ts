@@ -5,21 +5,17 @@ import { HeadersComponent } from './headers/headers.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicsimulatorComponent } from './ionicsimulator/ionicsimulator.component';
 import { IonicModule } from '@ionic/angular';
 import { HomeRoutingModule } from './home-routing.module';
 import { SplashComponent } from './splash/splash.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { SlidersComponent } from './sliders/sliders.component';
 @NgModule({
   declarations: [
     StoreComponent,
-    IonicsimulatorComponent,
     HeadersComponent,
     HeadersPageComponent,
-    SplashComponent,
-    SidebarComponent,
     SlidersComponent,
+    SplashComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +25,7 @@ import { SlidersComponent } from './sliders/sliders.component';
     OwlModule
 
   ],
+  exports: [SplashComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule { }

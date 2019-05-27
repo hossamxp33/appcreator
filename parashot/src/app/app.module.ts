@@ -1,3 +1,8 @@
+import { ColorPickerModule } from 'ngx-color-picker';
+import { HeadersPageComponent } from './modules/home/headers-page/headers-page.component';
+import { SlidersComponent } from './modules/home/sliders/sliders.component';
+import { HeadersComponent } from './modules/home/headers/headers.component';
+import { SidebarComponent } from './shared/marginals/sidebar/sidebar.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -7,12 +12,14 @@ import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './shared/marginals/header/header.component';
+import { FooterComponent } from './shared/marginals/footer/footer.component';
 import { IonicModule } from '@ionic/angular';
 import { OwlModule } from 'ngx-owl-carousel';
 import { SocialLoginModule, AuthServiceConfig, AuthService } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { AuthModule } from './modules/auth/auth.module';
+import { IonicsimulatorComponent } from './shared/components/ionicsimulator/ionicsimulator.component';
 
 
 let config = new AuthServiceConfig([
@@ -34,8 +41,12 @@ export function provideConfig() {
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    SidebarComponent,
+    IonicsimulatorComponent,
     ColorPickerComponent,
-
+    HeadersComponent,
+    SlidersComponent,
+    HeadersPageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -46,7 +57,10 @@ export function provideConfig() {
     NgtUniversalModule,
     IonicModule.forRoot(),
     OwlModule,
-    SocialLoginModule
+    SocialLoginModule,
+    AuthModule,
+    ColorPickerModule
+
   ],
   providers: [{
     provide: AuthServiceConfig,
