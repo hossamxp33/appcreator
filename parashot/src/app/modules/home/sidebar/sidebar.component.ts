@@ -10,10 +10,6 @@ export class SidebarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $('.dropdown-menu').click(function (e) {
-
-      e.stopPropagation();
-    });
 
   }
 

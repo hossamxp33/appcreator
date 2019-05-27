@@ -238,59 +238,65 @@ i {
   }
 }
 
-button:focus+.page {
-  display: block;
-}
+
+
+// button:focus+.page {
+//   display: block;
+// }
 
 .page {
-  display: none;
+  // display: none;
   background: #e6eaed;
   width: 70%;
   margin-right: 31%;
-  margin-top: -8px;
+  // margin-top: -8px;
   border: 1px solid #ccc;
 }
 
-.page:focus {
-  display: block;
-}
+// .page:focus {
+//   display: block;
+// }
 
 .page>ul {
   list-style: none;
   text-align: center
 }
 
-.dropdown-toggle:hover+.dropdown-menu {
-  display: block;
-  text-align: right;
-  // margin-right: -5px; // remove the gap so it doesn't close
-}
-
-// .dropdown-menu:hover,
-.dropdown-menu a:focus+.page {
-  display: block;
-
-}
-
-.btn-group.dropleft {
+.dropleft {
   width: 80%;
   border: 1px solid #ccc;
+
+  .dropdown-menu {
+
+    text-align: right;
+    border-radius: 20px;
+    padding: 15px;
+    line-height: 2;
+  }
 
   .btn {
     text-align: right;
     background: #fff;
   }
+
+  &:hover>.dropdown-menu {
+    display: block;
+    // margin-right: -5px; // remove the gap so it doesn't close
+  }
+
+  .dropdown-down:hover+.dropdown-menu {
+    display: block;
+  }
 }
 
 
-.dropleft .dropdown-toggle::before {
+
+
+.dropdown-toggle::before,
+.dropdown-toggle::after {
   display: none;
 }
 
-.dropleft .dropdown-menu {
-
-  text-align: right;
-}
 
 @media only screen and (max-width:375px) {
   .container {
