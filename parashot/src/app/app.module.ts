@@ -20,8 +20,11 @@ import { SocialLoginModule, AuthServiceConfig, AuthService } from "angularx-soci
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { AuthModule } from './modules/auth/auth.module';
 import { IonicsimulatorComponent } from './shared/components/ionicsimulator/ionicsimulator.component';
-
-
+import { NgMagicIframeModule } from '@sebgroup/ng-magic-iframe';
+import { CategoriesComponent } from './categories/categories.component';
+import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -47,6 +50,8 @@ export function provideConfig() {
     HeadersComponent,
     SlidersComponent,
     HeadersPageComponent,
+    CategoriesComponent,
+    EditCategoriesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -59,7 +64,10 @@ export function provideConfig() {
     OwlModule,
     SocialLoginModule,
     AuthModule,
-    ColorPickerModule
+    ColorPickerModule,
+    NgMagicIframeModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule
 
   ],
   providers: [{

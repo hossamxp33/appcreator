@@ -1,10 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ionicsimulator',
   templateUrl: './ionicsimulator.component.html',
-  styleUrls: ['./device.component.scss', './ionicsimulator.component.scss']
+  styleUrls: ['./ionicsimulator.component.scss']
 })
 export class IonicsimulatorComponent implements OnInit {
   @Input() headerColor: any;
@@ -24,8 +25,7 @@ export class IonicsimulatorComponent implements OnInit {
   colorHeader = '#1e56a0';
   colorSearch = '#fff';
 
-  constructor() { }
-
+  constructor(public sanitizer: DomSanitizer) { }
   ngOnInit() {
     // console.log(this.sliderId, this.source);
   }
