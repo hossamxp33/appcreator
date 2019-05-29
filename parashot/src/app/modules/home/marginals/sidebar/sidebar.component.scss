@@ -99,7 +99,6 @@
 //   transform: translateX(50%);
 // }
 
-
 // @media (max-width: 768px) {
 
 //   /* 80px and its content aligned to centre. Pushing it off the screen with the
@@ -112,12 +111,10 @@
 //     margin-left: -80px !important;
 //   }
 
-
 //   /* Reappearing the sidebar on toggle button click */
 //   #sidebar {
 //     margin-left: 0;
 //   }
-
 
 //   /* Toggling the sidebar header content,
 //        hide the big heading [h3] and showing the small heading [strong] and vice versa
@@ -190,17 +187,16 @@ i {
 }
 
 .menu-item {
-
   width: 70px;
   height: 65px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid transparent;
   border-radius: 50%;
   text-align: center;
   padding: 10px;
-  box-shadow: 1px 1px #e8e8e8;
   display: block;
   background: transparent;
   outline: none;
+  box-shadow: 0px 0px 4px 0px #9b9b9b;
 
   &:hover {
     width: 30%;
@@ -228,7 +224,6 @@ i {
       display: inline !important;
       padding-right: 55%;
     }
-
   }
 
   img {
@@ -237,8 +232,6 @@ i {
     object-fit: contain;
   }
 }
-
-
 
 // button:focus+.page {
 //   display: block;
@@ -257,9 +250,9 @@ i {
 //   display: block;
 // }
 
-.page>ul {
+.page > ul {
   list-style: none;
-  text-align: center
+  text-align: center;
 }
 
 .dropleft {
@@ -267,7 +260,6 @@ i {
   border: 1px solid #ccc;
 
   .dropdown-menu {
-
     text-align: right;
     border-radius: 20px;
     padding: 15px;
@@ -279,26 +271,22 @@ i {
     background: #fff;
   }
 
-  &:hover>.dropdown-menu {
+  &:hover > .dropdown-menu {
     display: block;
     // margin-right: -5px; // remove the gap so it doesn't close
   }
 
-  .dropdown-down:hover+.dropdown-menu {
+  .dropdown-down:hover + .dropdown-menu {
     display: block;
   }
 }
-
-
-
 
 .dropdown-toggle::before,
 .dropdown-toggle::after {
   display: none;
 }
 
-
-@media only screen and (max-width:375px) {
+@media only screen and (max-width: 375px) {
   .container {
     margin: 0;
     padding: 100px 10px;

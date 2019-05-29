@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { ImageSnippet } from '../../../shared/models/imageSnppit.model';
+import { ImageSnippet } from '../../../models/imageSnppit.model';
 @Component({
   selector: 'app-headers',
   templateUrl: './headers.component.html',

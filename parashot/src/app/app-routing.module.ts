@@ -2,8 +2,8 @@ import { SlidersComponent } from './modules/home/sliders/sliders.component';
 import { HeadersPageComponent } from './modules/home/headers-page/headers-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CategoriesComponent } from './categories/categories.component';
-import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
+import { CategoriesComponent } from './modules/home/categories/categories.component';
+import { EditCategoriesComponent } from './modules/home/edit-categories/edit-categories.component';
 
 const routes: Routes = [
 
@@ -12,22 +12,8 @@ const routes: Routes = [
     loadChildren: "./modules/auth/auth.module#AuthModule",
   },
   {
-    path: 'headers',
-    component: HeadersPageComponent,
-  },
-  {
-    path: 'sliders',
-    component: SlidersComponent,
-  }
-  ,
-  {
-    path: 'categories',
-    component: CategoriesComponent,
-  }
-  ,
-  {
-    path: 'edit-categories',
-    component: EditCategoriesComponent,
+    path: '',
+    loadChildren: "./modules/home/home.module#HomeModule"
   }
 ];
 

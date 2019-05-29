@@ -2,10 +2,25 @@
 $ionicons-font-path: "~ionicons/dist/fonts";
 @import "~ionicons/dist/scss/ionicons.scss";
 
+@font-face {
+  font-family: "DroidKufi Bold";
+  src: url("./assets/fonts/DroidKufi_Bold.ttf") format("opentype");
+}
 
+@font-face {
+  font-family: "DroidKufi";
+  src: url("./assets/fonts/DroidKufi_Regular.ttf") format("opentype");
+}
 
+html,
+body {
+  height: 100%;
+}
 
-
+body {
+  margin: 0;
+  font-family: DroidKufi;
+}
 
 .searchbar-input.sc-ion-searchbar-ios {
   background: #fff;
@@ -22,8 +37,10 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   font-size: 12px;
   font-weight: 400;
   line-height: 30px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 .searchbar-search-icon.sc-ion-searchbar-md {
@@ -33,7 +50,6 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   height: 15px;
   right: 88% !important;
 }
-
 
 .searchbar-search-icon.sc-ion-searchbar-ios {
   margin-left: calc(50% - 60px);
@@ -46,13 +62,13 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   right: 88% !important;
 }
 
-.searchbar-left-aligned.sc-ion-searchbar-ios-h .searchbar-input.sc-ion-searchbar-ios {
+.searchbar-left-aligned.sc-ion-searchbar-ios-h
+  .searchbar-input.sc-ion-searchbar-ios {
   padding-left: 58px !important;
   padding-right: 0px !important;
 }
 
 .searchbar-left-aligned.sc-ion-searchbar-ios-h {
-
   background: #fff;
 
   height: 36px;
@@ -64,7 +80,7 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   margin: 11px 3px;
 }
 
-[dir=rtl] .sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md {
+[dir="rtl"] .sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md {
   left: 88%;
 }
 
@@ -72,7 +88,6 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 //   display : none;
 // }
 #slide-1 {
-
   .hamburger-inner,
   .hamburger-inner::before,
   .hamburger-inner::after {
@@ -86,7 +101,7 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 }
 
 #slide-2 {
-  .owl-theme .owl-nav.disabled+.owl-dots {
+  .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: -25px;
     // z-index: 99999999999;
     position: relative;
@@ -104,7 +119,7 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 }
 
 #slide4 {
-  .owl-theme .owl-nav.disabled+.owl-dots {
+  .owl-theme .owl-nav.disabled + .owl-dots {
     text-align: left;
     position: absolute;
     top: 155px;
@@ -120,7 +135,7 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 
   .owl-theme .owl-dots .owl-dot.active span,
   .owl-theme .owl-dots .owl-dot:hover span {
-    background: #FFFCFC;
+    background: #fffcfc;
   }
 
   .owl-dot:nth-child(2) span {
@@ -142,11 +157,10 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   .active {
     box-shadow: -1px 22px 31px -21px rgba(237, 130, 237, 1);
   }
-
 }
 
 .swiper-pagination-bullet {
-  background: #D6D6D6 !important;
+  background: #d6d6d6 !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -212,7 +226,34 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   height: 25px;
   background-size: cover;
 }
-
+.palette {
+  background: url(./assets/images/paint-palette.png);
+  width: 20px;
+  height: 25px;
+  background-size: contain;
+  padding: 0 13px;
+  background-repeat: no-repeat;
+}
+.on {
+  background: url(./assets/images/switch.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+.off {
+  background: url(./assets/images/switch-off-icon.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+.back {
+  background: url(./assets/images/back.jpg);
+  width: 20px;
+  height: 25px;
+  background-size: contain;
+  padding: 0 13px;
+  background-repeat: no-repeat;
+}
 .color-picker .cursor {
   position: relative;
   width: 16px;
@@ -223,7 +264,6 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 }
 
 .color-picker {
-
   top: 32px !important;
   right: 67px !important;
   left: 0 !important;
@@ -258,7 +298,6 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 .seb-iframe-loading {
   height: 93% !important;
   display: none;
-
 }
 
 .iphone-x {
@@ -273,29 +312,14 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   }
 }
 
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
 .mat-slide-toggle-bar {
-
   background-color: #304d5d;
   width: 44px !important;
   height: 22px !important;
   border-radius: 11px !important;
-
 }
 
 .mat-slide-toggle-thumb {
-
   box-shadow: none;
   background-color: #48ac9f;
-
 }

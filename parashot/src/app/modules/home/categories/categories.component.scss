@@ -4,7 +4,7 @@
 }
 
 .dep {
-  background: url('../../assets/images/dep.png');
+  background: url("../../../../assets/images/dep.png");
   background-repeat: repeat;
   background-size: auto;
   width: 25px;
@@ -32,6 +32,7 @@
   span {
     display: block;
     font-size: 8px;
+    margin-top: 10px;
   }
 
   img {
@@ -53,15 +54,12 @@
   border-radius: 10px;
 }
 
-.fa-palette {
+.palette {
   margin: 5px;
 }
 
 a {
-  color: #000;
-
   &:hover {
-    color: #000;
     text-decoration: none;
   }
 }

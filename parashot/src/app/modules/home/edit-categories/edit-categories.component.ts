@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-categories.component.scss']
 })
 export class EditCategoriesComponent implements OnInit {
-  color: '#d02e2e';
+  color = '#d02e2e';
   checked = false;
   disabled = false;
+  shadow = true;
+  title = true;
+  border = true;
   constructor() { }
 
   ngOnInit() {
