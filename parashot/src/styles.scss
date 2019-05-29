@@ -273,15 +273,6 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   }
 }
 
-.toggle.ios,
-.toggle-on.ios,
-.toggle-off.ios {
-  border-radius: 20px;
-}
-
-.toggle.ios .toggle-handle {
-  border-radius: 20px;
-}
 
 html,
 body {
@@ -291,4 +282,20 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-slide-toggle-bar {
+
+  background-color: #304d5d;
+  width: 44px !important;
+  height: 22px !important;
+  border-radius: 11px !important;
+
+}
+
+.mat-slide-toggle-thumb {
+
+  box-shadow: none;
+  background-color: #48ac9f;
+
 }
