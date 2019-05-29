@@ -7,6 +7,9 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 
 
 
+.searchbar-input.sc-ion-searchbar-ios {
+  background: #fff;
+}
 
 .searchbar-input.sc-ion-searchbar-md {
   padding-left: 50%;
@@ -203,6 +206,13 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   background-size: cover;
 }
 
+.img-ico {
+  background: url(./assets/images/picture.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
 .color-picker .cursor {
   position: relative;
   width: 16px;
@@ -214,8 +224,8 @@ $ionicons-font-path: "~ionicons/dist/fonts";
 
 .color-picker {
 
-  top: 110px !important;
-  right: 123px !important;
+  top: 32px !important;
+  right: 67px !important;
   left: 0 !important;
 
   .arrow.arrow-right {
@@ -243,4 +253,42 @@ $ionicons-font-path: "~ionicons/dist/fonts";
     color: #fff;
     border-radius: 5px;
   }
+}
+
+.seb-iframe-loading {
+  height: 93% !important;
+  display: none;
+
+}
+
+.iphone-x {
+  .seb-iframe {
+    height: 96% !important;
+  }
+}
+
+.note8 {
+  .seb-iframe {
+    height: 93% !important;
+  }
+}
+
+.toggle.ios,
+.toggle-on.ios,
+.toggle-off.ios {
+  border-radius: 20px;
+}
+
+.toggle.ios .toggle-handle {
+  border-radius: 20px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

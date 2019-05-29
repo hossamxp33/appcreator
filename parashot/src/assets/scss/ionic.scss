@@ -1,0 +1,95 @@
+.icon {
+  font-size: 20px;
+}
+
+
+.row {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-bg {
+  background-image: url(../../../../assets/images/slide-bg.png);
+  background-size: cover;
+  -webkit-clip-path: ellipse(56% 32% at 50% 7%);
+  clip-path: ellipse(56% 32% at 50% 7%);
+  height: 225px;
+
+
+}
+
+
+.s-slider {
+  border: 5px solid #1c3c39;
+  width: 80%;
+  margin: -213px auto;
+  border-radius: 15px;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0px 5px 0px 0px;
+}
+
+.cart {
+  margin: auto;
+}
+
+.cart span {
+  position: absolute;
+  border-radius: 50%;
+  background: red;
+  color: #fff;
+  top: 9px;
+  width: 20px;
+  height: 20px;
+  left: 0px;
+  text-align: center;
+  font-size: 14px;
+}
+
+ion-slide {
+  width: 100%;
+  padding: 10px;
+  display: block;
+}
+
+ion-tab-bar {
+  background: transparent;
+}
+
+ion-tab-button {
+  background: #ffffffe6;
+
+}
+
+ion-tabs {
+  background: #e6eaed;
+
+}
+
+ion-header {
+  background: #1e56a0;
+}
+
+ion-content {
+  background: #e6eaed;
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 20%;
+  padding: 0;
+}
+
+.col .icon {
+  border-radius: 50%;
+  background: #fff;
+  padding: 15px;
+
+}
+
+
+.col label {
+  font-size: .9vw;
+  padding: 19px 13px;
+}
