@@ -239,12 +239,14 @@ body {
   width: 25px;
   height: 25px;
   background-size: cover;
+  padding: 3px 22px;
 }
 .off {
   background: url(./assets/images/switch-off-icon.png);
   width: 25px;
   height: 25px;
   background-size: cover;
+  padding: 3px 22px;
 }
 .back {
   background: url(./assets/images/back.jpg);
@@ -322,4 +324,9 @@ body {
 .mat-slide-toggle-thumb {
   box-shadow: none;
   background-color: #48ac9f;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

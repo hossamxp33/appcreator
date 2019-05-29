@@ -19,6 +19,7 @@
   background: #fafafa;
 
   border: 1px solid #ccc;
+  height: 70vh;
 
   .tail-head {
     padding: 15px;
@@ -44,6 +45,11 @@
   margin: auto;
   background: #e6eaed;
   border-radius: 10px;
+
+  & > img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .cat {
