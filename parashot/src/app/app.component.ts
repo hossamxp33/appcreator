@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,10 +8,8 @@ import * as $ from 'jquery';
 })
 export class AppComponent implements OnInit {
   title = 'parashot';
+  constructor(private router: Router) { }
   ngOnInit() {
-    $('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
-    });
   }
 
 

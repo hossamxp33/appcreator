@@ -3,11 +3,12 @@ header {
   height: 75px;
   background: #fff;
   color: #333;
-  border: 1px solid #cccccc;
+  border: 1px solid #f9f3f3;
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1040;
+  box-shadow: 9px 0px 10px #ccc;
 
 }
 
@@ -53,9 +54,10 @@ header {
   margin: 0 !important;
 }
 
-.form-group{
+.form-group {
   text-align: start;
 }
+
 .btn.focus,
 .btn:focus {
   outline: 0;
@@ -204,5 +206,18 @@ header {
 
   .nav-item>a {
     display: block;
+  }
+}
+
+
+
+.auth-links {
+  a {
+    padding: 13px;
+    color: #000;
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 }

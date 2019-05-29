@@ -1,0 +1,233 @@
+<head>
+  <meta charset="utf-8" />
+  <title>Parashot</title>
+  <base href="/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./assets/images/store.ico" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
+    integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If"
+    crossorigin="anonymous"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://unpkg.com/ionicons@4.5.8/dist/css/ionicons.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css"
+    rel="stylesheet"
+  />
+
+  <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+  <script
+    src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js"
+    integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<ion-header class="pt-4">
+  <!-- [(colorPicker)]="color" [style.background]="color" -->
+  <div class="d-flex justify-content-between">
+    <div class="cart">
+      <i class="icon ion-ios-cart"></i>
+      <span>1</span>
+    </div>
+    <ion-searchbar
+      class="col-md-10"
+      placeholder="ابحث بالمنتجات"
+      mode="ios"
+    ></ion-searchbar>
+  </div>
+</ion-header>
+<ion-content>
+  <div *ngIf="sliderId == -1">
+    <ion-slides [options]="deSlideOpts">
+      <ion-slide
+        class="ios swiper-slide swiper-zoom-container hydrated swiper-slide-active"
+      >
+        <img src="../../../../assets/images/slide-1.png" />
+        <h2>Welcome to the <b>IMA</b></h2>
+        <p>
+          The <b>IOS app</b> is a practical preview of the I make App in action,
+          and a demonstration of proper use.
+        </p>
+      </ion-slide>
+
+      <ion-slide
+        class="ios swiper-slide swiper-zoom-container hydrated swiper-slide-next"
+      >
+        <img src="../../../../assets/images/slide-2.png" />
+        <h2>What is I Make App?</h2>
+        <p>
+          <b>I Make App</b> is a web app that enables users to build high
+          quality mobile store apps .
+        </p>
+      </ion-slide>
+
+      <ion-slide class="ios swiper-slide swiper-zoom-container hydrated">
+        <img src="../../../../assets/images/slide-3.png" />
+        <h2>What is new about IMK?</h2>
+        <p>
+          <b>I Make App</b> is a powerful set of services and features built on
+          top of great technologies that brings a totally new level of apps.
+        </p>
+      </ion-slide>
+
+      <ion-slide class="ios swiper-slide swiper-zoom-container hydrated">
+        <img src="../../../../assets/images/slide-4.png" />
+        <h2>Ready to Start?</h2>
+        <ion-button
+          fill="clear"
+          class="ios button button-clear ion-activatable ion-focusable hydrated"
+          >Continue
+          <ion-icon
+            slot="end"
+            name="arrow-forward"
+            role="img"
+            class="ios hydrated"
+            aria-label="arrow forward"
+          ></ion-icon
+        ></ion-button>
+      </ion-slide>
+      ></ion-slides
+    >
+  </div>
+  <app-headers [id]="sliderId" [source]="source"></app-headers>
+  <div class="row px-3 text-center">
+    <div class="col">
+      <i class="icon ion-ios-shirt"></i>
+      <label>ملابس</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-phone-portrait"></i>
+      <label>موبايلات</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-laptop"></i>
+      <label>اليكترونيات</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-bed"></i>
+      <label>المنزل و الحديقة</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-glasses"></i>
+      <label>نظارات</label>
+    </div>
+  </div>
+  <div>
+    <h2>أشهر المنتجات</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-tabs>
+    <ion-tab tab="home">Home Content</ion-tab>
+  <ion-tab tab="settings">Settings Content</ion-tab>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="schedule">
+      <i class="icon ion-ios-home"></i>
+      <ion-label>الرئيسية</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <i class="icon ion-ios-cart"></i>
+      <ion-label>طلباتي</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <i class="icon ion-ios-pricetags"></i>
+      <ion-label>عروض</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <i class="icon ion-ios-code-working"></i>
+      <ion-label>المزيد</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

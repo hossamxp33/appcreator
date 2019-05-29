@@ -95,23 +95,25 @@
   </div>
 </div> -->
 
-<div>
-  <button class="menu-item m-2">
+<div class="dropdown">
+  <button
+    class="menu-item m-2 dropdown-toggle"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
     <img src=".././../assets/images/mobile.png" /><span class="d-none"
       >تصميم الصفحات</span
     >
   </button>
-  <div class="page">
+  <div class="page dropdown-menu">
     <ul>
       <li>
         <!-- Default dropleft button -->
-        <div class="btn-group dropleft mt-5">
+        <div class="btn-group dropleft mt-3">
           <button
             type="button"
             class="btn dropdown-toggle d-flex justify-content-between"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
           >
             <i class="home"><span>الصفحة الرئيسية</span> </i>
             <i class="more"></i>
@@ -124,7 +126,7 @@
             <a class="dropdown-item d-flex " routerLink="/sliders"
               ><i class="slider-ico"></i>سلايدر</a
             >
-            <a class="dropdown-item d-flex " routerLink="#"
+            <a class="dropdown-item d-flex " routerLink="/categories"
               ><i class="dep"></i>الاقسام</a
             >
             <a class="dropdown-item d-flex " routerLink="#"
@@ -138,7 +140,7 @@
       </li>
       <li>
         <!-- Default dropleft button -->
-        <div class="btn-group dropleft mt-5">
+        <div class="btn-group dropleft mt-3">
           <button
             type="button"
             class="btn dropdown-toggle d-flex justify-content-between"
@@ -174,7 +176,7 @@
       </li>
       <li>
         <!-- Default dropleft button -->
-        <div class="btn-group dropleft mt-5">
+        <div class="btn-group dropleft mt-3">
           <button
             type="button"
             class="btn dropdown-toggle d-flex justify-content-between"
@@ -207,7 +209,7 @@
       </li>
       <li>
         <!-- Default dropleft button -->
-        <div class="btn-group dropleft mt-5">
+        <div class="btn-group dropleft mt-3">
           <button
             type="button"
             class="btn dropdown-toggle d-flex justify-content-between"
@@ -220,7 +222,7 @@
           </button>
           <div class="dropdown-menu">
             <!-- Dropdown menu links -->
-            <a class="dropdown-item d-flex " routerLink="/headers"
+            <a class="dropdown-item d-flex " routerLink="/store/headers"
               >الشريط العلوي</a
             >
             <a class="dropdown-item d-flex " routerLink="#">سلايدر</a>

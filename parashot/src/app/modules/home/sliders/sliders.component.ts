@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlidersComponent implements OnInit {
 
-  id: number = 1;
+  id: number = -1;
   source = 'page';
   constructor() { }
 
