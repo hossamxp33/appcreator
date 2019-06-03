@@ -5,15 +5,199 @@
 <!-- <div class="ios-em" *ngIf="iosref"></div> -->
 <div *ngIf="iosref" class="marvel-device iphone-x">
   <div class="screen">
-    <!-- <seb-ng-magic-iframe
-      [source]="'/assets/iframes/iphone.iframe.html'"
-      [styleUrls]="['/assets/scss/ionic.scss']"
-    ></seb-ng-magic-iframe> -->
+   <ion-header class="pt-4">
+  <div class="d-flex justify-content-between">
+    <div class="cart">
+      <i class="icon ion-ios-cart"></i>
+      <span>1</span>
+    </div>
+    <ion-searchbar
+      class="col-md-10"
+      placeholder="ابحث بالمنتجات"
+      mode="ios"
+    ></ion-searchbar>
+  </div>
+</ion-header>
+<ion-content>
+  <div *ngIf="sliderId == -1">
+    <ion-slides [options]="deSlideOpts">
+      <ion-slide
+        class="ios swiper-slide swiper-zoom-container hydrated swiper-slide-active"
+      >
+        <img src="../../../../assets/images/slide-1.png" />
+        <h2>Welcome to the <b>IMA</b></h2>
+        <p>
+          The <b>IOS app</b> is a practical preview of the I make App in action,
+          and a demonstration of proper use.
+        </p>
+      </ion-slide>
+
+      <ion-slide
+        class="ios swiper-slide swiper-zoom-container hydrated swiper-slide-next"
+      >
+        <img src="../../../../assets/images/slide-2.png" />
+        <h2>What is I Make App?</h2>
+        <p>
+          <b>I Make App</b> is a web app that enables users to build high
+          quality mobile store apps .
+        </p>
+      </ion-slide>
+
+      <ion-slide class="ios swiper-slide swiper-zoom-container hydrated">
+        <img src="../../../../assets/images/slide-3.png" />
+        <h2>What is new about IMK?</h2>
+        <p>
+          <b>I Make App</b> is a powerful set of services and features built on
+          top of great technologies that brings a totally new level of apps.
+        </p>
+      </ion-slide>
+
+      <ion-slide class="ios swiper-slide swiper-zoom-container hydrated">
+        <img src="../../../../assets/images/slide-4.png" />
+        <h2>Ready to Start?</h2>
+        <ion-button
+          fill="clear"
+          class="ios button button-clear ion-activatable ion-focusable hydrated"
+          >Continue
+          <ion-icon
+            slot="end"
+            name="arrow-forward"
+            role="img"
+            class="ios hydrated"
+            aria-label="arrow forward"
+          ></ion-icon
+        ></ion-button>
+      </ion-slide>
+      ></ion-slides
+    >
+  </div>
+  <app-headers [id]="sliderId" [source]="source"></app-headers>
+  <div class="row px-3 text-center">
+    <div class="col">
+      <i class="icon ion-ios-shirt"></i>
+      <label>ملابس</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-phone-portrait"></i>
+      <label>موبايلات</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-laptop"></i>
+      <label>اليكترونيات</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-bed"></i>
+      <label>المنزل و الحديقة</label>
+    </div>
+    <div class="col">
+      <i class="icon ion-ios-glasses"></i>
+      <label>نظارات</label>
+    </div>
+  </div>
+  <div>
+    <h2>أشهر المنتجات</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../../assets/images/88d586d5-d523-4f3b-9689-ed3451e9aef1.jfif"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="d-flex justify-content-between">
+              <div>Price</div>
+              <div>Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="more">
+      <i class="icon ion-ios-code-working"></i>
+      <ion-label>المزيد</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="offers">
+      <i class="icon ion-ios-pricetags"></i>
+      <ion-label>عروض</ion-label> </ion-tab-button
+    ><ion-tab-button tab="myorders">
+      <i class="icon ion-ios-cart"></i>
+      <ion-label>طلباتي</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="home">
+      <i class="icon ion-ios-home"></i>
+      <ion-label>الرئيسية</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
   </div>
 </div>
 
 <div *ngIf="mdref" class="marvel-device note8 mt-4">
-  <div class="img-container">
   <div class="screen">
     <!-- <seb-ng-magic-iframe
       [source]="'/assets/iframes/md.iframe.html'"
@@ -221,9 +405,8 @@
           <ion-label>المزيد</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
-
+      <!-- <img src='../../../../assets/images/android-skin.png'> -->
   </div>
-  <img src="../../../../assets/images/android-skin.png"></div>
 </div>
 
 <!-- <button (click)="loadText()">Load Text</button>
