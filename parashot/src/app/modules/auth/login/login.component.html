@@ -40,12 +40,12 @@
           <form class="login-form">
   
             <div class="name-field">
-              <input type="text" placeholder="اسم المستخدم" />
+              <input id="ts_username" type="text" placeholder="اسم المستخدم" />
             </div>
   
             
             <div class="pwp-field">
-                <input type="password" placeholder="كلمة المرور" />
+                <input id="ts_pwp" type="password" placeholder="كلمة المرور" />
             </div>
             
             <div class="row">
@@ -65,7 +65,7 @@
             </div>            
             
             <div class="btn-field">
-                <input type="submit" value="تسجيل الدخول" />
+                <input (click)="getUser()" type="submit" value="تسجيل الدخول" />
             </div>          
   
           </form>
