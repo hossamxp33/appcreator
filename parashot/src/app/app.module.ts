@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { ApiPrefixInterceptor } from './core/interceptors/api-prefix.interceptor';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { HeadersPageComponent } from './modules/home/headers-page/headers-page.component';
@@ -55,7 +56,8 @@ export function provideConfig() {
     ColorPickerModule,
     NgMagicIframeModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    CoreModule
 
   ],
   providers: [{
