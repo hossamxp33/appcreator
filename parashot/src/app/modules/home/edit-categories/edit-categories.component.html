@@ -2,7 +2,7 @@
   <div><i class="dep"></i><span>الاقسام</span></div>
   <i class="img-ico"></i>
 </div>
-<div class="tail">
+<div class="tail pb-5">
   <div class="d-flex justify-content-between tail-head">
     <span>تعديل تصاميم الأقسام</span>
     <a routerLink="/categories"><i class="back"></i></a>
@@ -28,9 +28,8 @@
       <span class="col-md-5">ظل الأقسام</span>
       <div class="col-md-6">
         <span
-          class=" "
           (click)="toggleShadow()"
-          [ngClass]="shadow ? 'on' : ' off'"
+          [ngClass]="shadow ? 'on' : 'off'"
         >
           <!-- <mat-slide-toggle
             class="example-margin"
@@ -47,9 +46,8 @@
       <span class="col-md-5">إتاحة عنوان للأقسام</span>
       <div class="col-md-6">
         <span
-          class=""
           (click)="toggleTitle()"
-          [ngClass]="title ? 'on' : ' off'"
+          [ngClass]="title ? 'on' : 'off'"
         >
           <!-- <mat-slide-toggle
             class="example-margin"
@@ -66,9 +64,8 @@
       <span class="col-md-5">وضع إطار للأقسام</span>
       <div class="col-md-6">
         <span
-          class=""
           (click)="toggleBorder()"
-          [ngClass]="border ? 'on' : ' off'"
+          [ngClass]="border ? 'on' : 'off'"
         >
           <!-- <mat-slide-toggle
             class="example-margin"
