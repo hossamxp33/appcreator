@@ -41,7 +41,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         this.mainDesign = res.data;
         this.header = this.mainDesign.find(v => v.type === 'header');
         console.log(this.header);
-        $('ion-header').css('background', this.header.data[0].background);
+        $('ion-header').css('background', this.header.data.background);
         this.footer = this.mainDesign.find(v => v.type === 'footer');
         this.categorydesign = this.mainDesign.find(v => v.type === 'categorydesign');
         this.productsetting = this.mainDesign.find(v => v.type === 'productsetting');
@@ -60,10 +60,14 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   ios() {
     this.iosref = true;
     this.mdref = false;
+    console.log(this.header.data.background)
+    $('ion-header').css('background', this.header.data.background);
   }
   md() {
     this.iosref = false;
     this.mdref = true;
+    console.log(this.header.data.background)
+    $('ion-header').css('background', this.header.data.background);
   }
   ngOnDestroy() {
     // this.subs.unsubscribe();
