@@ -16,6 +16,7 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
     request = request.clone({
       setHeaders: {
         Authorization: this.auth.getToken() ? `Bearer ${this.auth.getToken()}` : ' '
+
       }
     });
     return next.handle(request);
