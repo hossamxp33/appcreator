@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   title = 'parashot';
   constructor(private router: Router) { }
   ngOnInit() {
+
+
   }
 
 

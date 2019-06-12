@@ -2,14 +2,10 @@
   <button [class.selected]="iosref" (click)="ios()">IOS</button>
   <button [class.selected]="mdref" (click)="md()">MD</button>
 </div>
-<!-- <div class="ios-em" *ngIf="iosref"></div> -->
 <div *ngIf="iosref" class="marvel-device iphone-x mt-4">
   <div class="img-container">
     <div class="screen">
-      <!-- <seb-ng-magic-iframe
-      [source]="'/assets/iframes/iphone.iframe.html'"
-      [styleUrls]="['/assets/scss/ionic.scss']"
-    ></seb-ng-magic-iframe> -->
+
       <ion-header class="pt-4">
         <div class="d-flex flex-row-reverse justify-content-between">
           <div class="cart">
@@ -182,23 +178,23 @@
           </div>
         </div> -->
       </ion-content>
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="more">
-            <i class="icon ion-ios-code-working"></i>
-            <ion-label>المزيد</ion-label>
-          </ion-tab-button>
-          <ion-tab-button tab="offers">
-            <i class="icon ion-ios-pricetags"></i>
-            <ion-label>عروض</ion-label> </ion-tab-button
-          ><ion-tab-button tab="myorders">
-            <i class="icon ion-ios-cart"></i>
-            <ion-label>طلباتي</ion-label>
-          </ion-tab-button>
-          <ion-tab-button tab="home">
-            <i class="icon ion-ios-home"></i>
-            <ion-label>الرئيسية</ion-label>
-          </ion-tab-button>
-        </ion-tab-bar>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="more">
+          <i class="icon ion-ios-code-working"></i>
+          <ion-label>المزيد</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="offers">
+          <i class="icon ion-ios-pricetags"></i>
+          <ion-label>عروض</ion-label> </ion-tab-button
+        ><ion-tab-button tab="myorders">
+          <i class="icon ion-ios-cart"></i>
+          <ion-label>طلباتي</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="home">
+          <i class="icon ion-ios-home"></i>
+          <ion-label>الرئيسية</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
     </div>
     <img src="../../../../assets/images/iphone-skin.png" />
   </div>
@@ -417,13 +413,3 @@
     <img src="../../../../assets/images/android-skin.png" />
   </div>
 </div>
-
-<!-- <button (click)="loadText()">Load Text</button>
-
-<ng-container *ngIf="text$ | async as text; else empty">
-  <div>{{ text }}</div>
-</ng-container>
-
-<ng-template #empty>
-  <ion-skeleton-text animated [style.width.px]="200"> </ion-skeleton-text>
-</ng-template> -->
