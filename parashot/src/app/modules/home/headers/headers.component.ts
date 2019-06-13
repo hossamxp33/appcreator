@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { ImageSnippet } from '../../../models/imageSnppit.model';
+
 @Component({
   selector: 'app-headers',
   templateUrl: './headers.component.html',
@@ -127,19 +127,7 @@ export class HeadersComponent implements OnInit {
   addImg() {
 
   }
-  deleteImg(name) {
-    this.imagesDisplay = this.imagesDisplay.filter(img => img.name != name);
 
-  }
 
-  processFile(imagesInput) {
-    const file: File = imagesInput.files[0];
-    const reader = new FileReader();
-    reader.addEventListener('load', (event: any) => {
-      this.uploadedFile = new ImageSnippet(event.target.result, file);
-      this.imagesDisplay.push({ "name": "../../../../assets/images/" + this.uploadedFile.file.name });
-      console.log(this.imagesDisplay)
-    });
-    reader.readAsDataURL(file);
-  }
+
 }
