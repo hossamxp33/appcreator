@@ -18,12 +18,32 @@ body {
 }
 
 body {
+    height: 100%;
     margin: 0;
     font-family: DroidKufi;
 }
 
 * {
     outline: none;
+}
+
+app-store {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+app-footer {
+    height: 35px;
+    width: 100%;
+    background: #000;
+    margin-top: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1260px;
+    }
 }
 
 .searchbar-input.sc-ion-searchbar-ios {
@@ -330,6 +350,21 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.swiper-zoom-container{
+
+.swiper-zoom-container {
     display: block !important;
+}
+
+.custom-loading {
+    background: url(./assets/images/VGIvAL.jpg) 100% 100%;
+    background-size: cover;
+    z-index: 1000 !important;
+    width: 100%;
+    height: 143%;
+    position: absolute;
+}
+
+.loading-wrapper {
+    background: transparent !important;
+    box-shadow: none !important;
 }

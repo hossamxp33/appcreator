@@ -2,36 +2,32 @@
   <div><i class="dep"></i><span>الاقسام</span></div>
   <i class="img-ico"></i>
 </div>
-<div class="tail">
+<div class="tail pb-5">
   <div class="d-flex justify-content-between tail-head">
     <span>تعديل تصاميم الأقسام</span>
     <a routerLink="/categories"><i class="back"></i></a>
   </div>
   <div class="selections p-3">
     <div class="row mb-5">
-      <span class="col-md-5">لون الخلفية</span>
-      <div class="col-md-6">
+      <span class="col-md-5 col-5">لون الخلفية</span>
+      <div class="col-md-6 col-6">
         <span class="color-span"
           ><input [(colorPicker)]="color" [style.background]="color"
         /></span>
       </div>
     </div>
     <div class="row mt-4">
-      <span class="col-md-5">لون الخط</span>
-      <div class="col-md-6">
+      <span class="col-md-5 col-5">لون الخط</span>
+      <div class="col-md-6 col-6">
         <span class="color-span"
           ><input [(colorPicker)]="color" [style.background]="color"
         /></span>
       </div>
     </div>
     <div class="row mt-4">
-      <span class="col-md-5">ظل الأقسام</span>
-      <div class="col-md-6">
-        <span
-          class=" "
-          (click)="toggleShadow()"
-          [ngClass]="shadow ? 'on' : ' off'"
-        >
+      <span class="col-md-5 col-5">ظل الأقسام</span>
+      <div class="col-md-6 col-6">
+        <span (click)="toggleShadow()" [ngClass]="shadow ? 'on' : 'off'">
           <!-- <mat-slide-toggle
             class="example-margin"
             [color]="color"
@@ -44,13 +40,9 @@
       </div>
     </div>
     <div class="row mt-4">
-      <span class="col-md-5">إتاحة عنوان للأقسام</span>
-      <div class="col-md-6">
-        <span
-          class=""
-          (click)="toggleTitle()"
-          [ngClass]="title ? 'on' : ' off'"
-        >
+      <span class="col-md-5 col-5">إتاحة عنوان للأقسام</span>
+      <div class="col-md-6 col-6">
+        <span (click)="toggleTitle()" [ngClass]="title ? 'on' : 'off'">
           <!-- <mat-slide-toggle
             class="example-margin"
             [color]="color"
@@ -63,13 +55,9 @@
       </div>
     </div>
     <div class="row mt-4">
-      <span class="col-md-5">وضع إطار للأقسام</span>
-      <div class="col-md-6">
-        <span
-          class=""
-          (click)="toggleBorder()"
-          [ngClass]="border ? 'on' : ' off'"
-        >
+      <span class="col-md-5 col-5">وضع إطار للأقسام</span>
+      <div class="col-md-6 col-6">
+        <span (click)="toggleBorder()" [ngClass]="border ? 'on' : 'off'">
           <!-- <mat-slide-toggle
             class="example-margin"
             [color]="color"
@@ -82,21 +70,21 @@
       </div>
     </div>
     <div class="row mt-4">
-      <span class="col-md-5">عنوان الأقسام</span>
-      <div class="col-md-6"><input type="text" /></div>
+      <span class="col-md-5 col-5">عنوان الأقسام</span>
+      <div class="col-md-6 col-6"><input type="text" /></div>
     </div>
     <div class="row mt-4">
-      <span class="col-md-5">حجم عنوان الأقسام</span>
-      <div class="col-md-6"><input type="number" min="0" /></div>
+      <span class="col-md-5 col-5">حجم عنوان الأقسام</span>
+      <div class="col-md-6 col-6"><input type="number" min="0" /></div>
     </div>
     <div class="row mt-4">
-      <span class="col-md-5">حجم خط الأقسام</span>
-      <div class="col-md-6"><input type="number" min="0" /></div>
+      <span class="col-md-5 col-5">حجم خط الأقسام</span>
+      <div class="col-md-6 col-6"><input type="number" min="0" /></div>
     </div>
 
     <div class="row mt-4">
-      <span class="col-md-5">لون الاطار</span>
-      <div class="col-md-6">
+      <span class="col-md-5 col-5">لون الاطار</span>
+      <div class="col-md-6 col-6">
         <span class="color-span"
           ><input [(colorPicker)]="color" [style.background]="color"
         /></span>

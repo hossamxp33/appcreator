@@ -9,7 +9,6 @@ header {
   right: 0;
   z-index: 1040;
   box-shadow: 9px 0px 10px #ccc;
-
 }
 
 .navbar {
@@ -17,7 +16,9 @@ header {
 }
 
 .logo {
-  width: 180px;
+  // width: 100%;
+  height: 63px;
+  object-fit: contain;
 
   i {
     color: #fff;
@@ -32,7 +33,7 @@ header {
   }
 }
 
-.nav-item>a {
+.nav-item > a {
   display: none;
 }
 
@@ -61,7 +62,7 @@ header {
 .btn.focus,
 .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 .2rem rgba(11, 114, 75, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(11, 114, 75, 0.25);
 }
 
 // ul {
@@ -78,8 +79,6 @@ header {
 //       color: #fff;
 //       cursor: pointer;
 //     }
-
-
 
 //     .dropdown-menu a {
 //       color: #000000 !important;
@@ -128,12 +127,12 @@ header {
   font-size: 0.8rem;
 }
 
-.form-dark [type="radio"]+label,
-.form-dark [type="checkbox"]+label {
+.form-dark [type="radio"] + label,
+.form-dark [type="checkbox"] + label {
   font-size: 0.8rem;
 }
 
-.form-dark [type="checkbox"]+label:before {
+.form-dark [type="checkbox"] + label:before {
   top: 2px;
   width: 15px;
   height: 15px;
@@ -143,28 +142,28 @@ header {
   color: #fff;
 }
 
-.form-dark input[type=email]:focus:not([readonly]) {
-  border-bottom: 1px solid #00C851;
-  -webkit-box-shadow: 0 1px 0 0 #00C851;
-  box-shadow: 0 1px 0 0 #00C851;
+.form-dark input[type="email"]:focus:not([readonly]) {
+  border-bottom: 1px solid #00c851;
+  -webkit-box-shadow: 0 1px 0 0 #00c851;
+  box-shadow: 0 1px 0 0 #00c851;
 }
 
-.form-dark input[type=email]:focus:not([readonly])+label {
+.form-dark input[type="email"]:focus:not([readonly]) + label {
   color: #fff;
 }
 
-.form-dark input[type=password]:focus:not([readonly]) {
-  border-bottom: 1px solid #00C851;
-  -webkit-box-shadow: 0 1px 0 0 #00C851;
-  box-shadow: 0 1px 0 0 #00C851;
+.form-dark input[type="password"]:focus:not([readonly]) {
+  border-bottom: 1px solid #00c851;
+  -webkit-box-shadow: 0 1px 0 0 #00c851;
+  box-shadow: 0 1px 0 0 #00c851;
 }
 
-.form-dark input[type=password]:focus:not([readonly])+label {
+.form-dark input[type="password"]:focus:not([readonly]) + label {
   color: #fff;
 }
 
-.form-dark input[type="checkbox"]+label:before {
-  content: '';
+.form-dark input[type="checkbox"] + label:before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -178,7 +177,7 @@ header {
   transition: 0.2s;
 }
 
-.form-dark input[type="checkbox"]:checked+label:before {
+.form-dark input[type="checkbox"]:checked + label:before {
   top: -4px;
   left: -3px;
   width: 12px;
@@ -199,17 +198,15 @@ header {
   border-bottom: none;
 }
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
   .navbar {
     display: flex;
   }
 
-  .nav-item>a {
+  .nav-item > a {
     display: block;
   }
 }
-
-
 
 .auth-links {
   a {
@@ -219,5 +216,13 @@ header {
 
   a:hover {
     text-decoration: none;
+  }
+  i {
+    margin: 20px 10px;
+  }
+  @media only screen and (max-width: 425px) {
+    span {
+      display: none;
+    }
   }
 }

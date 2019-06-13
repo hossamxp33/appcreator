@@ -17,9 +17,11 @@ export class EditCategoriesComponent implements OnInit {
   ngOnInit() {
   }
   toggleShadow() {
+
     this.shadow = !this.shadow;
   }
   toggleTitle() {
+    
     this.title = !this.title;
   }
   toggleBorder() {

@@ -2,22 +2,18 @@
   font-size: 20px;
 }
 
-
 .row {
   position: relative;
   z-index: 1;
 }
 
 .slider-bg {
-  background-image: url(../../../../assets/images/slide-bg.png);
+  background-image: url(../images/slide-bg.png);
   background-size: cover;
   -webkit-clip-path: ellipse(56% 32% at 50% 7%);
   clip-path: ellipse(56% 32% at 50% 7%);
   height: 225px;
-
-
 }
-
 
 .s-slider {
   border: 5px solid #1c3c39;
@@ -38,10 +34,10 @@
   border-radius: 50%;
   background: red;
   color: #fff;
-  top: 9px;
+  top: 28px;
   width: 20px;
   height: 20px;
-  left: 0px;
+  left: 23px;
   text-align: center;
   font-size: 14px;
 }
@@ -58,12 +54,10 @@ ion-tab-bar {
 
 ion-tab-button {
   background: #ffffffe6;
-
 }
 
 ion-tabs {
   background: #e6eaed;
-
 }
 
 ion-header {
@@ -85,11 +79,9 @@ ion-content {
   border-radius: 50%;
   background: #fff;
   padding: 15px;
-
 }
 
-
 .col label {
-  font-size: .9vw;
+  font-size: 0.9vw;
   padding: 19px 13px;
 }
