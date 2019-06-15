@@ -11,6 +11,7 @@ export class SlidersComponent implements OnInit {
   id: number = -1;
   source = 'page';
   imagesDisplay;
+  delete: boolean = false;
   constructor( private slidesService : SlideshowService) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class SlidersComponent implements OnInit {
 
   }
   deleteImg(id) {
+    this.delete = true;
 
   }
   getId($event) {
@@ -30,8 +32,8 @@ export class SlidersComponent implements OnInit {
     const file: File = imagesInput.files[0];
     const reader = new FileReader();
     reader.addEventListener('load', (event: any) => {
-      this.uploadedFile = new ImageSnippet(event.target.result, file);
-      this.imagesDisplay.push({ "name": "../../../../assets/images/" + this.uploadedFile.file.name });
+      // this.uploadedFile = new ImageSnippet(event.target.result, file);
+      // this.imagesDisplay.push({ "name": "../../../../assets/images/" + this.uploadedFile.file.name });
       console.log(this.imagesDisplay)
     });
     reader.readAsDataURL(file);

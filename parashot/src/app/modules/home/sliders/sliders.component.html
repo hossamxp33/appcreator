@@ -8,7 +8,7 @@
   </div>
   <div class="tail">
     <div class="col-md-11 my-5 mx-auto">
-      <app-headers (sliderId)="getId($event)" [source]="source"></app-headers>
+      <!-- <app-headers (sliderId)="getId($event)" [source]="source"></app-headers> -->
     </div>
   </div>
 </div>
@@ -51,12 +51,13 @@
           class="item"
           *ngFor="let image of imagesDisplay.data; let i = index"
         >
-          <div class="thumbnail-img d-flex">
+          <div class="text-center">
+            <div class='thumbnail-img'>
             <img src="{{ image.photo }}" /><span
               (click)="deleteImg(image.id)"
               class="cancle"
-            ></span>
-            <div class="deleted">
+            ></span></div>
+            <div class='"deleted-"{{i}}'>
               تم المسح
               <span
                 ><img src="../../../../assets/images/credit-card.png"
