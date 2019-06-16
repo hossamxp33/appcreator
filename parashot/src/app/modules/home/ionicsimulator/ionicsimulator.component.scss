@@ -100,78 +100,68 @@
 //     display: block !important;
 // }
 .d-flex button {
-    background-color: transparent;
-    border: none;
-    border-radius: 16px;
-    color: #ccc;
-    cursor: pointer;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    line-height: 24px;
-    margin: 0px 3px;
-    padding: 0 9px;
-    text-transform: uppercase;
-    -webkit-transition: 200ms background-color ease, 200ms color ease;
-    transition: 200ms background-color ease, 200ms color ease;
+  background-color: transparent;
+  border: none;
+  border-radius: 16px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  margin: 0px 3px;
+  padding: 0 9px;
+  text-transform: uppercase;
+  -webkit-transition: 200ms background-color ease, 200ms color ease;
+  transition: 200ms background-color ease, 200ms color ease;
 
-    &:focus {
-        box-shadow: none;
-        border: none;
-    }
+  &:focus {
+    box-shadow: none;
+    border: none;
+  }
 }
 
 .selected {
-    background-color: #000 !important;
-    color: white !important;
+  background-color: #000 !important;
+  color: white !important;
 }
 
 .iphone-x {
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    /* transition: out 0s ease 0s; */
-    margin-top: 20px;
-    background-image: url(../../../../assets/images/iphone-skin.png);
-    background-repeat: no-repeat;
-    background-position: 56% 0;
-    background-size: 100% 100%;
+  width: 80%;
+  height: 650px;
+  overflow: hidden;
+  /* transition: out 0s ease 0s; */
+  margin-top: 20px;
+  background-image: url(../../../../assets/images/iphone-skin.png);
+  background-repeat: no-repeat;
+  background-position: 56% 0;
+  background-size: 100% 100%;
+  margin: auto;
 
-
-
-    .screen {
-        width: 87%;
-        margin: auto;
-        margin-top: 13%;
-        height: calc(100% - 275px);
-
-
-    }
-
+  .screen {
+    width: 87%;
+    margin: auto;
+    margin-top: 20%;
+    height: calc(100% - 309px);
+  }
 }
 
 .note8 {
+  width: 80%;
+  height: 650px;
+  overflow: hidden;
+  /* transition: out 0s ease 0s; */
+  margin-top: 73px;
+  background-image: url(../../../../assets/images/android-skin.png);
+  background-repeat: no-repeat;
+  background-position: 56% 0;
+  background-size: 100% 100%;
+  margin: auto;
 
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    /* transition: out 0s ease 0s; */
-    margin-top: 73px;
-    background-image: url(../../../../assets/images/android-skin.png);
-    background-repeat: no-repeat;
-    background-position: 56% 0;
-    background-size: 100% 100%;
-
-
-
-    .screen {
-        width: 87%;
-        margin: auto;
-        margin-top: 13%;
-        height: calc(100% - 275px);
-
-
-    }
-
-
+  .screen {
+    width: 87%;
+    margin: auto;
+    margin-top: 17%;
+    height: 320px;
+  }
 }

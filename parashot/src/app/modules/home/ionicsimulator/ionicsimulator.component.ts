@@ -1,5 +1,6 @@
 import { Design } from "./../../../helpers/design";
 import { Component, OnInit, Input, OnDestroy } from "@angular/core";
+import { DomSanitizer } from '@angular/platform-browser';
 import { BehaviorSubject } from "rxjs";
 import { DesignService } from "src/app/services/design.service";
 import { SplashService } from "src/app/services/splash.service";
@@ -42,15 +43,14 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   bodydesign: any;
   private loading;
   splash: Splash;
+  imageUrl;
   constructor(
     public splashService: SplashService,
     private design: DesignService,
-    public loadingController: LoadingController
-  ) {}
+    public loadingController: LoadingController,
+    private sanitizer: DomSanitizer
+  ) { }
   ngOnInit() {
-    this.splashLoader();
-
-    // console.log(this.sliderId, this.source);
     this.subs.add(
       this.design.getInitialDesign().subscribe(res => {
         let mainDesign = new Design(res.data);
@@ -59,9 +59,16 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         this.bodydesign = mainDesign.bodydesign;
         this.categorydesign = mainDesign.categorydesign;
         this.productsetting = mainDesign.productsetting;
-        console.log(this.header, this.footer, this.bodydesign);
+        // console.log(this.header, this.footer, this.bodydesign);
+      }),
+      this.splashService.getSplashs().subscribe((res: Splash) => {
+        this.splash = res;
+        console.log(this.splash);
+        this.splashLoader();
+
       })
     );
+
   }
 
   ios() {
@@ -83,22 +90,22 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   }
 
   splashLoader() {
-    console.log("sss");
+    // console.log("sss");
     this.loadingController
       .create({
-        spinner: "crescent",
+        // spinner: "bubbles",
         message: ``,
+        animated: true,
+        // backdropDismiss: true,
+        showBackdrop: true,
         cssClass: "custom-class custom-loading",
-        duration: 3000
+        // duration: 3000
       })
       .then(overlay => {
-        this.splashService.getSplashs().subscribe((res: Splash) => {
-          this.splash = res;
-          console.log(this.splash);
-        });
         this.loading = overlay;
         this.loading.present();
-        $("ion-loading").prependTo($(".screen"));
+        console.log(this.splash.data[0].photo)
+        $("ion-loading").css('background', `url(${this.splash.data[0].photo}) 100% 100% no-repeat`).prependTo($(".screen"));
       });
   }
 }

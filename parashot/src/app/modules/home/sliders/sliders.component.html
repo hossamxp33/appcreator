@@ -1,31 +1,33 @@
 <div class="text-right">
   <div class="head">
-    <div class="col-md-11 d-flex justify-content-between">
+    <div class="m-1 d-flex justify-content-between">
       <div><i class="slider-ico"></i><span>سلايدر</span></div>
       <label class="add" data-toggle="modal" data-target="#exampleModal">
       </label>
     </div>
   </div>
+
   <div class="tail">
     <div class="col-md-11 my-5 mx-auto">
-      <!-- <app-headers (sliderId)="getId($event)" [source]="source"></app-headers> -->
+      <div *ngIf="imagesDisplay.length > 0">
+        <app-headers (sliderId)="getId($event)" [source]="source"></app-headers>
+      </div>
     </div>
   </div>
-</div>
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header d-flex justify-content-between">
-        <h5 class="modal-title" id="exampleModalLabel">رفع صور السلايدر</h5>
-        <!-- <button
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between">
+          <h5 class="modal-title" id="exampleModalLabel">رفع صور السلايدر</h5>
+          <!-- <button
           class=""
           type="button"
           class="close"
@@ -33,62 +35,63 @@
           aria-label="Close"
         >
         </button> -->
-        <label class="add" (click)="addImg()">
-          <input
-            #imagesInput
-            type="file"
-            accept="image/*"
-            #file
-            class="d-none"
-            (change)="processFile(imagesInput)"
-          />
-          <!-- <button (click)="file.click()"></button
+          <label class="add" (click)="addImg()">
+            <input
+              #imagesInput
+              type="file"
+              accept="image/*"
+              #file
+              class="d-none"
+              (change)="processFile($event)"
+            />
+            <!-- <button (click)="file.click()"></button
         > -->
-        </label>
-      </div>
-      <div class="modal-body">
-        <div
-          class="item"
-          *ngFor="let image of imagesDisplay.data; let i = index"
-        >
-          <div class="text-center">
-            <div class='thumbnail-img'>
-            <img src="{{ image.photo }}" /><span
-              (click)="deleteImg(image.id)"
-              class="cancle"
-            ></span></div>
-            <div class='"deleted-"{{i}}'>
-              تم المسح
-              <span
-                ><img src="../../../../assets/images/credit-card.png"
-              /></span>
+          </label>
+        </div>
+        <div *ngIf="imagesDisplay" class="modal-body">
+          <div
+            class="item"
+            *ngFor="let image of imagesDisplay.data; let i = index"
+          >
+            <div class="text-center">
+              <div class="thumbnail-img img-{{ i + 1 }} d-flex">
+                <img src="{{ image.photo }}" /><span
+                  (click)="deleteImg(image.id)"
+                  class="cancle"
+                ></span>
+              </div>
+              <div class="deleted-{{ i + 1 }}">
+                تم المسح
+                <span
+                  ><img src="../../../../assets/images/credit-card.png"
+                /></span>
+              </div>
             </div>
           </div>
-        </div>
-        <label
-          *ngIf="imagesDisplay.length == 0"
-          class="upload"
-          (click)="addImg()"
-        >
-          <input
-            #imagesInput
-            type="file"
-            accept="image/*"
-            #file
-            class="d-none"
-            (change)="processFile(imagesInput)"
-          />
-          <i class="fas fa-plus"></i>رفع صورة
+          <label
+            *ngIf="imagesDisplay.length == 0"
+            class="upload"
+            (click)="addImg()"
+          >
+            <input
+              #imagesInput
+              type="file"
+              accept="image/*"
+              #file
+              class="d-none"
+              (change)="processFile(imagesInput)"
+            />
+            <i class="fas fa-plus"></i>رفع صورة
 
-          <!-- <button (click)="file.click()"></button
-        > --></label
-        >
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn submit">حفظ</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          إغلاق
-        </button>
+            <button (click)="file.click()"></button>
+          </label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn submit">حفظ</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            إغلاق
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -20,7 +20,7 @@ export class AuthenticationService {
 
   }
   getToken() {
-    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIwMSwiZXhwIjoxNTYwNjc0NTkyfQ.3khjDZJ7E9PI73tAHtXowcNqoYs1Sxk4THbJ8Ye8Ee0';
+    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIxMCwiZXhwIjoxNTYxMjkxMjg0fQ.9LAiqkY8aKFBv85rhy4jwjSoDInlluAdqYV9psTTrA0';
     return token;
   }
   setToken(token) {

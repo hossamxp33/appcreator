@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { UploadSliderImagesService } from "./upload-slider-images.service";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
@@ -10,19 +11,21 @@ export class SlideshowService {
   constructor(
     private http: HttpClient,
     private uploadImage: UploadSliderImagesService
-  ) {}
+  ) { }
 
-  addSlideShow(image: File) {
-    this.uploadImage
-      .uploadImage(image, "Slideshows/addslideshow.json")
-      .subscribe(res => {}, err => {});
+  addSlideShow(image) {
+
+    return this.http.post(environment.serverUrl + 'Slideshows/addslideshow.json', image)
   }
   editSlideShow(image: File) {
-    this.uploadImage
+    return this.uploadImage
       .uploadImage(image, "Slideshows/editslideshow/2.json")
-      .subscribe(res => {}, err => {});
+      .subscribe(res => { }, err => { });
   }
-  getSlideShows() {
+  deleteImage(id) {
+    return this.http.delete(environment.serverUrl + 'Slideshows/delete/' + id + '.json')
+  }
+  getSlideShows(): any {
     return this.http.get<any>(
       environment.serverUrl + "Slideshows/getallslideshows.json"
     );
