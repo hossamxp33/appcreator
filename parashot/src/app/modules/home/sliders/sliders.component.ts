@@ -36,17 +36,21 @@ export class SlidersComponent implements OnInit {
     console.log(this.id)
   }
   processFile(event) {
-    // const file: File = imagesInput.files[0];
-    // const reader = new FileReader();
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
     // reader.addEventListener('load', (event: any) => {
-    //   // this.uploadedFile = new ImageSnippet(event.target.result, file);
-    //   // this.imagesDisplay.push({ "name": "../../../../assets/images/" + this.uploadedFile.file.name });
+    //   // const uploadedFile = new ImageSnippet(event.target.result, file);
+    //   this.imagesDisplay.push(file);
     //   console.log(this.imagesDisplay)
     // });
     // reader.readAsDataURL(file);
+    var img = document.createElement("img");
+    reader.onloadend = function () {
+      img.src = reader.result;
+    }
+    reader.readAsDataURL(file);
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      // this.uploadForm.get('profile').setValue(file);
       console.log(file)
       const formData = new FormData();
       formData.append('photo', file);
