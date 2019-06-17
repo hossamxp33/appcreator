@@ -55,8 +55,10 @@
 }
 
 .deleted {
-  // display: none;
+  display: none;
   color: #992734;
+  animation-duration: 1s;
+  animation-name: slidein;
 
   img {
     height: 100px !important;
@@ -103,11 +105,6 @@
   height: 200px;
   object-fit: cover;
 }
-
-// .deleted {
-//     animation-duration: 1s;
-//     animation-name: slidein;
-// }
 
 @keyframes slidein {
   from {

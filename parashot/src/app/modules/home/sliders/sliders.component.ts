@@ -13,10 +13,11 @@ export class SlidersComponent implements OnInit {
   source = 'page';
   imagesDisplay;
   delete: boolean = false;
+  imgSrc;
   constructor(private slidesService: SlideshowService) { }
 
   ngOnInit() {
-    this.slidesService.getSlideShows().subscribe(res => {
+    this.slidesService.sliderImages.subscribe(res => {
       this.imagesDisplay = res;
       console.log(this.imagesDisplay);
     })
@@ -24,10 +25,16 @@ export class SlidersComponent implements OnInit {
   }
   deleteImg(id) {
     this.delete = true;
-    // console.log(id)
+    console.log(id)
     this.slidesService.deleteImage(id).subscribe(res => {
       console.log(res);
-      $(`.deleted-${id}`).css('display', 'none');
+      $(`.deleted-${id}`).css('display', 'block');
+      if (res) {
+        this.slidesService.getSlideShows();
+        this.slidesService.sliderImages.subscribe(res => {
+          this.imagesDisplay = res;
+        })
+      }
     })
 
   }
@@ -35,19 +42,12 @@ export class SlidersComponent implements OnInit {
     this.id = $event;
     console.log(this.id)
   }
-  processFile(event) {
+  addImg(event) {
     const file: File = event.target.files[0];
     const reader = new FileReader();
-    // reader.addEventListener('load', (event: any) => {
-    //   // const uploadedFile = new ImageSnippet(event.target.result, file);
-    //   this.imagesDisplay.push(file);
-    //   console.log(this.imagesDisplay)
-    // });
-    // reader.readAsDataURL(file);
-    var img = document.createElement("img");
-    reader.onloadend = function () {
-      img.src = reader.result;
-    }
+    reader.onload = (event: any) => {
+      this.imgSrc = event.target.result;
+    };
     reader.readAsDataURL(file);
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
@@ -57,12 +57,17 @@ export class SlidersComponent implements OnInit {
       console.log(formData)
       this.slidesService.addSlideShow(formData).subscribe(res => {
         console.log(res)
+        // if (res) {
+        this.slidesService.getSlideShows();
+        this.slidesService.sliderImages.subscribe(res => {
+          this.imagesDisplay = res;
+          console.log(this.imagesDisplay)
+        })
+        // }
 
       })
     }
   }
-  addImg() {
 
-  }
 
 }

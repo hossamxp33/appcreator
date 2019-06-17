@@ -99,7 +99,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         // backdropDismiss: true,
         showBackdrop: true,
         cssClass: "custom-class custom-loading",
-        // duration: 3000
+        duration: 3000
       })
       .then(overlay => {
         this.loading = overlay;

@@ -9,10 +9,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class HeadersComponent implements OnInit {
   headerColor: any;
   images: any;
-  imagesDisplay: any;
+  // imagesDisplay: any;
   uploadedFile: any;
   @Input() id: number = 1;
   @Input() source: string;
+  @Input() imagesDisplay;
   @Output() sliderId = new EventEmitter<number>();
   slideOpts = {
     autoplay: true,
@@ -109,20 +110,25 @@ export class HeadersComponent implements OnInit {
   ngOnInit() {
     // console.log(this.id , this.source);
     // this.headerColor = 'white';
-    this.sliderService.getSlideShows().subscribe(res => {
-      this.images = res.data;
-      console.log(this.images)
-    })
+    // this.images = this.imagesDisplay.data;
+    this.sliderService.sliderImages.subscribe(res => {
+      if (res.length > 0) { this.images = res; }
+      else {
+        this.images = [{
+          photo: "../../../../assets/images/no-image.png"
+        }]
+      }
 
-    this.imagesDisplay = this.images;
+    })
+    console.log(this.images)
+
+
   }
   getSliderId(id) {
     // console.log(id);
     this.sliderId.emit(id);
   }
-  addImg() {
 
-  }
 
 
 

@@ -2,15 +2,25 @@
   <div class="head">
     <div class="m-1 d-flex justify-content-between">
       <div><i class="slider-ico"></i><span>سلايدر</span></div>
-      <label class="add" data-toggle="modal" data-target="#exampleModal">
+      <label
+        class="add"
+        data-toggle="modal"
+        data-target="#exampleModal"
+        title="Add Image"
+      >
       </label>
     </div>
   </div>
 
   <div class="tail">
     <div class="col-md-11 my-5 mx-auto">
-      <div *ngIf="imagesDisplay.length > 0">
-        <app-headers (sliderId)="getId($event)" [source]="source"></app-headers>
+      <div *ngIf="imagesDisplay">
+        <app-headers
+          [source]="source"
+          [imagesDisplay]="imagesDisplay"
+        ></app-headers>
+        <!-- (sliderId)="getId($event)"
+          -->
       </div>
     </div>
   </div>
@@ -35,24 +45,21 @@
           aria-label="Close"
         >
         </button> -->
-          <label class="add" (click)="addImg()">
+          <label class="add" (click)="addImg($event)">
             <input
               #imagesInput
               type="file"
               accept="image/*"
               #file
               class="d-none"
-              (change)="processFile($event)"
+              (change)="addImg($event)"
             />
             <!-- <button (click)="file.click()"></button
         > -->
           </label>
         </div>
         <div *ngIf="imagesDisplay" class="modal-body">
-          <div
-            class="item"
-            *ngFor="let image of imagesDisplay.data; let i = index"
-          >
+          <div class="item" *ngFor="let image of imagesDisplay; let i = index">
             <div class="text-center">
               <div class="thumbnail-img img-{{ i + 1 }} d-flex">
                 <img src="{{ image.photo }}" /><span
@@ -60,7 +67,7 @@
                   class="cancle"
                 ></span>
               </div>
-              <div class="deleted-{{ i + 1 }}">
+              <div class="deleted deleted-{{ i + 1 }}">
                 تم المسح
                 <span
                   ><img src="../../../../assets/images/credit-card.png"
@@ -71,7 +78,7 @@
           <label
             *ngIf="imagesDisplay.length == 0"
             class="upload"
-            (click)="addImg()"
+            (click)="addImg($event)"
           >
             <input
               #imagesInput
@@ -79,15 +86,15 @@
               accept="image/*"
               #file
               class="d-none"
-              (change)="processFile(imagesInput)"
+              (change)="addImg($event)"
             />
             <i class="fas fa-plus"></i>رفع صورة
 
-            <button (click)="file.click()"></button>
+            <!-- <button (click)="file.click()"></button> -->
           </label>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn submit">حفظ</button>
+          <!-- <button type="button" class="btn submit">حفظ</button> -->
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
             إغلاق
           </button>

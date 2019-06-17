@@ -1,13 +1,17 @@
+import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { UploadSliderImagesService } from "./upload-slider-images.service";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
+import { getJSDocThisTag } from 'typescript';
 
 @Injectable({
   providedIn: "root"
 })
 export class SlideshowService {
+
+  sliderImages = new BehaviorSubject(null);
   constructor(
     private http: HttpClient,
     private uploadImage: UploadSliderImagesService
@@ -26,8 +30,11 @@ export class SlideshowService {
     return this.http.delete(environment.serverUrl + 'Slideshows/delete/' + id + '.json')
   }
   getSlideShows(): any {
-    return this.http.get<any>(
+    this.http.get<any>(
       environment.serverUrl + "Slideshows/getallslideshows.json"
-    );
+    ).subscribe(res => {
+      this.sliderImages.next(res.data);
+      console.log(res.data)
+    });
   }
 }
