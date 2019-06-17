@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class MainpageService {
 
   constructor(private http: HttpClient) { }
-  getMainPage() {
-    this.http.get<any>(environment.serverUrl + 'products/mainpage.json');
+  getMainPage(): any {
+    return this.http.get<any>(environment.serverUrl + 'products/mainpage.json');
   }
 }

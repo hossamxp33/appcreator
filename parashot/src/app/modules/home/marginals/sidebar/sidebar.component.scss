@@ -204,6 +204,8 @@ i {
     height: 80%;
     border-radius: 30px;
     text-align: right;
+    position: relative;
+    z-index: 99999999999999;
 
     .d-none {
       display: inline !important;
@@ -233,8 +235,6 @@ i {
     object-fit: contain;
   }
 }
-
-
 
 .page {
   // display: none;

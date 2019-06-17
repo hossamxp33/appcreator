@@ -24,7 +24,7 @@ body {
 }
 
 * {
-  outline: none;
+  outline: none !important;
 }
 
 app-store {
@@ -354,26 +354,23 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .iphone-x .custom-loading {
-  // background: url(./assets/images/VGIvAL.jpg) 100% 100%;
-
-  background-size: cover;
+  background-size: cover !important;
   z-index: 1000 !important;
   position: absolute;
-  width: 65%;
+  width: 81%;
   margin: auto;
-  margin-top: 25%;
-  height: 480px;
+  margin-top: 117px;
+  height: 489px;
 }
 
 .note8 .custom-loading {
-  // background: url(./assets/images/VGIvAL.jpg) 100% 100%;
-  background-size: cover;
+  background-size: cover !important;
   z-index: 1000 !important;
   position: absolute;
-  width: 65%;
+  width: 81%;
   margin: auto;
-  margin-top: 23%;
-  height: 480px;
+  margin-top: 95px;
+  height: 490px;
 }
 
 .loading-wrapper {

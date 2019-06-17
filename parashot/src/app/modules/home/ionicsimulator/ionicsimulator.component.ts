@@ -1,6 +1,7 @@
+import { MainPageModel } from './../../../models/mainPage.model';
+import { MainpageService } from './../../../services/mainpage.service';
 import { Design } from "./../../../helpers/design";
 import { Component, OnInit, Input, OnDestroy } from "@angular/core";
-import { DomSanitizer } from '@angular/platform-browser';
 import { BehaviorSubject } from "rxjs";
 import { DesignService } from "src/app/services/design.service";
 import { SplashService } from "src/app/services/splash.service";
@@ -41,17 +42,27 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   categorydesign: any;
   productsetting: any;
   bodydesign: any;
+  main;
+  slider;
   private loading;
   splash: Splash;
+  showSlideShow: boolean;
   imageUrl;
   constructor(
     public splashService: SplashService,
     private design: DesignService,
     public loadingController: LoadingController,
-    private sanitizer: DomSanitizer
+    private mainPageService: MainpageService
+
   ) { }
   ngOnInit() {
     this.subs.add(
+      this.splashService.getSplashs().subscribe((res: Splash) => {
+        this.splash = res;
+        console.log(this.splash);
+        this.splashLoader();
+
+      }),
       this.design.getInitialDesign().subscribe(res => {
         let mainDesign = new Design(res.data);
         this.header = mainDesign.header;
@@ -59,15 +70,25 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         this.bodydesign = mainDesign.bodydesign;
         this.categorydesign = mainDesign.categorydesign;
         this.productsetting = mainDesign.productsetting;
-        // console.log(this.header, this.footer, this.bodydesign);
-      }),
-      this.splashService.getSplashs().subscribe((res: Splash) => {
-        this.splash = res;
-        console.log(this.splash);
-        this.splashLoader();
+        this.main = mainDesign.main;
 
-      })
+        if (this.main.data.slideshow === "true") {
+          console.log(this.main.data.slideshow)
+          this.showSlideShow = true;
+          this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
+            console.log(res)
+            this.slider = res.sliders;
+          })
+        }
+        else {
+          this.showSlideShow = false;
+
+        }
+      }),
+
+
     );
+
 
   }
 
@@ -105,7 +126,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         this.loading = overlay;
         this.loading.present();
         console.log(this.splash.data[0].photo)
-        $("ion-loading").css('background', `url(${this.splash.data[0].photo}) 100% 100% no-repeat`).prependTo($(".screen"));
+        $("ion-loading").css('background', `url(${this.splash.data[1].photo}) 100% 100% no-repeat`).prependTo($(".screen"));
       });
   }
 }
