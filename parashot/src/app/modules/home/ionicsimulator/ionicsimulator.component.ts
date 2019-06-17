@@ -1,3 +1,4 @@
+import { SlideshowService } from './../../../services/slideshow.service';
 import { MainPageModel } from './../../../models/mainPage.model';
 import { MainpageService } from './../../../services/mainpage.service';
 import { Design } from "./../../../helpers/design";
@@ -52,7 +53,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     public splashService: SplashService,
     private design: DesignService,
     public loadingController: LoadingController,
-    private mainPageService: MainpageService
+    private slideshowService: SlideshowService
 
   ) { }
   ngOnInit() {
@@ -75,10 +76,13 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         if (this.main.data.slideshow === "true") {
           console.log(this.main.data.slideshow)
           this.showSlideShow = true;
-          this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
+          // this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
+          this.slideshowService.getSlideShows();
+          this.slideshowService.sliderImages.subscribe(res => {
             console.log(res)
             this.slider = res.sliders;
           })
+
         }
         else {
           this.showSlideShow = false;
