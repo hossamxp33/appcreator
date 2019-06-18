@@ -1,31 +1,44 @@
-<div class="col-md-12">
-  <div class="head"><i class="top-bar"></i> الشريط العلوي</div>
-  <div class="body">
-    <ul>
-      <li>
-        <span>لون الخلفية</span
-        ><span class="color-span"
+<div class="d-flex justify-content-between head">
+  <div><i class="top-bar"></i><span>الشريط العلوي</span></div>
+  <i class="img-ico"></i>
+</div>
+<div class="tail py-4 ">
+  <!-- <div class="d-flex justify-content-between tail-head">
+    <span>تعديل تصاميم الأقسام</span>
+    <a routerLink="/categories"><i class="back"></i></a>
+  </div> -->
+  <div class="selections p-3">
+    <div class="row mb-5">
+      <span class="col-md-5 col-5">لون الخلفية</span>
+      <div class="col-md-6 col-6">
+        <span class="color-span"
           ><input [(colorPicker)]="color" [style.background]="color"
         /></span>
-      </li>
-      <li>
-        صورة السلة
+      </div>
+    </div>
+    <div class="row mt-4">
+      <span class="col-md-5 col-5">صورة السلة</span>
+      <div class="col-md-6 col-6">
         <label>
           <input type="file" accept="image/*" #file class="d-none" />
           <i class="fas fa-shopping-cart"></i>
           <!-- <button (click)="file.click()"></button
         > -->
         </label>
-      </li>
-      <li>
-        صورة شريط البحث
-        <label>
-          <input type="file" accept="image/*" #file class="d-none" />
-          <i class="fas fa-search"></i>
-          <!-- <button (click)="file.click()"></button
+      </div>
+    </div>
+    <div class="row mt-4">
+      <span class="col-md-5 col-5">صورة شريط البحث</span>
+      <div class="col-md-6 col-6">
+        <span>
+          <label>
+            <input type="file" accept="image/*" #file class="d-none" />
+            <i class="fas fa-search"></i>
+            <!-- <button (click)="file.click()"></button
         > -->
-        </label>
-      </li>
-    </ul>
+          </label>
+        </span>
+      </div>
+    </div>
   </div>
 </div>

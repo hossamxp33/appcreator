@@ -1,0 +1,167 @@
+// .d-flex button {
+//     background-color: transparent;
+//     border: none;
+//     border-radius: 16px;
+//     color: #ccc;
+//     cursor: pointer;
+//     font-size: 10px;
+//     font-weight: 700;
+//     letter-spacing: 0.1em;
+//     line-height: 24px;
+//     margin: 0px 3px;
+//     padding: 0 9px;
+//     text-transform: uppercase;
+//     -webkit-transition: 200ms background-color ease, 200ms color ease;
+//     transition: 200ms background-color ease, 200ms color ease;
+
+//     &:focus {
+//         box-shadow: none;
+//         border: none;
+//     }
+// }
+
+// .selected {
+//     background-color: #000 !important;
+//     color: white !important;
+// }
+
+// .iphone-x {
+//     margin: auto;
+//     width: 90%;
+
+//     // height: 75vh;
+//     // background-image: url("../../../../assets/images/iphone-skin.png");
+//     // width: 100%;
+//     // background-size: cover;
+//     // background-repeat: no-repeat;
+//     img {
+//         max-width: 100%;
+//     }
+
+//     .screen {
+//         // width: 100%;
+//         // height: 100%;
+//         // padding: 16% 7%;
+//         position: absolute;
+//         right: 22px;
+//         left: 22px;
+//         top: 72px;
+//         background-color: #fff;
+//         color: white;
+//         font-size: 17px;
+//         line-height: 18px;
+//         height: 55%;
+//     }
+// }
+
+// .note8 {
+//     margin: auto;
+//     width: 90%;
+
+//     // height: 75vh;
+//     // background-image: url("../../../../assets/images/android-skin.png");
+//     // width: 100%;
+//     // background-size: cover;
+//     // background-repeat: no-repeat;
+//     img {
+//         max-width: 100%;
+//     }
+
+//     .screen {
+//         // width: 100%;
+//         // height: 100%;
+//         // padding: 16% 7%;
+//         position: absolute;
+//         right: 22px;
+//         left: 22px;
+//         top: 54px;
+//         background-color: #fff;
+//         color: white;
+//         font-size: 17px;
+//         line-height: 18px;
+//         height: 52%;
+//     }
+
+//     // seb-ng-magic-iframe {
+
+//     //   height: 93%;
+
+//     // }
+// }
+
+// .img-container {
+//     display: inline-block;
+//     position: relative;
+// }
+
+// ion-slide {
+//     width: 100%;
+//     padding: 10px;
+//     display: block !important;
+// }
+.d-flex button {
+  background-color: transparent;
+  border: none;
+  border-radius: 16px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  margin: 0px 3px;
+  padding: 0 9px;
+  text-transform: uppercase;
+  -webkit-transition: 200ms background-color ease, 200ms color ease;
+  transition: 200ms background-color ease, 200ms color ease;
+
+  &:focus {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+.selected {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+.iphone-x {
+  height: 745px;
+  width: 80%;
+  overflow: hidden;
+  /* transition: out 0s ease 0s; */
+  margin-top: 20px;
+  background-image: url(../../../../assets/images/iphone-skin.png);
+  background-repeat: no-repeat;
+  background-position: 56% 0;
+  background-size: 100% 100%;
+  margin: auto;
+
+  .screen {
+    width: 87%;
+    margin: auto;
+    margin-top: 20%;
+    height: calc(100% - 309px);
+  }
+}
+
+.note8 {
+  height: 745px;
+  width: 80%;
+  overflow: hidden;
+  /* transition: out 0s ease 0s; */
+  margin-top: 73px;
+  background-image: url(../../../../assets/images/android-skin.png);
+  background-repeat: no-repeat;
+  background-position: 56% 0;
+  background-size: 100% 100%;
+  margin: auto;
+
+  .screen {
+    width: 87%;
+    margin: auto;
+    margin-top: 13.5%;
+    height: 320px;
+  }
+}

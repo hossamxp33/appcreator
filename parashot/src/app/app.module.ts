@@ -1,3 +1,5 @@
+import { CoreModule } from './core/core.module';
+import { ApiPrefixInterceptor } from './core/interceptors/api-prefix.interceptor';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { HeadersPageComponent } from './modules/home/headers-page/headers-page.component';
 import { SlidersComponent } from './modules/home/sliders/sliders.component';
@@ -8,9 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
-import { NgModule }         from '@angular/core';
 
 import { IonicModule } from '@ionic/angular';
 import { OwlModule } from 'ngx-owl-carousel';
@@ -39,7 +40,7 @@ export function provideConfig() {
 }
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -56,13 +57,18 @@ export function provideConfig() {
     NgMagicIframeModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    BrowserModule   
+    CoreModule
 
   ],
   providers: [{
     provide: AuthServiceConfig,
     useFactory: provideConfig
-  }, AuthService],
+  }, AuthService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ApiPrefixInterceptor,
+    multi: true
+  }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

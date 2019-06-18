@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl: ''
+  serverUrl: 'http://parashote.codesroots.com/api/'
 };

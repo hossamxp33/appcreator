@@ -23,15 +23,13 @@
     >
       <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
-          <a data-toggle="modal" data-target="#exampleModal"
-            ><img src="{{ image.name }}"
-          /></a>
-          <img src="{{ image.name }}" />
+          <a><img src="{{ image.photo }}"/></a>
+          <img src="{{ image.photo }}" />
         </div>
       </div>
     </owl-carousel>
   </div>
-  <div id="slide-2" (click)="getSliderId(2)" class="slider  mb-4 p-0">
+  <div id="slide-2" (click)="getSliderId(2)" class="slider  mb-4 ">
     <owl-carousel
       [options]="{
         items: 1,
@@ -45,7 +43,7 @@
     >
       <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
-          <a><img src="{{ image.name }}"/></a>
+          <a><img src="{{ image.photo }}"/></a>
         </div>
       </div>
     </owl-carousel>
@@ -64,8 +62,8 @@
     >
       <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
-          <a><img src="{{ image.name }}"/></a>
-          <img src="{{ image.name }}" />
+          <a><img src="{{ image.photo }}"/></a>
+          <img src="{{ image.photo }}" />
         </div>
       </div>
     </owl-carousel>
@@ -89,7 +87,7 @@
     >
       <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
-          <a><img src="{{ image.name }}"/></a>
+          <a><img src="{{ image.photo }}"/></a>
         </div>
       </div>
     </owl-carousel>
@@ -125,8 +123,8 @@
     >
       <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
-          <a><img src="{{ image.name }}"/></a>
-          <img src="{{ image.name }}" />
+          <a><img src="{{ image.photo }}"/></a>
+          <img src="{{ image.photo }}" />
         </div>
       </div>
     </owl-carousel>
@@ -139,7 +137,7 @@
   >
     <ion-slides pager="true" [options]="slideOpts">
       <ion-slide *ngFor="let image of images; let i = index">
-        <a><img src="{{ image.name }}"/></a>
+        <a><img src="{{ image.photo }}"/></a>
       </ion-slide>
     </ion-slides>
   </div>
@@ -162,8 +160,8 @@
     >
       <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
-          <a><img src="{{ image.name }}"/></a>
-          <img src="{{ image.name }}" />
+          <a><img src="{{ image.photo }}"/></a>
+          <img src="{{ image.photo }}" />
         </div>
       </div>
     </owl-carousel>
@@ -192,76 +190,9 @@
     >
       <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
-          <a><img src="{{ image.name }}"/></a>
+          <a><img src="{{ image.photo }}"/></a>
         </div>
       </div>
     </owl-carousel>
-  </div>
-</div>
-
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header d-flex justify-content-between">
-        <h5 class="modal-title" id="exampleModalLabel">رفع صور السلايدر</h5>
-        <!-- <button
-          class=""
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-        </button> -->
-        <label class="add" (click)="addImg()">
-          <input #imagesInput type="file" accept="image/*" #file class="d-none" (change)="processFile(imagesInput) "/>
-          <!-- <button (click)="file.click()"></button
-        > -->
-        </label>
-      </div>
-      <div class="modal-body">
-        <div class="item" *ngFor="let image of imagesDisplay; let i = index">
-          <div class="thumbnail-img d-flex">
-            <img src="{{ image.name }}" /><span
-              (click)="deleteImg(image.name)"
-              class="cancle"
-            ></span>
-            <div class="deleted">
-              تم المسح
-              <span
-                ><img src="../../../../assets/images/credit-card.png"
-              /></span>
-            </div>
-          </div>
-        </div>
-        <label *ngIf="imagesDisplay.length == 0" class="upload" (click)="addImg()">
-            <input
-              #imagesInput
-              type="file"
-              accept="image/*"
-              #file
-              class="d-none"
-              (change)="processFile(imagesInput)"
-            />
-            <i class="fas fa-plus"></i>رفع صورة
-
-            <!-- <button (click)="file.click()"></button
-        > --></label
-        >
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn submit">Save changes</button>
-      </div>
-    </div>
   </div>
 </div>

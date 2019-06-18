@@ -1,3 +1,4 @@
+import { AuthenticationService } from './authentication/authentication.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,5 +8,6 @@ import { CommonModule } from '@angular/common';
 
 
   ],
+  providers:[AuthenticationService]
 })
 export class CoreModule { }

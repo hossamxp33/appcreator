@@ -1,0 +1,165 @@
+.head {
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.dep {
+  background: url("../../../../assets/images/dep.png");
+  background-repeat: repeat;
+  background-size: auto;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  padding: 0 0 0 25px;
+  margin-left: 5px;
+  background-repeat: no-repeat;
+}
+
+.tail {
+  background: #fafafa;
+
+  border: 1px solid #ccc;
+  // height: 70vh;
+
+  .tail-head {
+    padding: 15px;
+  }
+}
+
+.col {
+  text-align: center;
+  padding: 0;
+
+  span {
+    display: block;
+    font-size: 8px;
+    margin-top: 10px;
+  }
+
+  img {
+    width: 50px;
+  }
+}
+
+.cate-1 {
+  margin: auto;
+  background: #e6eaed;
+  border-radius: 10px;
+
+  & > img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.cat {
+  width: 93%;
+  background: #fff;
+  border: 1px solid #efefef;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.palette {
+  margin: 5px;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* start current categories model */
+
+#exampleModal{
+    
+    .modal-dialog {
+        
+        .modal-body{
+            
+            .cat{
+                text-align: center;
+                margin-bottom: 15px;
+                border: none;
+            }
+            
+        }
+        
+    }
+    
+}   
+
+/* end current categories model */
+
+/* start new cat */
+
+#newCatModal{
+    
+    .modal-dialog{
+        
+        .modal-content{
+            
+            .modal-body{
+                
+                .new-cat-form{
+                    
+                    div{
+                        
+                        input, label{
+                            display: block;
+                            text-align: center;
+                            padding: 20px;
+                            margin-bottom: 15px;
+                            width: 70%;
+                            margin: auto;
+                            border-radius: 10px;
+                            border: 1px solid #000;
+                            
+                        }
+                        
+                        input{
+                            
+                            &::placeholder{
+                                color: #000;
+                            }
+                            
+                        }
+                        
+                        label{
+                            position: relative;
+                            margin-top: 15px;
+                            
+                            img{
+                                    position: absolute;
+                                    right: 90px;
+                                    top: 24px;
+                            }
+                        }
+                        
+                    }
+                    
+                    .img-box{
+                        position: relative;
+                        margin-top: 15px;
+                        
+                        i{
+                            position: absolute;
+                            top: -17px;
+                            right: -10px;
+                            color: red;
+                            cursor: pointer;
+                        }
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+}
+
+/* end new cat */

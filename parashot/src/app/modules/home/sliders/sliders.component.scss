@@ -2,10 +2,118 @@
   height: calc(100vh - 180px);
   overflow-y: scroll;
 
-  &>div {
+  & > div {
     cursor: pointer;
   }
+}
 
+.head {
+  border: 1px solid #ccc;
+  padding: 15px;
+}
 
+.slider-ico {
+  background: url("../../../../assets/images/slider.png");
+  background-repeat: repeat;
+  background-size: auto;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  padding: 0px 3px 0 32px;
+  margin-left: 15px;
+  background-repeat: no-repeat;
+}
 
+.tail {
+  background: #fafafa;
+
+  border: 1px solid #ccc;
+  // height: 70vh;
+
+  .tail-head {
+    padding: 15px;
+  }
+}
+
+.add {
+  background: url(../../../../assets/images/plus.png) center no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+
+.cancle {
+  background: url("../../../../assets/images/cancel.png") center no-repeat;
+  background-size: auto;
+  width: 26px;
+  height: 25px;
+  background-size: contain;
+  position: relative;
+  left: 103%;
+  top: -18px;
+  padding: 11px;
+}
+
+.deleted {
+  display: none;
+  color: #992734;
+  animation-duration: 1s;
+  animation-name: slidein;
+
+  img {
+    height: 100px !important;
+    width: 100px !important;
+    object-fit: cover;
+    margin: 0 12px;
+  }
+}
+
+.upload {
+  display: block;
+  width: 45%;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+
+  i {
+    margin: 0 8px;
+  }
+}
+
+.thumbnail-img {
+  margin: 20px auto;
+
+  width: 80%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.submit {
+  background: #992734;
+  color: #fff;
+}
+
+.modal-dialog {
+  max-width: 700px !important;
+}
+
+.modal-body img {
+  height: 200px;
+  object-fit: cover;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }

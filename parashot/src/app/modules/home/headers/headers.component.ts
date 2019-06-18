@@ -1,5 +1,6 @@
+import { SlideshowService } from './../../../services/slideshow.service';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { ImageSnippet } from '../../../shared/models/imageSnppit.model';
+
 @Component({
   selector: 'app-headers',
   templateUrl: './headers.component.html',
@@ -8,10 +9,11 @@ import { ImageSnippet } from '../../../shared/models/imageSnppit.model';
 export class HeadersComponent implements OnInit {
   headerColor: any;
   images: any;
-  imagesDisplay: any;
+  // imagesDisplay: any;
   uploadedFile: any;
   @Input() id: number = 1;
   @Input() source: string;
+  @Input() imagesDisplay;
   @Output() sliderId = new EventEmitter<number>();
   slideOpts = {
     autoplay: true,
@@ -103,43 +105,31 @@ export class HeadersComponent implements OnInit {
       }
     }
   };
-  constructor() { }
+  constructor(private sliderService: SlideshowService) { }
 
   ngOnInit() {
     // console.log(this.id , this.source);
-    this.headerColor = 'white';
-    this.images = [{ "name": '../../../../assets/images/modern-furniture-seating_large.jpg' },
-    { "name": '../../../../assets/images/2Modern-Top-10-Modern-Sofas-Gus-Atwood-Sofa-Urban-Tweed.png' },
-    { "name": '../../../../assets/images/bfe73085b6a296fbf1c0b6b584d1453c--living-room-grey-living-room-side-tables.jpg' }];
-    // this.images1 = ['../../../../assets/images/58933461_2232195253524681_5787888431916908544_n.jpg',
-    //   '../../../../assets/images/60136386_2261895037221369_2823275448987811840_n.png',
-    //   '../../../../assets/images/60364039_2261449820599224_7930565118159486976_n.png'];
-    // this.images2 = ['../../../../assets/images/1.jpg', '../../../../assets/images/2.jpg', '../../../../assets/images/3.jpg']
-    // this.images3 = ['../../../../assets/images/nike-vapormax-2019-womens-pink-white-ar6632-105-3.jpg',
-    //   '../../../../assets/images/background-pink-vintage.jpg',
-    //   '../../../../assets/images/pink-spring-outfit-ideas.png'];
-    this.imagesDisplay = this.images;
+    // this.headerColor = 'white';
+    // this.images = this.imagesDisplay.data;
+    this.sliderService.sliderImages.subscribe(res => {
+      if (res.length > 0) { this.images = res; }
+      else {
+        this.images = [{
+          photo: "../../../../assets/images/no-image.png"
+        }]
+      }
+
+    })
+    console.log(this.images)
+
+
   }
   getSliderId(id) {
     // console.log(id);
     this.sliderId.emit(id);
   }
-  addImg() {
 
-  }
-  deleteImg(name) {
-    this.imagesDisplay = this.imagesDisplay.filter(img => img.name != name);
 
-  }
 
-  processFile(imagesInput) {
-    const file: File = imagesInput.files[0];
-    const reader = new FileReader();
-    reader.addEventListener('load', (event: any) => {
-      this.uploadedFile = new ImageSnippet(event.target.result, file);
-      this.imagesDisplay.push({ "name": "../../../../assets/images/" + this.uploadedFile.file.name });
-      console.log(this.imagesDisplay)
-    });
-    reader.readAsDataURL(file);
-  }
+
 }
