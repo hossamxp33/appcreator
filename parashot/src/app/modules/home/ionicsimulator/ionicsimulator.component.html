@@ -20,7 +20,25 @@
     </ion-header>
     <ion-content>
       <div *ngIf="showSlideShow">
-        <ion-slides [options]="deSlideOpts">
+        <!-- <div
+          style="position: absolute;top: 50%;left: 16px;font-size: 25px;z-index: 2;"
+          (click)="slidePrev()"
+        >
+          <i class="icon ion-ios-arrow-back"></i>
+        </div> -->
+        <div><button class="btn skip">تخطي</button></div>
+        <div
+          class='next-nav'
+          (click)="slideNext()"
+        >
+          <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+        <ion-slides
+          class="primary-slider"
+          pager="true"
+          [options]="deSlideOpts"
+          mode="ios"
+        >
           <ion-slide
             *ngFor="let image of slider"
             class="ios swiper-slide swiper-zoom-container hydrated swiper-slide-active"
@@ -190,7 +208,25 @@
     </ion-header>
     <ion-content>
       <div *ngIf="showSlideShow">
-        <ion-slides [options]="deSlideOpts">
+        <!-- <div
+          style="position: absolute;top: 50%;left: 16px;font-size: 25px;z-index: 2;"
+          (click)="slidePrev()"
+        >
+          <i class="icon ion-md-arrow-back"></i>
+        </div> -->
+        <div><button  class="btn skip">تخطي</button></div>
+        <div
+          class='next-nav'
+          (click)="slideNext()"
+        >
+          <i class="icon ion-md-arrow-forward"></i>
+        </div>
+        <ion-slides
+          class="primary-slider"
+          [options]="deSlideOpts"
+          pager="true"
+          mode="md"
+        >
           <ion-slide
             *ngFor="let image of slider"
             class="ios swiper-slide swiper-zoom-container hydrated swiper-slide-active"

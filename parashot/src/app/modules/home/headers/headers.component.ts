@@ -112,7 +112,7 @@ export class HeadersComponent implements OnInit {
     // this.headerColor = 'white';
     // this.images = this.imagesDisplay.data;
     this.sliderService.sliderImages.subscribe(res => {
-      if (res.length > 0) { this.images = res; }
+      if (res && res.length > 0) { this.images = res; }
       else {
         this.images = [{
           photo: "../../../../assets/images/no-image.png"

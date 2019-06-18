@@ -26,7 +26,18 @@ body {
 * {
   outline: none !important;
 }
-
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: transparent !important;
+  outline: 0;
+  box-shadow: none !important;
+}
 app-store {
   display: flex;
   flex-direction: column;
@@ -34,9 +45,7 @@ app-store {
 }
 
 app-footer {
-  height: 35px;
   width: 100%;
-  background: #000;
   margin-top: auto;
 }
 
@@ -184,11 +193,8 @@ app-footer {
 }
 
 .swiper-pagination-bullet {
-  background: #d6d6d6 !important;
-}
-
-.swiper-pagination-bullet-active {
-  background: #86979166 !important;
+  background: #341642 !important;
+  opacity: 0.6;
 }
 
 .home {
@@ -357,23 +363,33 @@ input[type="number"]::-webkit-outer-spin-button {
   background-size: cover !important;
   z-index: 1000 !important;
   position: absolute;
-  width: 81%;
+  width: 64.5%;
   margin: auto;
   margin-top: 117px;
-  height: 489px;
+  height: 554px;
 }
 
 .note8 .custom-loading {
   background-size: cover !important;
   z-index: 1000 !important;
   position: absolute;
-  width: 81%;
+  width: 64.5%;
   margin: auto;
-  margin-top: 95px;
-  height: 490px;
+  margin-top: 103px;
+  height: 560px;
 }
 
 .loading-wrapper {
   background: transparent !important;
   box-shadow: none !important;
+}
+.primary-slider {
+  img {
+    height: 380px;
+    object-fit: cover;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: #341642 !important;
+  opacity: 1 !important;
 }
