@@ -141,8 +141,7 @@
   .screen {
     width: 87%;
     margin: auto;
-    margin-top: 20%;
-    height: calc(100% - 309px);
+    margin-top: 27%;
   }
 }
 
@@ -161,7 +160,23 @@
   .screen {
     width: 87%;
     margin: auto;
-    margin-top: 13.5%;
-    height: 320px;
+    margin-top: 20%;
+  }
+}
+.skip {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  font-size: 14px;
+  z-index: 2;
+  color: #341642;
+}
+.next-nav {
+  position: absolute;
+  top: 90%;
+  right: 16px;
+  z-index: 2;
+  i {
+    color: #341642;
   }
 }

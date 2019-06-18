@@ -1,14 +1,12 @@
 import { SlideshowService } from './../../../services/slideshow.service';
-import { MainPageModel } from './../../../models/mainPage.model';
-import { MainpageService } from './../../../services/mainpage.service';
 import { Design } from "./../../../helpers/design";
-import { Component, OnInit, Input, OnDestroy } from "@angular/core";
+import { Component, OnInit, Input, OnDestroy, ViewChild } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { DesignService } from "src/app/services/design.service";
 import { SplashService } from "src/app/services/splash.service";
 import { SubSink } from "subsink";
 import * as $ from "jquery";
-import { LoadingController } from "@ionic/angular";
+import { LoadingController, IonSlides } from "@ionic/angular";
 import { Splash } from "src/app/models/splash.model";
 
 @Component({
@@ -20,6 +18,13 @@ import { Splash } from "src/app/models/splash.model";
   ]
 })
 export class IonicsimulatorComponent implements OnInit, OnDestroy {
+  @ViewChild(IonSlides) slides: IonSlides;
+  // slidePrev() {
+  //   this.slides.slidePrev();
+  // }
+  slideNext() {
+    this.slides.slideNext();
+  }
   @Input() headerColor: any;
   @Input() sliderId: number = -1;
   source = "sim";
@@ -29,7 +34,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     slidesPerView: 1,
     speed: 400,
     loop: true,
-    autoplay: true
+    autoplay: true,
   };
   text$ = new BehaviorSubject<string | null>("Initial Text");
   iosref: boolean = false;
@@ -77,10 +82,10 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
           console.log(this.main.data.slideshow)
           this.showSlideShow = true;
           // this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
-          this.slideshowService.getSlideShows();
+          // this.slideshowService.getSlideShows();
           this.slideshowService.sliderImages.subscribe(res => {
             console.log(res)
-            this.slider = res.sliders;
+            this.slider = res;
           })
 
         }
