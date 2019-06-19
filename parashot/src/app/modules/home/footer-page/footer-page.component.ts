@@ -38,21 +38,6 @@ export class FooterPageComponent implements OnInit {
 
       let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
-<<<<<<< HEAD
-      
-      reader.onload = (event: any) => {
-      
-        if (input.id == 'ts_main_image')
-          this.mainImage = event.target.result; 
-        else if (input.id == 'ts_order_image')
-          this.orderImage = event.target.result;
-        else if (input.id == 'ts_offer_image')
-          this.offerImage = event.target.result;
-        else if (input.id == 'ts_noti_image')
-          this.notiImage = event.target.result;
-        else if (input.id == 'ts_more_image')
-          this.moreImage = event.target.result;
-=======
 
       reader.onload = (event: any) => {
 
@@ -61,7 +46,6 @@ export class FooterPageComponent implements OnInit {
         else if (input.id == 'ts_offer_image') { this.offerImage = event.target.result; }
         else if (input.id == 'ts_noti_image') { this.notiImage = event.target.result; }
         else if (input.id == 'ts_more_image') { this.moreImage = event.target.result; }
->>>>>>> nouran
       }
 
     }
