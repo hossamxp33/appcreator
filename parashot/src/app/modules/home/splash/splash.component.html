@@ -18,10 +18,10 @@
             <input type="file" accept="image/*" class="d-none" (change)="addSplashImage($event)" />
         </label>             
     </div>
-    <div class="show-image">
+    <div class="show-image" [ngClass]="{'actual-h': splashImage != null}">
         <div *ngIf="splashImage != null" class="img-box">
             <i class="far fa-times-circle" (click)="splashImage = null"></i>
-            <img [src]="splashImage" width="100%" />
+            <img #splashImg [src]="splashImage" width="100%" />
         </div>
     </div>    
 </div>
