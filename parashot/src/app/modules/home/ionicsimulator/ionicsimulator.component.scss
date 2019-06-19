@@ -141,8 +141,7 @@
   .screen {
     width: 87%;
     margin: auto;
-    margin-top: 20%;
-    height: calc(100% - 309px);
+    margin-top: 27%;
   }
 }
 
@@ -161,7 +160,48 @@
   .screen {
     width: 87%;
     margin: auto;
-    margin-top: 13.5%;
-    height: 320px;
+    margin-top: 20%;
+  }
+}
+.skip {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  font-size: 14px;
+  z-index: 2;
+  color: #341642;
+}
+.next-nav {
+  position: absolute;
+  top: 90%;
+  right: 16px;
+  z-index: 2;
+  i {
+    color: #341642;
+  }
+}
+.ion-md-search {
+  position: relative;
+  right: -10%;
+  z-index: 2;
+  font-size: 16px;
+}
+.cart {
+  margin: 14px auto 0 auto;
+  i {
+    font-size: 22px;
+    color: #fff;
+  }
+  span {
+    position: absolute;
+    border-radius: 50%;
+    background: red;
+    color: #fff;
+    top: 40px;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    text-align: center;
+    font-size: 14px;
   }
 }

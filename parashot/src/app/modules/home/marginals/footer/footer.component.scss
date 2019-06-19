@@ -1,0 +1,25 @@
+footer {
+  background: #341642;
+  color: #fff;
+}
+.sign-up {
+  color: #fff;
+  border: 1px solid #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.fa-search {
+  position: relative;
+  right: -40px;
+  color: #000;
+  font-size: 14px;
+}
+.search-input {
+  width: 90%;
+}
+a {
+  color: #fff !important;
+  &:hover {
+    color: #fff !important;
+  }
+}
