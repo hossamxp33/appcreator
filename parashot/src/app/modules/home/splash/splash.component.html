@@ -1,0 +1,29 @@
+<!-- start section header -->
+
+<div class="d-flex justify-content-between head">
+    <div><i class="dep"></i><span>سبلاش سكرين</span></div>
+</div>
+
+<!-- end section header -->
+
+<!-- start section body -->
+
+<div class="tail">
+    <div class="d-flex justify-content-between tail-head">
+        <span>تعديل سبلاش سكرين</span>           
+    </div>
+    <div class="upload">
+        <label class="add-image">
+            <img src="../../../../assets/images/plus%20(1).png" alt="add" width="20px" /> رفع صورة
+            <input type="file" accept="image/*" class="d-none" (change)="addSplashImage($event)" />
+        </label>             
+    </div>
+    <div class="show-image">
+        <div *ngIf="splashImage != null" class="img-box">
+            <i class="far fa-times-circle" (click)="splashImage = null"></i>
+            <img [src]="splashImage" width="100%" />
+        </div>
+    </div>    
+</div>
+
+<!-- end section body -->

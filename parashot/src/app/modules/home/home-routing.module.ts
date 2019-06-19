@@ -35,6 +35,11 @@ const routes: Routes = [
         path: 'footer-page',
         component: FooterPageComponent,
       }
+      ,
+      {
+        path: 'splash',
+        component: SplashComponent,
+      }      
     ]
   }
 
