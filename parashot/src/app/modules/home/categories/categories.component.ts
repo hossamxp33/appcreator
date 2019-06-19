@@ -23,9 +23,9 @@ export class CategoriesComponent implements OnInit {
       let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (event) => {
+      reader.onload = (event: any) => {
 
-        // this.imgSrc = event.target.result;
+        this.imgSrc = event.target.result;
 
       }
 

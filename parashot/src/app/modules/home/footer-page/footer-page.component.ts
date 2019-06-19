@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
 @Component({
   selector: 'app-footer-page',
@@ -40,7 +39,7 @@ export class FooterPageComponent implements OnInit {
       let reader = new FileReader();        
       reader.readAsDataURL(event.target.files[0]);
       
-      reader.onload = (event) => {
+      reader.onload = (event: any) => {
       
         if (input.id == 'ts_main_image')
           this.mainImage = event.target.result; 
