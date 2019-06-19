@@ -1,4 +1,4 @@
-.slider {
+.page-sliders .slider {
   // border: 1px solid #ccc;
   background: #fff;
   border-radius: 6px;
@@ -50,7 +50,7 @@
   img:nth-child(1) {
     height: 160px;
     object-fit: fill;
-    width: 80%;
+    width: 90%;
     margin: 3% auto;
     position: relative;
     z-index: 1;
@@ -65,7 +65,7 @@
     -webkit-clip-path: ellipse(56% 32% at 50% 7%);
     clip-path: ellipse(56% 32% at 50% 7%);
     height: 400px;
-    filter: blur(8px);
+    filter: blur(1px);
     object-fit: cover;
   }
 }

@@ -11,10 +11,12 @@ $ionicons-font-path: "~ionicons/dist/fonts";
   font-family: "DroidKufi";
   src: url("./assets/fonts/DroidKufi_Regular.ttf") format("opentype");
 }
-
+@import "~ngx-bar-rating/themes/br-bootstrap-theme.css";
+@import "~ngx-bar-rating/themes/br-default-theme.css";
 html,
 body {
   height: 100%;
+  text-align: right;
 }
 
 body {
@@ -55,76 +57,22 @@ app-footer {
   }
 }
 
-// .searchbar-input.sc-ion-searchbar-ios {
-//   background: #fff;
-// }
-
 .searchbar-input.sc-ion-searchbar-md {
   padding: 0px 12px;
   text-align: right;
   font-size: 12px;
   margin-right: 10px;
 }
-//   padding-left: 50%;
-//   padding-right: 0;
-//   padding-top: 0;
-//   padding-bottom: 0;
-//   border-radius: 2px;
-//   background-position: left 8px center;
-//   height: auto;
-//   font-size: 12px;
-//   font-weight: 400;
-//   line-height: 30px;
-//   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-//     0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-//   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-//     0 1px 5px 0 rgba(0, 0, 0, 0.12);
-// }
+.searchbar-input-container.sc-ion-searchbar-ios {
+  margin: 0 15px 0 0;
+}
+.searchbar-input.sc-ion-searchbar-ios {
+  text-align: right;
+  background: #fff;
+  font-size: 12px;
+  padding-left: 15px !important;
+}
 
-// .searchbar-search-icon.sc-ion-searchbar-md {
-//   left: 0;
-//   top: 8px;
-//   width: 15px;
-//   height: 15px;
-//   right: 88% !important;
-// }
-
-// .searchbar-search-icon.sc-ion-searchbar-ios {
-//   margin-left: calc(50% - 60px);
-//   left: 8px;
-//   top: 0;
-//   position: absolute;
-//   width: 16px;
-//   height: 100%;
-//   contain: strict;
-//   right: 88% !important;
-// }
-
-// .searchbar-left-aligned.sc-ion-searchbar-ios-h
-//   .searchbar-input.sc-ion-searchbar-ios {
-//   padding-left: 58px !important;
-//   padding-right: 0px !important;
-// }
-
-// .searchbar-left-aligned.sc-ion-searchbar-ios-h {
-//   background: #fff;
-
-//   height: 36px;
-
-//   padding: 0px;
-
-//   border-radius: 9px;
-
-//   margin: 11px 3px;
-// }
-
-// [dir="rtl"] .sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md {
-//   left: 88%;
-// }
-
-// .swiper-pagination.swiper-pagination-bullets{
-//   display : none;
-// }
 #slide-1 {
   .hamburger-inner,
   .hamburger-inner::before,
@@ -141,7 +89,6 @@ app-footer {
 #slide-2 {
   .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: -25px;
-    // z-index: 99999999999;
     position: relative;
   }
 
@@ -368,20 +315,20 @@ input[type="number"]::-webkit-outer-spin-button {
   background-size: cover !important;
   z-index: 1000 !important;
   position: absolute;
-  width: 64.5%;
+  width: 72.5%;
   margin: auto;
-  margin-top: 117px;
-  height: 554px;
+  margin-top: 128px;
+  height: 542px;
 }
 
 .note8 .custom-loading {
   background-size: cover !important;
   z-index: 1000 !important;
   position: absolute;
-  width: 64.5%;
+  width: 72.5%;
   margin: auto;
-  margin-top: 103px;
-  height: 560px;
+  margin-top: 108px;
+  height: 544px;
 }
 
 .loading-wrapper {

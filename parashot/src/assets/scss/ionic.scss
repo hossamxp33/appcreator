@@ -31,10 +31,6 @@ ion-slide {
   display: block;
 }
 
-ion-tab-bar {
-  background: transparent;
-}
-
 ion-tab-button {
   background: #ffffffe6;
 }
@@ -48,7 +44,7 @@ ion-header {
 }
 
 ion-content {
-  background: #e6eaed;
+  --background: #e6eaed;
   height: 400px;
 }
 

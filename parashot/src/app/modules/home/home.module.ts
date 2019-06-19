@@ -21,6 +21,7 @@ import { HeaderComponent } from './marginals/header/header.component';
 import { FooterComponent } from './marginals/footer/footer.component';
 import { SidebarComponent } from './marginals/sidebar/sidebar.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
+import { BarRatingModule } from "ngx-bar-rating";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { FooterPageComponent } from './footer-page/footer-page.component';
     AuthModule,
     ColorPickerModule,
     NgMagicIframeModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    BarRatingModule
 
   ],
   exports: [SplashComponent],
