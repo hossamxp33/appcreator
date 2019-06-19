@@ -8,6 +8,7 @@ import { SlidersComponent } from './sliders/sliders.component';
 import { StoreComponent } from './store/store.component';
 import { FooterComponent } from './marginals/footer/footer.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
         path: 'edit-categories',
         component: EditCategoriesComponent,
       }
+      ,
+      {
+        path: 'products',
+        component: ProductsComponent,
+      }      
       ,
       {
         path: 'footer-page',
