@@ -55,67 +55,72 @@ app-footer {
   }
 }
 
-.searchbar-input.sc-ion-searchbar-ios {
-  background: #fff;
-}
+// .searchbar-input.sc-ion-searchbar-ios {
+//   background: #fff;
+// }
 
 .searchbar-input.sc-ion-searchbar-md {
-  padding-left: 50%;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-radius: 2px;
-  background-position: left 8px center;
-  height: auto;
+  padding: 0px 12px;
+  text-align: right;
   font-size: 12px;
-  font-weight: 400;
-  line-height: 30px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  margin-right: 10px;
 }
+//   padding-left: 50%;
+//   padding-right: 0;
+//   padding-top: 0;
+//   padding-bottom: 0;
+//   border-radius: 2px;
+//   background-position: left 8px center;
+//   height: auto;
+//   font-size: 12px;
+//   font-weight: 400;
+//   line-height: 30px;
+//   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+//     0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+//   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+//     0 1px 5px 0 rgba(0, 0, 0, 0.12);
+// }
 
-.searchbar-search-icon.sc-ion-searchbar-md {
-  left: 0;
-  top: 8px;
-  width: 15px;
-  height: 15px;
-  right: 88% !important;
-}
+// .searchbar-search-icon.sc-ion-searchbar-md {
+//   left: 0;
+//   top: 8px;
+//   width: 15px;
+//   height: 15px;
+//   right: 88% !important;
+// }
 
-.searchbar-search-icon.sc-ion-searchbar-ios {
-  margin-left: calc(50% - 60px);
-  left: 8px;
-  top: 0;
-  position: absolute;
-  width: 16px;
-  height: 100%;
-  contain: strict;
-  right: 88% !important;
-}
+// .searchbar-search-icon.sc-ion-searchbar-ios {
+//   margin-left: calc(50% - 60px);
+//   left: 8px;
+//   top: 0;
+//   position: absolute;
+//   width: 16px;
+//   height: 100%;
+//   contain: strict;
+//   right: 88% !important;
+// }
 
-.searchbar-left-aligned.sc-ion-searchbar-ios-h
-  .searchbar-input.sc-ion-searchbar-ios {
-  padding-left: 58px !important;
-  padding-right: 0px !important;
-}
+// .searchbar-left-aligned.sc-ion-searchbar-ios-h
+//   .searchbar-input.sc-ion-searchbar-ios {
+//   padding-left: 58px !important;
+//   padding-right: 0px !important;
+// }
 
-.searchbar-left-aligned.sc-ion-searchbar-ios-h {
-  background: #fff;
+// .searchbar-left-aligned.sc-ion-searchbar-ios-h {
+//   background: #fff;
 
-  height: 36px;
+//   height: 36px;
 
-  padding: 0px;
+//   padding: 0px;
 
-  border-radius: 9px;
+//   border-radius: 9px;
 
-  margin: 11px 3px;
-}
+//   margin: 11px 3px;
+// }
 
-[dir="rtl"] .sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md {
-  left: 88%;
-}
+// [dir="rtl"] .sc-ion-searchbar-md-h .searchbar-clear-button.sc-ion-searchbar-md {
+//   left: 88%;
+// }
 
 // .swiper-pagination.swiper-pagination-bullets{
 //   display : none;

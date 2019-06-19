@@ -180,3 +180,28 @@
     color: #341642;
   }
 }
+.ion-md-search {
+  position: relative;
+  right: -10%;
+  z-index: 2;
+  font-size: 16px;
+}
+.cart {
+  margin: 14px auto 0 auto;
+  i {
+    font-size: 22px;
+    color: #fff;
+  }
+  span {
+    position: absolute;
+    border-radius: 50%;
+    background: red;
+    color: #fff;
+    top: 40px;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+}
