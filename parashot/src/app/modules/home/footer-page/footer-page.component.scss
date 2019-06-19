@@ -1,0 +1,71 @@
+/* start footer effect section */
+
+.effect,
+.footer{
+    text-align: right;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    border-right: 6px solid #00a1f1;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #6d5050;
+    margin-bottom: 40px;
+}
+
+.footer-effects,
+.footer-component{
+    padding: 40px 10px;
+    background: #e6e6e6;
+
+    span{
+        margin-left: 5px;
+    }
+}
+
+/* end footer effect section */
+
+/* start main footer */
+
+.footer{ margin-top: 40px; }
+
+.footer-component{
+    
+    .container{
+        .row{
+            div{
+
+                margin-bottom: 35px;
+
+            }
+
+            .show-image{
+                position: relative;
+
+                i{
+                    position: absolute;
+                    top: 0;
+                    color: red;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .color-span{
+        border: 1px solid #ccc;
+        background: #fff;
+        height: 45px;
+        padding: 11px 2px;
+        border-radius: 12px;
+
+        input{
+            width: 70px;
+            margin: 0 10px;
+            border-radius: 13px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}
+
+/* end main footer */

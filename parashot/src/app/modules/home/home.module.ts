@@ -20,6 +20,7 @@ import { SlidersComponent } from './sliders/sliders.component';
 import { HeaderComponent } from './marginals/header/header.component';
 import { FooterComponent } from './marginals/footer/footer.component';
 import { SidebarComponent } from './marginals/sidebar/sidebar.component';
+import { FooterPageComponent } from './footer-page/footer-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SidebarComponent } from './marginals/sidebar/sidebar.component';
     SidebarComponent,
     CategoriesComponent,
     IonicsimulatorComponent,
-    EditCategoriesComponent
+    EditCategoriesComponent,
+    FooterPageComponent
   ],
   imports: [
     CommonModule,
