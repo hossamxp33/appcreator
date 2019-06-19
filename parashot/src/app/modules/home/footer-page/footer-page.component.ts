@@ -30,14 +30,15 @@ export class FooterPageComponent implements OnInit {
 
   toggleShadow() { this.shadow = !this.shadow; }
 
-  // show image 
+  // show image
 
-  showImage(event, input: HTMLInputElement){
+  showImage(event, input: HTMLInputElement) {
 
     if (event.target.files && event.target.files[0]) {
-    
-      let reader = new FileReader();        
+
+      let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
+<<<<<<< HEAD
       
       reader.onload = (event: any) => {
       
@@ -51,11 +52,21 @@ export class FooterPageComponent implements OnInit {
           this.notiImage = event.target.result;
         else if (input.id == 'ts_more_image')
           this.moreImage = event.target.result;
-      }
-  
-    }
-    
+=======
 
-  }  
+      reader.onload = (event: any) => {
+
+        if (input.id == 'ts_main_image') { this.mainImage = event.target.result; }
+        else if (input.id == 'ts_order_image') { this.orderImage = event.target.result; }
+        else if (input.id == 'ts_offer_image') { this.offerImage = event.target.result; }
+        else if (input.id == 'ts_noti_image') { this.notiImage = event.target.result; }
+        else if (input.id == 'ts_more_image') { this.moreImage = event.target.result; }
+>>>>>>> nouran
+      }
+
+    }
+
+
+  }
 
 }

@@ -26,9 +26,10 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     this.slides.slideNext();
   }
   @Input() headerColor: any;
-  @Input() sliderId: number = -1;
+  @Input() sliderId: number = 3;
   source = "sim";
   color = "#1e56a0";
+  rate = 5;
   deSlideOpts = {
     initialSlide: 1,
     slidesPerView: 1,
@@ -81,6 +82,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         if (this.main.data.slideshow === "true") {
           console.log(this.main.data.slideshow)
           this.showSlideShow = true;
+          $('ion-content.slide-show').css('height', ' 541px')
           // this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
           // this.slideshowService.getSlideShows();
           this.slideshowService.sliderImages.subscribe(res => {
@@ -91,6 +93,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         }
         else {
           this.showSlideShow = false;
+
 
         }
       }),

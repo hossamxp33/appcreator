@@ -5,7 +5,7 @@
 <div *ngIf="mdref" class="marvel-device note8 mt-4">
   <!-- <div class="img-container"> -->
   <div class="screen">
-    <ion-header class="p-2">
+    <ion-header *ngIf="!showSlideShow" class="p-2">
       <svg class="docs-demo-device__md-bar" viewBox="0 0 1384.3 40.3">
         <path
           class="st0"
@@ -24,16 +24,15 @@
         </div>
 
         <ion-searchbar
-          animated
           mode="md"
           placeholder="ابحث بالمنتجات"
-          class="col-md-11 col-10 px-0 flex-row-reverse"
+          class="col-md-10 col-10 px-0 flex-row-reverse"
           showCancelButton
-        ><i class="icon ion-md-search"></i></ion-searchbar>
+        ></ion-searchbar>
       </div>
     </ion-header>
-    <ion-content>
-      <div *ngIf="showSlideShow">
+    <ion-content *ngIf="showSlideShow" class="slide-show">
+      <div>
         <!-- <div
           style="position: absolute;top: 50%;left: 16px;font-size: 25px;z-index: 2;"
           (click)="slidePrev()"
@@ -58,117 +57,107 @@
           </ion-slide>
         </ion-slides>
       </div>
-      <app-headers
-        *ngIf="!showSlideShow"
-        [id]="sliderId"
-        [source]="source"
-      ></app-headers>
-      <div *ngIf="!showSlideShow" class="row px-3 text-center">
+    </ion-content>
+    <ion-content *ngIf="!showSlideShow">
+      <app-headers [id]="sliderId" [source]="source"></app-headers>
+      <div class="row px-3 mx-2  text-center">
         <div class="col">
-          <i class="icon ion-md-shirt"></i>
-          <label>ملابس</label>
+          <img src="../../assets/images/clothes.png" /><span>ملابس</span>
         </div>
         <div class="col">
-          <i class="icon ion-md-phone-portrait"></i>
-          <label>موبايلات</label>
+          <img src="../../assets/images/cell-phone.png" /><span>موبايلات</span>
         </div>
         <div class="col">
-          <i class="icon ion-md-laptop"></i>
-          <label>اليكترونيات</label>
+          <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
         </div>
         <div class="col">
-          <i class="icon ion-md-bed"></i>
-          <label>المنزل و الحديقة</label>
+          <img src="../../assets/images/home.png" /><span
+            >المنزل و الحديقة</span
+          >
         </div>
         <div class="col">
-          <i class="icon ion-md-glasses"></i>
-          <label>نظارات</label>
+          <img src="../../assets/images/glasses.png" /><span>نظارات</span>
         </div>
       </div>
-      <!-- <div>
-          <h2>أشهر المنتجات</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirt-2.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirtt-1.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirt-3.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirt.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
+      <div class="p-3">
+        <h6 class="font-weight-bold mb-3">أشهر المنتجات</h6>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirt-2.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
                 </div>
               </div>
             </div>
           </div>
-        </div> -->
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirtt-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirt-3.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirt.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </ion-content>
-
-    <ion-tab-bar slot="bottom">
+    <ion-tab-bar *ngIf="!showSlideShow" slot="bottom">
       <ion-tab-button tab="home">
         <i class="icon ion-md-home"></i>
         <ion-label>الرئيسية</ion-label>
@@ -193,9 +182,9 @@
 <div *ngIf="iosref" class="marvel-device iphone-x mt-4">
   <!-- <div class="img-container"> -->
   <div class="screen">
-    <ion-header class="pt-4">
+    <ion-header *ngIf="!showSlideShow" class="pt-2">
       <div class="d-flex flex-row-reverse justify-content-between">
-        <div class="cart">
+        <div class="cart cart-ios">
           <i class="icon ion-ios-cart"></i>
           <span>1</span>
         </div>
@@ -203,12 +192,11 @@
           class="col-md-10 col-10 px-0"
           placeholder="ابحث بالمنتجات"
           mode="ios"
-          animated
         ></ion-searchbar>
       </div>
     </ion-header>
-    <ion-content>
-      <div *ngIf="showSlideShow">
+    <ion-content *ngIf="showSlideShow" class="slide-show">
+      <div>
         <!-- <div
           style="position: absolute;top: 50%;left: 16px;font-size: 25px;z-index: 2;"
           (click)="slidePrev()"
@@ -233,116 +221,111 @@
           </ion-slide>
         </ion-slides>
       </div>
+    </ion-content>
+    <ion-content *ngIf="!showSlideShow">
       <app-headers
         *ngIf="!showSlideShow"
         [id]="sliderId"
         [source]="source"
       ></app-headers>
-      <div *ngIf="!showSlideShow" class="row px-3 text-center">
+      <div class="row px-3 mx-2  text-center">
         <div class="col">
-          <i class="icon ion-ios-shirt"></i>
-          <label>ملابس</label>
+          <img src="../../assets/images/clothes.png" /><span>ملابس</span>
         </div>
         <div class="col">
-          <i class="icon ion-ios-phone-portrait"></i>
-          <label>موبايلات</label>
+          <img src="../../assets/images/cell-phone.png" /><span>موبايلات</span>
         </div>
         <div class="col">
-          <i class="icon ion-ios-laptop"></i>
-          <label>اليكترونيات</label>
+          <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
         </div>
         <div class="col">
-          <i class="icon ion-ios-bed"></i>
-          <label>المنزل و الحديقة</label>
+          <img src="../../assets/images/home.png" /><span
+            >المنزل و الحديقة</span
+          >
         </div>
         <div class="col">
-          <i class="icon ion-ios-glasses"></i>
-          <label>نظارات</label>
+          <img src="../../assets/images/glasses.png" /><span>نظارات</span>
         </div>
       </div>
-      <!-- <div>
-          <h2>أشهر المنتجات</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirt-2.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirtt-1.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirt-2.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="../../../../assets/images/shirt.jpg"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div>Price</div>
-                    <div>Rate</div>
-                  </div>
+      <div class="p-3">
+        <h6 class="font-weight-bold mb-3">أشهر المنتجات</h6>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirt-2.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
                 </div>
               </div>
             </div>
           </div>
-        </div> -->
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirtt-1.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirt-2.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src="../../../../assets/images/shirt.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <p class="card-text">
+                  مثال
+                </p>
+                <div class="d-flex justify-content-between">
+                  <div>230 ر.غ</div>
+                  <div class='d-flex rateDiv'><bar-rating [(rate)]="rate" [max]="5"></bar-rating>(342)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </ion-content>
-    <ion-tab-bar slot="bottom">
+    <ion-tab-bar *ngIf="!showSlideShow" slot="bottom">
       <ion-tab-button tab="more">
         <i class="icon ion-ios-code-working"></i>
         <ion-label>المزيد</ion-label>

@@ -21,7 +21,11 @@ import { HeaderComponent } from './marginals/header/header.component';
 import { FooterComponent } from './marginals/footer/footer.component';
 import { SidebarComponent } from './marginals/sidebar/sidebar.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
+<<<<<<< HEAD
 import { ProductsComponent } from './products/products.component';
+=======
+import { BarRatingModule } from "ngx-bar-rating";
+>>>>>>> nouran
 
 @NgModule({
   declarations: [
@@ -49,7 +53,8 @@ import { ProductsComponent } from './products/products.component';
     AuthModule,
     ColorPickerModule,
     NgMagicIframeModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    BarRatingModule
 
   ],
   exports: [SplashComponent],
