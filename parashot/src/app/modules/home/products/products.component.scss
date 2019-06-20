@@ -77,3 +77,95 @@
 }
 
 /* end section body */
+
+/* start product form */
+
+#newProduct{
+    .modal-dialog{
+        .modal-content{
+            .modal-body{
+                .container{
+                    .row{
+                        div{
+                            margin-bottom: 15px;
+                            text-align: right;
+
+                            label{
+                                text-align: right;
+                            }
+
+                            .addImage{
+                                display: block;
+                                text-align: center;
+                                padding: 20px;
+                                margin-bottom: 15px;
+                                width: 100%;
+                                margin: auto;
+                                border-radius: 10px;
+                                border: 1px solid #c4c4c4;
+                                cursor: pointer;
+
+                                img{
+                                    margin-bottom: -7px;
+                                }
+                            }
+
+                            .img-box{
+                                margin-top: 10px;
+                                position: relative;
+
+                                i{
+                                    position: absolute;
+                                    top: 0;
+                                    color: red;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .color-container{
+                                .color-span{
+                                    border: 1px solid #ccc;
+                                    background: #fff;
+                                    height: 45px;
+                                    padding: 11px 2px;
+                                    border-radius: 12px;
+    
+                                    .color-picker{
+                                        position: absolute !important; 
+                                    }
+                            
+                                    input{
+                                        width: 70px;
+                                        margin: 0 10px;
+                                        border-radius: 13px;
+                                        border: 1px solid #ccc;
+                                        text-align: center;
+                                        cursor: pointer;
+                                    }
+                                } 
+
+                                .color-clone{
+                                    display: inline-block;
+                                    margin-bottom: 30px;
+                                    opacity: 0;
+                                }
+                            }
+
+                            .size-container{
+                                margin-bottom: 0;
+
+                                .size-clone{
+                                    display: inline-block;
+                                    opacity: 0;
+                                }
+                            }
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* end product form */

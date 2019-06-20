@@ -103,8 +103,8 @@
                 <input id="ts_order_image" class="form-control" type="file" accept="image/*" #order (change)="showImage($event, order)">
             </div>
             <div *ngIf="orderImage != null" class="show-image">
-                    <i class="far fa-times-circle" (click)="orderImage = null"></i>
-                    <img [src]="orderImage" width="100%" />
+                <i class="far fa-times-circle" (click)="orderImage = null"></i>
+                <img [src]="orderImage" width="100%" />
             </div>            
        
             <!-- end name of main image -->

@@ -148,3 +148,223 @@
 </div>
 
 <!-- end section body -->
+
+<!-- start adding new product modal -->
+
+<div class="modal fade" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          
+        <div class="modal-header d-flex justify-content-between">
+          <h5 class="modal-title" id="exampleModalLabel">اضافة منتج جديد</h5>
+        </div>
+          
+        <div class="modal-body">            
+
+            <div class="container">
+                <div class="row">
+
+                  <!-- start product image -->
+
+                  <div class="col-md-2">
+                    <label>
+                        صورة المنتج
+                    </label>
+                  </div>
+                  <div class="col-md-10">
+                    <label class="addImage">
+                        <img src="../../../../assets/images/plus%20(1).png" alt="add" width="20px" /> رفع صورة
+                        <input type="file" accept="image/*" class="d-none"  (change)="showImage($event)" />
+                    </label>
+                    <div *ngIf="imgSrc != null" class="img-box">
+                        <i class="far fa-times-circle" (click)="imgSrc = null"></i>
+                        <img [src]="imgSrc" width="100%" />
+                    </div>                     
+                  </div>
+
+                  <!-- end product image -->
+                  
+                  <!-- start product name -->
+
+                  <div class="col-md-2">
+                    <label>
+                      اسم المنتج
+                    </label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" />
+                  </div>
+
+                  <!-- end product name -->
+
+                  <!-- start product description -->
+
+                  <div class="col-md-2">
+                    <label>
+                      وصف المنتج
+                    </label>
+                  </div>
+                  <div class="col-md-10">
+                    <textarea class="form-control" ></textarea>
+                  </div>
+  
+                  <!-- end product description -->  
+                  
+                  <!-- start category -->
+
+                  <div class="col-md-2">
+                    <label>
+                      القسم الرئيسي
+                    </label>
+                  </div>
+                  <div class="col-md-10">
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+    
+                  <!-- end category -->                   
+                    
+                  <!-- start sub category -->
+
+                  <div class="col-md-2">
+                      <label>
+                        القسم الفرعي
+                      </label>
+                    </div>
+                    <div class="col-md-10">
+                      <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                      </select>
+                    </div>
+      
+                    <!-- end sub category -->
+
+                  <!-- start product brand -->
+
+                  <div class="col-md-2">
+                    <label>
+                      البراند
+                    </label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" />
+                  </div>
+  
+                  <!-- end product brand -->                    
+
+                  <!-- start product quantity -->
+
+                  <div class="col-md-2">
+                    <label>
+                      الكمية المتوفرة
+                    </label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" />
+                  </div>
+    
+                  <!-- end product quantity -->
+
+                  <!-- start product price -->
+
+                  <div class="col-md-2">
+                    <label>
+                      سعر المنتج
+                    </label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" />
+                  </div>
+      
+                  <!-- end product price -->
+
+                  <!-- start product color -->
+
+                  <div class="col-md-2">
+                    <label>
+                      اللون
+                    </label>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="color-container" *ngFor="let item of items">
+                        <span class="color-span">                        
+                            <input [(colorPicker)]="color" [style.background]="color"/>                        
+                        </span>
+                        <span class="color-clone">{{item}}</span>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-left">
+                    <button class="btn btn-primary" (click)="copyColor()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+        
+                  <!-- end product color -->
+
+                  <!-- start product size -->
+
+                  <div class="col-md-2">
+                    <label>
+                      المقاس
+                    </label>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="size-container" *ngFor="let size of sizes">
+                        <input type="text" class="form-control" />
+                        <span class="size-clone">{{size}}</span>
+                    </div>                    
+                  </div>
+                  <div class="col-md-2 text-left">
+                    <button class="btn btn-primary" (click)="copySize()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+        
+                  <!-- end product size --> 
+                  
+                  <!-- start guarantee -->
+
+                  <div class="col-md-2">
+                    مرخص
+                  </div>
+                  <div class="col-md-10">
+                    <input type="checkbox" class="form-control" style="width: 35px" />
+                  </div>
+
+                  <!-- end guarantee -->
+
+                  <!-- start visible -->
+
+                  <div class="col-md-2">
+                      مرئي
+                  </div>
+                  <div class="col-md-10">
+                    <input type="checkbox" class="form-control" style="width: 35px" />
+                  </div>
+  
+                  <!-- end visible -->                  
+
+                </div>
+            </div>            
+
+        </div>
+          
+        <div class="modal-footer">          
+          <button type="button" class="btn btn-primary">
+            اضافة
+          </button>
+        </div>          
+          
+      </div>
+        
+    </div>
+</div>
+
+<!-- end adding new product modal -->
