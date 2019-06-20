@@ -79,15 +79,15 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         this.productsetting = mainDesign.productsetting;
         this.main = mainDesign.main;
 
-        if (this.main.data.slideshow === "true") {
+        if (this.main.data.slideshow === "false") {
           console.log(this.main.data.slideshow)
           this.showSlideShow = true;
-          $('ion-content.slide-show').css('height', ' 541px')
+
           // this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
           // this.slideshowService.getSlideShows();
-          this.slideshowService.sliderImages.subscribe(res => {
+          this.slideshowService.getSlideShows().subscribe(res => {
             console.log(res)
-            this.slider = res;
+            this.slider = res.data;
           })
 
         }
@@ -97,6 +97,10 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
 
         }
       }),
+      this.slideshowService.getSlideShows().subscribe(res => {
+        console.log(res)
+        this.slider = res.data;
+      })
 
 
     );
@@ -132,7 +136,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         // backdropDismiss: true,
         showBackdrop: true,
         cssClass: "custom-class custom-loading",
-        duration: 3000
+        duration: 2000
       })
       .then(overlay => {
         this.loading = overlay;
@@ -140,5 +144,8 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         console.log(this.splash.data[0].photo)
         $("ion-loading").css('background', `url(${this.splash.data[1].photo}) 100% 100% no-repeat`).prependTo($(".screen"));
       });
+  }
+  skip() {
+    this.showSlideShow = false
   }
 }

@@ -110,17 +110,30 @@ export class HeadersComponent implements OnInit {
   ngOnInit() {
     // console.log(this.id , this.source);
     // this.headerColor = 'white';
-    // this.images = this.imagesDisplay.data;
-    this.sliderService.sliderImages.subscribe(res => {
-      if (res && res.length > 0) { this.images = res; }
-      else {
-        this.images = [{
-          photo: "../../../../assets/images/no-image.png"
-        }]
-      }
+    if (this.imagesDisplay && this.imagesDisplay.length > 0) {
+      console.log(this.images)
+      this.images = this.imagesDisplay;
+    }
+    else {
+      this.images = [{
+        photo: "../../../../assets/images/no-image.png"
+      }]
+    }
 
-    })
-    console.log(this.images)
+    // this.sliderService.getSlideShows().subscribe(res => {
+    //   console.log(res)
+    //   if (res && res.data.length >= 1) {
+    //     this.images = res.data;
+    //     console.log(this.images)
+    //   }
+    //   else {
+    //     this.images = [{
+    //       photo: "../../../../assets/images/no-image.png"
+    //     }]
+    //   }
+
+    // })
+    // console.log(this.images)
 
 
   }

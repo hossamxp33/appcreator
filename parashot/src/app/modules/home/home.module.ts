@@ -21,8 +21,13 @@ import { HeaderComponent } from './marginals/header/header.component';
 import { FooterComponent } from './marginals/footer/footer.component';
 import { SidebarComponent } from './marginals/sidebar/sidebar.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
+<<<<<<< HEAD
 import { BarRatingModule } from "ngx-bar-rating";
 import { ProductsComponent } from './products/products.component';
+=======
+import { ProductsComponent } from './products/products.component';
+import { BarRatingModule } from "ngx-bar-rating";
+>>>>>>> nouran
 
 @NgModule({
   declarations: [
