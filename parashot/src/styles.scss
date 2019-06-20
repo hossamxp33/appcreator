@@ -318,7 +318,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 72.5%;
   margin: auto;
   margin-top: 128px;
-  height: 542px;
+  height: 562px;
 }
 
 .note8 .custom-loading {
@@ -328,7 +328,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 72.5%;
   margin: auto;
   margin-top: 108px;
-  height: 544px;
+  height: 550px;
 }
 
 .loading-wrapper {
@@ -336,12 +336,29 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: none !important;
 }
 .primary-slider {
+  ion-slide {
+    padding: 0 !important;
+  }
   img {
-    height: 380px;
+    height: 550px;
     object-fit: cover;
+  }
+  .swiper-pagination {
+    bottom: 28px !important;
   }
 }
 .swiper-pagination-bullet-active {
   background: #341642 !important;
   opacity: 1 !important;
+}
+.categories-slider {
+  ion-slide {
+    padding: 0px 2px !important;
+    img {
+      max-width: 90% !important;
+    }
+    span {
+      font-size: 6px;
+    }
+  }
 }

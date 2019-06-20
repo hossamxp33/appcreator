@@ -17,8 +17,8 @@ export class SlidersComponent implements OnInit {
   constructor(private slidesService: SlideshowService) { }
 
   ngOnInit() {
-    this.slidesService.sliderImages.subscribe(res => {
-      this.imagesDisplay = res;
+    this.slidesService.getSlideShows().subscribe(res => {
+      this.imagesDisplay = res.data;
       console.log(this.imagesDisplay);
     })
 
@@ -30,9 +30,11 @@ export class SlidersComponent implements OnInit {
       console.log(res);
       $(`.deleted-${id}`).css('display', 'block');
       if (res) {
-        this.slidesService.getSlideShows();
-        this.slidesService.sliderImages.subscribe(res => {
-          this.imagesDisplay = res;
+        console.log('resfound')
+        this.slidesService.getSlideShows().subscribe(res => {
+          this.imagesDisplay = res.data;
+          console.log(res);
+
         })
       }
     })
@@ -57,13 +59,12 @@ export class SlidersComponent implements OnInit {
       console.log(formData)
       this.slidesService.addSlideShow(formData).subscribe(res => {
         console.log(res)
-        // if (res) {
-        this.slidesService.getSlideShows();
-        this.slidesService.sliderImages.subscribe(res => {
-          this.imagesDisplay = res;
-          console.log(this.imagesDisplay)
-        })
-        // }
+        if (res) {
+          this.slidesService.getSlideShows().subscribe(res => {
+            this.imagesDisplay = res.data;
+            console.log(this.imagesDisplay)
+          })
+        }
 
       })
     }
