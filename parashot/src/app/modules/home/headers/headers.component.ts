@@ -9,11 +9,13 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class HeadersComponent implements OnInit {
   headerColor: any;
   images: any;
+  ionImages;
   // imagesDisplay: any;
   uploadedFile: any;
   @Input() id: number = 1;
   @Input() source: string;
   @Input() imagesDisplay;
+  @Input() ionImagesDisplay;
   @Output() sliderId = new EventEmitter<number>();
   slideOpts = {
     autoplay: true,
@@ -105,36 +107,25 @@ export class HeadersComponent implements OnInit {
       }
     }
   };
-  constructor(private sliderService: SlideshowService) { }
+  constructor() { }
 
   ngOnInit() {
+    console.log(this.ionImagesDisplay)
     // console.log(this.id , this.source);
-    // this.headerColor = 'white';
-    if (this.imagesDisplay && this.imagesDisplay.length > 0) {
-      console.log(this.images)
+    if ((this.imagesDisplay && this.imagesDisplay.length > 0) || (this.ionImagesDisplay && this.ionImagesDisplay.length > 0)) {
+
       this.images = this.imagesDisplay;
+
+      this.ionImages = this.ionImagesDisplay
+      console.log(this.images)
+      console.log(this.ionImagesDisplay)
+
     }
     else {
       this.images = [{
         photo: "../../../../assets/images/no-image.png"
       }]
     }
-
-    // this.sliderService.getSlideShows().subscribe(res => {
-    //   console.log(res)
-    //   if (res && res.data.length >= 1) {
-    //     this.images = res.data;
-    //     console.log(this.images)
-    //   }
-    //   else {
-    //     this.images = [{
-    //       photo: "../../../../assets/images/no-image.png"
-    //     }]
-    //   }
-
-    // })
-    // console.log(this.images)
-
 
   }
   getSliderId(id) {

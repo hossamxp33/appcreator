@@ -1,3 +1,4 @@
+import { MainpageService } from './../../../services/mainpage.service';
 import { SlideshowService } from './../../../services/slideshow.service';
 import { Design } from "./../../../helpers/design";
 import { Component, OnInit, Input, OnDestroy, ViewChild } from "@angular/core";
@@ -30,6 +31,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   source = "sim";
   color = "#1e56a0";
   rate = 5;
+  ionSlider;
   deSlideOpts = {
     initialSlide: 1,
     slidesPerView: 1,
@@ -59,7 +61,8 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     public splashService: SplashService,
     private design: DesignService,
     public loadingController: LoadingController,
-    private slideshowService: SlideshowService
+    private slideshowService: SlideshowService,
+    private mainPageService: MainpageService
 
   ) { }
   ngOnInit() {
@@ -73,13 +76,15 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
       this.design.getInitialDesign().subscribe(res => {
         let mainDesign = new Design(res.data);
         this.header = mainDesign.header;
+        $('ion-header').css('background', this.header.data.background)
+        $('.ion-logo img').attr('src', this.header.data.logo)
         this.footer = mainDesign.footer;
         this.bodydesign = mainDesign.bodydesign;
         this.categorydesign = mainDesign.categorydesign;
         this.productsetting = mainDesign.productsetting;
         this.main = mainDesign.main;
 
-        if (this.main.data.slideshow === "false") {
+        if (this.main.data.slideshow === "true") {
           console.log(this.main.data.slideshow)
           this.showSlideShow = true;
 
@@ -97,9 +102,10 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
 
         }
       }),
-      this.slideshowService.getSlideShows().subscribe(res => {
+      this.mainPageService.getMainPage().subscribe(res => {
         console.log(res)
-        this.slider = res.data;
+        this.ionSlider = res.sliders;
+        console.log(this.ionSlider)
       })
 
 

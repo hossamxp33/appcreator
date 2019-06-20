@@ -100,7 +100,7 @@
     border-radius: 50%;
     background: red;
     color: #fff;
-    top: 10px;
+    top: 43px;
     width: 20px;
     height: 20px;
     left: 14px;
@@ -141,4 +141,12 @@
 }
 .rateDiv {
   font-size: 10px;
+}
+.ion-logo {
+  text-align: center;
+  img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
 }
