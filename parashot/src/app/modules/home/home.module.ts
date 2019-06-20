@@ -23,6 +23,7 @@ import { SidebarComponent } from './marginals/sidebar/sidebar.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
 import { BarRatingModule } from "ngx-bar-rating";
 import { ProductsComponent } from './products/products.component';
+import { SlideShowComponent } from './slide-show/slide-show.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ProductsComponent } from './products/products.component';
     EditCategoriesComponent,
     FooterPageComponent,
     ProductsComponent,
+    SlideShowComponent,
   ],
   imports: [
     CommonModule,

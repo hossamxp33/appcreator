@@ -9,6 +9,7 @@ import { StoreComponent } from './store/store.component';
 import { FooterComponent } from './marginals/footer/footer.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
 import { ProductsComponent } from './products/products.component';
+import { SlideShowComponent } from './slide-show/slide-show.component';
 
 const routes: Routes = [
   {
@@ -45,7 +46,12 @@ const routes: Routes = [
       {
         path: 'splash',
         component: SplashComponent,
-      }      
+      }
+      ,
+      {
+        path: 'slide-show',
+        component: SlideShowComponent,
+      }             
     ]
   }
 

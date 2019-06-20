@@ -1,0 +1,60 @@
+/* start header */
+
+.head{
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+/* end header */
+
+/* start body section */
+
+.tail{
+    background: #fafafa;
+    border: 1px solid #ccc;
+
+    .tail-head{
+        padding: 14px;
+    }
+}
+
+/* end body section */
+
+/* start modal */
+
+#addSlide{
+    .modal-dialog{
+        .modal-content{
+            .modal-body{
+                .addImage{
+                    display: block;
+                    text-align: center;
+                    padding: 20px;
+                    margin-bottom: 15px;
+                    width: 70%;
+                    margin: auto;
+                    border-radius: 10px;
+                    border: 1px solid #c4c4c4;
+                    cursor: pointer;
+
+                    img{
+                        margin-bottom: -7px;
+                    }
+                }
+                .img-box{
+                    position: relative;
+                    margin-top: 10px;
+
+                    i{
+                        position: absolute;
+                        top: 0;
+                        color: red;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* end modal */

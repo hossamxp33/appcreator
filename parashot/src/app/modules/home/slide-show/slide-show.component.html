@@ -1,0 +1,97 @@
+<!-- start header section -->
+
+<div class="d-flex justify-content-between head">
+    <div><i class="dep"></i><span>سلايد شو</span></div>
+    <img 
+      src="../../../../assets/images/plus.png" 
+      width="30px" 
+      height="30px" 
+      data-toggle="modal" 
+      data-target="#addSlide" 
+      style="cursor: pointer;" />
+</div>
+
+<!-- end header section -->
+
+<div
+class="modal fade"
+id="addSlide"
+tabindex="-1"
+role="dialog"
+aria-labelledby="addSlideLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+
+    <!-- start modal header-->
+
+    <div class="modal-header d-flex justify-content-between">
+      <h5 class="modal-title" id="addSlideLabel">رفع صور سلايد شو</h5>
+    </div>
+    
+    <!-- end modal header-->
+
+    <!-- start modal body -->
+
+    <div class="modal-body">
+      <label class="addImage">
+          <img src="../../../../assets/images/plus%20(1).png" alt="add" width="20px" /> رفع صورة
+          <input type="file" accept="image/*" class="d-none"  (change)="showImage($event)" />
+      </label>
+      <div *ngIf="imgSrc != null" class="img-box">
+          <i class="far fa-times-circle" (click)="imgSrc = null"></i>
+          <img [src]="imgSrc" width="100%" />
+      </div>      
+    </div>
+
+    <!-- end modal body -->
+
+    <!-- start modal footer -->
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary">
+        حفظ
+      </button>
+    </div>
+
+    <!-- end modal footer -->
+
+  </div>
+</div>
+</div>
+
+<!-- start body section -->
+
+<div class="tail">
+
+  <!-- start body header -->
+
+  <div class="d-flex justify-content-between tail-head">
+    <span>حالة تفعيل سلايد شو</span>
+    <span (click)="toggleShow()" [ngClass]="show ? 'on' : 'off'" style="height: 34px; width: 34px; padding: 0;"></span>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!--<div *ngIf="imagesDisplay">
+          <app-headers
+            [source]="source"
+            [imagesDisplay]="imagesDisplay"
+          ></app-headers>
+        </div>-->
+      </div>
+    </div>
+    </div>  
+
+  <!-- end body header -->
+
+</div>
+
+<!-- end body section -->
+
+<!-- start adding slide show -->
+
+
+<!-- end adding slide show -->
