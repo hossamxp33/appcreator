@@ -30,11 +30,8 @@ export class SlideshowService {
     return this.http.delete(environment.serverUrl + 'Slideshows/delete/' + id + '.json')
   }
   getSlideShows(): any {
-    this.http.get<any>(
+    return this.http.get<any>(
       environment.serverUrl + "Slideshows/getallslideshows.json"
-    ).subscribe(res => {
-      this.sliderImages.next(res.data);
-      console.log(res.data)
-    });
+    );
   }
 }

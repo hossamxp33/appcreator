@@ -10,12 +10,12 @@ import { Splash } from '../models/splash.model';
 })
 export class SplashService {
 
-  constructor(private http: HttpClient, private uploadImage: UploadSliderImagesService) { }
-  addSplash(image: File) {
-    this.uploadImage.uploadImage(image, 'Splashes/addsplash.json').subscribe(res => { }, err => { })
+  constructor(private http: HttpClient) { }
+  addSplash(image) {
+    return this.http.post(environment.serverUrl + 'Splashes/addsplash.json', image);
   }
-  editSplash(image: File) {
-    this.uploadImage.uploadImage(image, 'Splashes/editsplash/1.json').subscribe(res => { }, err => { })
+  editSplash(image, id) {
+    return this.http.post(environment.serverUrl + 'Splashes/editsplash/' + id + '.json', image);
   }
   getSplashs(): Observable<Splash> {
     return this.http.get<any>(environment.serverUrl + 'Splashes/getallsplashes.json');

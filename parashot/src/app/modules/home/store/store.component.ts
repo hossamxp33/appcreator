@@ -10,6 +10,6 @@ export class StoreComponent implements OnInit {
   constructor(private slidesService: SlideshowService) { }
 
   ngOnInit() {
-    this.slidesService.getSlideShows();
+
   }
 }
