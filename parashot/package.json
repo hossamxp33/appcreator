@@ -36,8 +36,6 @@
     "@nguniversal/common": "0.0.0",
     "@nguniversal/express-engine": "0.0.0",
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",
-    "@sebgroup/ng-magic-iframe": "^1.0.2",
-    "angularx-social-login": "^1.2.7",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.6.9",
