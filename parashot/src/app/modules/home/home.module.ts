@@ -1,9 +1,7 @@
 import { IonicsimulatorComponent } from './ionicsimulator/ionicsimulator.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgMagicIframeModule } from '@sebgroup/ng-magic-iframe';
 import { AuthModule } from './../auth/auth.module';
-import { SocialLoginModule } from 'angularx-social-login';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HeadersPageComponent } from './headers-page/headers-page.component';
@@ -46,10 +44,8 @@ import { BarRatingModule } from "ngx-bar-rating";
     IonicModule.forRoot(),
     ColorPickerModule,
     OwlModule,
-    SocialLoginModule,
     AuthModule,
     ColorPickerModule,
-    NgMagicIframeModule,
     MatSlideToggleModule,
     BarRatingModule
 

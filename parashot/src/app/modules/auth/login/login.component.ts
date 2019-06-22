@@ -1,9 +1,9 @@
-import { Http } from '@angular/http';
-import { HttpClient } from '@angular/common/http';
-import {Headers, RequestOptions} from '@angular/http';
 import { Component, OnInit } from '@angular/core';
-import { AuthService, FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from "angularx-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+import { SocialUser } from "angularx-social-login";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,15 +11,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   LoginForm: FormGroup;
+  private user: SocialUser;
+  private loggedIn: boolean;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor( private authService: AuthService,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.LoginForm = this.formBuilder.group({
       username: ['', Validators],
       password: ['', Validators]
 
-    })
+    });
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
   onSubmit() {
     const loginData = new FormData();
@@ -31,5 +37,9 @@ export class LoginComponent implements OnInit {
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+
+  signOut(): void {
+    this.authService.signOut();
   }
 }

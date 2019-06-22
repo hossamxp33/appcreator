@@ -1,5 +1,5 @@
-import { MainpageService } from './../../../services/mainpage.service';
-import { SlideshowService } from './../../../services/slideshow.service';
+import { MainpageService } from "./../../../services/mainpage.service";
+import { SlideshowService } from "./../../../services/slideshow.service";
 import { Design } from "./../../../helpers/design";
 import { Component, OnInit, Input, OnDestroy, ViewChild } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
@@ -19,7 +19,7 @@ import { Splash } from "src/app/models/splash.model";
   ]
 })
 export class IonicsimulatorComponent implements OnInit, OnDestroy {
-  @ViewChild(IonSlides) slides: IonSlides;
+  @ViewChild(IonSlides, { static: false }) slides: IonSlides;
   // slidePrev() {
   //   this.slides.slidePrev();
   // }
@@ -37,14 +37,16 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     slidesPerView: 1,
     speed: 400,
     loop: true,
-    autoplay: true,
+    autoplay: true
   };
+  xOptions ={ slidesPerView: 5, loop: true , autoplay : true}
+
   text$ = new BehaviorSubject<string | null>("Initial Text");
-  iosref: boolean = false;
-  mdref: boolean = true;
   colorHeader = "#1e56a0";
   colorSearch = "#fff";
   subs = new SubSink();
+  iosClass: boolean = false;
+  mdClass: boolean = true;
   // mainDesign: any;
   header: any;
   footer: any;
@@ -63,9 +65,9 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     public loadingController: LoadingController,
     private slideshowService: SlideshowService,
     private mainPageService: MainpageService
-
-  ) { }
+  ) {}
   ngOnInit() {
+
     this.subs.add(
       this.splashService.getSplashs().subscribe((res: Splash) => {
         this.splash = res;
@@ -76,8 +78,8 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
       this.design.getInitialDesign().subscribe(res => {
         let mainDesign = new Design(res.data);
         this.header = mainDesign.header;
-        $('ion-header').css('background', this.header.data.background)
-        $('.ion-logo img').attr('src', this.header.data.logo)
+        $("ion-header").css("background", this.header.data.background);
+        $(".ion-logo img").attr("src", this.header.data.logo);
         this.footer = mainDesign.footer;
         this.bodydesign = mainDesign.bodydesign;
         this.categorydesign = mainDesign.categorydesign;
@@ -85,48 +87,38 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         this.main = mainDesign.main;
 
         if (this.main.data.slideshow === "true") {
-          console.log(this.main.data.slideshow)
+          console.log(this.main.data.slideshow);
           this.showSlideShow = true;
 
           // this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
           // this.slideshowService.getSlideShows();
           this.slideshowService.getSlideShows().subscribe(res => {
-            console.log(res)
+            console.log(res);
             this.slider = res.data;
-          })
-
-        }
-        else {
+          });
+        } else {
           this.showSlideShow = false;
-
-
         }
       }),
       this.mainPageService.getMainPage().subscribe(res => {
-        console.log(res)
+        console.log(res);
         this.ionSlider = res.sliders;
-        console.log(this.ionSlider)
+        console.log(this.ionSlider);
       })
-
-
     );
-
-
   }
 
   ios() {
-    this.iosref = true;
-    this.mdref = false;
-    console.log(this.header.data.background);
-    $(".screen ion-header").css("background", this.header.data.background);
-    this.splashLoader();
+    $(".note8").css("display", "none");
+    $(".iphone-x").css("display", "block");
+    this.iosClass = true;
+    this.mdClass = false;
   }
   md() {
-    this.iosref = false;
-    this.mdref = true;
-    console.log(this.header.data.background);
-    $(".screen ion-header").css("background", this.header.data.background);
-    this.splashLoader();
+    $(".iphone-x").css("display", "none");
+    $(".note8").css("display", "block");
+    this.mdClass = true;
+    this.iosClass = false;
   }
   ngOnDestroy() {
     this.subs.unsubscribe();
@@ -146,12 +138,20 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
       })
       .then(overlay => {
         this.loading = overlay;
+        console.log(this.splash.data[0].photo);
+        $("ion-loading")
+          .css(
+            "background",
+            `url(${this.splash.data[1].photo}) 100% 100% no-repeat`
+          )
+          .prependTo($(".note8 .screen"));
+        $(".iphone-x").css("display", "none");
+        $(".note8").css("display", "block");
         this.loading.present();
-        console.log(this.splash.data[0].photo)
-        $("ion-loading").css('background', `url(${this.splash.data[1].photo}) 100% 100% no-repeat`).prependTo($(".screen"));
+
       });
   }
   skip() {
-    this.showSlideShow = false
+    this.showSlideShow = false;
   }
 }

@@ -1,4 +1,6 @@
 import { CoreModule } from './core/core.module';
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { ApiPrefixInterceptor } from './core/interceptors/api-prefix.interceptor';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { HeadersPageComponent } from './modules/home/headers-page/headers-page.component';
@@ -15,29 +17,29 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 
 import { IonicModule } from '@ionic/angular';
 import { OwlModule } from 'ngx-owl-carousel';
-import { SocialLoginModule, AuthServiceConfig, AuthService } from "angularx-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { AuthModule } from './modules/auth/auth.module';
 import { IonicsimulatorComponent } from './modules/home/ionicsimulator/ionicsimulator.component';
-import { NgMagicIframeModule } from '@sebgroup/ng-magic-iframe';
 import { CategoriesComponent } from './modules/home/categories/categories.component';
 import { EditCategoriesComponent } from './modules/home/edit-categories/edit-categories.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("549753125776-tol8on9q0o1nrtkr1v1q44ifsl9gre7b.apps.googleusercontent.com")
+    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("2065583860235146")
+    provider: new FacebookLoginProvider("Facebook-App-Id")
   }
 ]);
 
 export function provideConfig() {
   return config;
 }
+
 @NgModule({
   declarations: [
     AppComponent
@@ -51,23 +53,22 @@ export function provideConfig() {
     NgtUniversalModule,
     IonicModule.forRoot(),
     OwlModule,
-    SocialLoginModule,
     AuthModule,
     ColorPickerModule,
-    NgMagicIframeModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    CoreModule
+    CoreModule,
+    SocialLoginModule
 
   ],
-  providers: [{
-    provide: AuthServiceConfig,
-    useFactory: provideConfig
-  }, AuthService,
-  {
+  providers: [ {
     provide: HTTP_INTERCEPTORS,
     useClass: ApiPrefixInterceptor,
     multi: true
+  },
+  {
+    provide: AuthServiceConfig,
+    useFactory: provideConfig
   }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

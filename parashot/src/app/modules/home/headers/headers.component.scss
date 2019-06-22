@@ -77,3 +77,16 @@
     border-radius: 10px;
   }
 }
+.sim-sliders {
+  #slide-3{
+    img:nth-child(1) {
+      height: 110px;
+
+    }
+
+    img:nth-child(2) {
+      height: 250px;
+
+    }
+  }
+}

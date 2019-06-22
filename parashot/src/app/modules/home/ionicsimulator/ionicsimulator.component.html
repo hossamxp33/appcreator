@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center">
-  <button [class.selected]="iosref" (click)="ios()">IOS</button>
-  <button [class.selected]="mdref" (click)="md()">MD</button>
+  <button [class.selected]='iosClass'  (click)="ios()">IOS</button>
+  <button [class.selected]='mdClass' (click)="md()">MD</button>
 </div>
-<div *ngIf="mdref" class="marvel-device note8 mt-4">
+<div class="marvel-device note8 mt-4">
   <!-- <div class="img-container"> -->
   <div class="screen">
     <ion-header *ngIf="!showSlideShow" class="p-2">
@@ -22,6 +22,7 @@
       </div>
     </ion-header>
     <ion-content
+    [scrollEvents]="true"
       *ngIf="showSlideShow"
       style="height: 550px;"
       class="slide-show"
@@ -42,7 +43,7 @@
           [options]="deSlideOpts"
           pager="true"
           mode="md"
-          
+
         >
           <ion-slide
             *ngFor="let image of slider"
@@ -53,8 +54,8 @@
         </ion-slides>
       </div>
     </ion-content>
-    <ion-content *ngIf="!showSlideShow">
-      <app-headers
+    <ion-content [scrollEvents]="true" *ngIf="!showSlideShow">
+      <app-headers *ngIf='ionSlider'
         [id]="sliderId"
         [source]="source"
         [ionImagesDisplay]="ionSlider"
@@ -63,35 +64,31 @@
         <ion-slides
           class="categories-slider"
           [options]="{ slidesPerView: 5, loop: true }"
+          mode = 'md'
         >
           <ion-slide>
-            <!-- <div class="col"> -->
+
             <img src="../../assets/images/clothes.png" /><span>ملابس</span>
-            <!-- </div> -->
           </ion-slide>
           <ion-slide>
-            <!-- <div class="col"> -->
+
             <img src="../../assets/images/cell-phone.png" /><span
               >موبايلات</span
             >
-            <!-- </div> -->
           </ion-slide>
           <ion-slide>
-            <!-- <div class="col"> -->
+
             <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
-            <!-- </div> -->
           </ion-slide>
           <ion-slide>
-            <!-- <div class="col"> -->
+
             <img src="../../assets/images/home.png" /><span
               >المنزل و الحديقة</span
             >
-            <!-- </div> -->
           </ion-slide>
           <ion-slide>
-            <!-- <div class="col"> -->
+
             <img src="../../assets/images/glasses.png" /><span>نظارات</span>
-            <!-- </div> -->
           </ion-slide>
         </ion-slides>
       </div>
@@ -203,10 +200,11 @@
   <!-- <img src="../../../../assets/images/android-skin.png" /> -->
   <!-- </div> -->
 </div>
-<div *ngIf="iosref" class="marvel-device iphone-x mt-4">
+<div class="marvel-device iphone-x mt-4">
   <!-- <div class="img-container"> -->
   <div class="screen">
     <ion-header *ngIf="!showSlideShow" class="pt-2">
+        <div class='ion-logo'><img></div>
       <div class="d-flex flex-row-reverse justify-content-between">
         <div class="cart cart-ios">
           <i class="icon ion-ios-cart"></i>
@@ -220,6 +218,7 @@
       </div>
     </ion-header>
     <ion-content
+    [scrollEvents]="true"
       *ngIf="showSlideShow"
       style="height: 550px;"
       class="slide-show"
@@ -250,36 +249,48 @@
         </ion-slides>
       </div>
     </ion-content>
-    <ion-content *ngIf="!showSlideShow">
-      <app-headers
-        *ngIf="!showSlideShow"
+    <ion-content *ngIf="!showSlideShow" [scrollEvents]="true">
+      <app-headers *ngIf='ionSlider'
         [id]="sliderId"
         [source]="source"
         [ionImagesDisplay]="ionSlider"
       ></app-headers>
       <div class="row px-3 mx-2  text-center">
-        <div class="col">
-          <img src="../../assets/images/clothes.png" /><span>ملابس</span>
-        </div>
-        <div class="col">
-          <img src="../../assets/images/cell-phone.png" /><span>موبايلات</span>
-        </div>
-        <div class="col">
-          <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
-        </div>
-        <div class="col">
-          <img src="../../assets/images/home.png" /><span
-            >المنزل و الحديقة</span
-          >
-        </div>
-        <div class="col">
-          <img src="../../assets/images/glasses.png" /><span>نظارات</span>
-        </div>
+        <ion-slides
+          class="categories-slider"
+          [options]="xOptions"
+          mode = 'ios'
+        >
+          <ion-slide>
+
+            <img src="../../assets/images/clothes.png" /><span>ملابس</span>
+          </ion-slide>
+          <ion-slide>
+
+            <img src="../../assets/images/cell-phone.png" /><span
+              >موبايلات</span
+            >
+          </ion-slide>
+          <ion-slide>
+
+            <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
+          </ion-slide>
+          <ion-slide>
+
+            <img src="../../assets/images/home.png" /><span
+              >المنزل و الحديقة</span
+            >
+          </ion-slide>
+          <ion-slide>
+
+            <img src="../../assets/images/glasses.png" /><span>نظارات</span>
+          </ion-slide>
+        </ion-slides>
       </div>
       <div class="p-3">
         <h6 class="font-weight-bold mb-3">أشهر المنتجات</h6>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
@@ -299,7 +310,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
@@ -319,7 +330,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
@@ -339,7 +350,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
