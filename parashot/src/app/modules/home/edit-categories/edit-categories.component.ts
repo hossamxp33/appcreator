@@ -31,7 +31,5 @@ export class EditCategoriesComponent implements OnInit {
   changeComplete(event) {
 
   }
-  togglePalette() {
-    this.show = !this.shadow;
-  }
+
 }
