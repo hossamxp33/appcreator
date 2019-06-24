@@ -1,3 +1,4 @@
+import { HeadersPageComponent } from './../headers-page/headers-page.component';
 import { MainpageService } from "./../../../services/mainpage.service";
 import { SlideshowService } from "./../../../services/slideshow.service";
 import { Design } from "./../../../helpers/design";
@@ -39,14 +40,18 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     loop: true,
     autoplay: true
   };
-  xOptions ={ slidesPerView: 5, loop: true , autoplay : true}
+  xOptions = {
+    slidesPerView: 5,
+    loop: true,
+    autoplay: true
+  }
 
   text$ = new BehaviorSubject<string | null>("Initial Text");
   colorHeader = "#1e56a0";
   colorSearch = "#fff";
   subs = new SubSink();
-  iosClass: boolean = false;
-  mdClass: boolean = true;
+  iosClass: boolean = true;
+  mdClass: boolean = false;
   // mainDesign: any;
   header: any;
   footer: any;
@@ -64,8 +69,8 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     private design: DesignService,
     public loadingController: LoadingController,
     private slideshowService: SlideshowService,
-    private mainPageService: MainpageService
-  ) {}
+    private mainPageService: MainpageService,
+  ) { }
   ngOnInit() {
 
     this.subs.add(
@@ -79,13 +84,17 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         let mainDesign = new Design(res.data);
         this.header = mainDesign.header;
         $("ion-header").css("background", this.header.data.background);
+        this.design.headerColor.next(this.header.data.background);
         $(".ion-logo img").attr("src", this.header.data.logo);
         this.footer = mainDesign.footer;
+        $('ion-tab-bar').css('--background', this.footer.data.background)
+        $('ion-tab-bar ion-label').css('--background', this.footer.data.font_color)
         this.bodydesign = mainDesign.bodydesign;
+        $('ion-content').css('--background', this.bodydesign.data.background)
         this.categorydesign = mainDesign.categorydesign;
         this.productsetting = mainDesign.productsetting;
         this.main = mainDesign.main;
-
+        console.log(this.main.data.slideshow);
         if (this.main.data.slideshow === "true") {
           console.log(this.main.data.slideshow);
           this.showSlideShow = true;
@@ -104,8 +113,16 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         console.log(res);
         this.ionSlider = res.sliders;
         console.log(this.ionSlider);
+      }),
+      this.design.headerColor.subscribe(res => {
+        // console.log(res)
+        $("ion-header").css("background", res);
+
       })
     );
+
+
+
   }
 
   ios() {
@@ -142,7 +159,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         $("ion-loading")
           .css(
             "background",
-            `url(${this.splash.data[1].photo}) 100% 100% no-repeat`
+            `url(${this.splash.data[0].photo}) 100% 100% no-repeat`
           )
           .prependTo($(".note8 .screen"));
         $(".iphone-x").css("display", "none");

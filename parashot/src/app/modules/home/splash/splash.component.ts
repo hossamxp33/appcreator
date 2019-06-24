@@ -13,11 +13,15 @@ export class SplashComponent implements OnInit {
   constructor(private splashService: SplashService) { }
 
   ngOnInit() {
+    this.splashService.getSplashs().subscribe(res => {
+      this.splashImage = res.data[0].photo;
+      console.log(this.splashImage)
+    })
   }
 
   // add splash screen
 
-  addSplashImage(event) {
+  editSplashImage(event) {
 
     if (event.target.files && event.target.files[0]) {
 
@@ -34,7 +38,7 @@ export class SplashComponent implements OnInit {
         const formData = new FormData();
         formData.append('photo', file);
         console.log(formData)
-        this.splashService.addSplash(formData).subscribe(res => {
+        this.splashService.editSplash(formData, 1).subscribe(res => {
           console.log(res)
           if (res) {
             this.splashService.getSplashs().subscribe(res => {

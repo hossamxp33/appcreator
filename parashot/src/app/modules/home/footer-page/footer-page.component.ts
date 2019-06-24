@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-footer-page',
@@ -16,10 +17,23 @@ export class FooterPageComponent implements OnInit {
   offerImage;
   notiImage;
   moreImage;
-
+  show: boolean = false;
   constructor() { }
 
   ngOnInit() {
+    $(document).mouseup(function (e) {
+      var container = $("color-sketch");
+      var span = $('.color-span');
+
+      // if the target of the click isn't the container nor a descendant of the container
+      if (!container.is(e.target) && !span.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+        this.show = false;
+        console.log(this.show)
+      } else if (span.is(e.target)) {
+        container.show();
+      }
+    });
   }
 
   // toggle border option
@@ -50,6 +64,10 @@ export class FooterPageComponent implements OnInit {
 
     }
 
+
+  }
+
+  changeComplete(event) {
 
   }
 

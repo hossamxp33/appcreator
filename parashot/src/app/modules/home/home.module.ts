@@ -1,6 +1,7 @@
 import { IonicsimulatorComponent } from './ionicsimulator/ionicsimulator.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ColorSketchModule } from 'ngx-color/sketch';
+
 import { AuthModule } from './../auth/auth.module';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -8,7 +9,6 @@ import { HeadersPageComponent } from './headers-page/headers-page.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { StoreComponent } from './store/store.component';
 import { HeadersComponent } from './headers/headers.component';
-import { ColorPickerModule } from 'ngx-color-picker';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -22,6 +22,7 @@ import { FooterPageComponent } from './footer-page/footer-page.component';
 import { ProductsComponent } from './products/products.component';
 import { BarRatingModule } from "ngx-bar-rating";
 import { SlideShowComponent } from './slide-show/slide-show.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,14 +45,16 @@ import { SlideShowComponent } from './slide-show/slide-show.component';
     CommonModule,
     HomeRoutingModule,
     IonicModule.forRoot(),
-    ColorPickerModule,
     OwlModule,
     AuthModule,
-    ColorPickerModule,
     MatSlideToggleModule,
-    BarRatingModule
+    BarRatingModule,
+    FormsModule,
+    ColorSketchModule
+
 
   ],
+  providers: [],
   exports: [SplashComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

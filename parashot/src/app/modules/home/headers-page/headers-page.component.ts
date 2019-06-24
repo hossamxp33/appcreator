@@ -1,5 +1,6 @@
+import { DesignService } from 'src/app/services/design.service';
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-headers-page',
   templateUrl: './headers-page.component.html',
@@ -8,32 +9,34 @@ import { Component, OnInit } from '@angular/core';
 export class HeadersPageComponent implements OnInit {
   // id: number = 1;
   // source = 'page';
-  color = '#d02e2e';
-  constructor() { }
+  show: boolean = false;
+  color;
+  constructor(private designService: DesignService) { }
 
   ngOnInit() {
+    this.designService.headerColor.subscribe(res => {
+      this.color = res
+    });
+    $(document).mouseup(function (e) {
+      var container = $("color-sketch");
+      var span = $('.color-span');
+
+      // if the target of the click isn't the container nor a descendant of the container
+      if (!container.is(e.target) && !span.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+        this.show = false;
+        console.log(this.show)
+      } else if (span.is(e.target)) {
+        container.show();
+      }
+    });
 
   }
-  // getId($event) {
-  // this.id = $event;
-  // console.log(this.id)
-  // }
-  // handleChange($event: ColorEvent) {
-  //   console.log($event.color);
-  //   // color = {
-  //   //   hex: '#333',
-  //   //   rgb: {
-  //   //     r: 51,
-  //   //     g: 51,
-  //   //     b: 51,
-  //   //     a: 1,
-  //   //   },
-  //   //   hsl: {
-  //   //     h: 0,
-  //   //     s: 0,
-  //   //     l: .20,
-  //   //     a: 1,
-  //   //   },
-  //   // }
-  // }
+  changeComplete(event) {
+    // console.log(event.color)
+    this.designService.headerColor.next(event.color.hex);
+
+  }
+
+
 }

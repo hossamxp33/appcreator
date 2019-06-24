@@ -31,7 +31,7 @@ export class SlideshowService {
   }
   getSlideShows(): any {
     return this.http.get<any>(
-      environment.serverUrl + "Slideshows/getallslideshows.json"
+      'http://parashote.codesroots.com/api/Slideshows/getallslideshows.json'
     );
   }
 }

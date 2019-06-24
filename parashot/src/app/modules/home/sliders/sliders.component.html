@@ -75,11 +75,7 @@
               </div>
             </div>
           </div>
-          <label
-            *ngIf="imagesDisplay.length == 0"
-            class="upload"
-            (click)="addImg($event)"
-          >
+          <label *ngIf="imagesDisplay.length == 0" class="upload">
             <input
               #imagesInput
               type="file"

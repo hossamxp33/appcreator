@@ -1,22 +1,22 @@
 <!-- start footer effect -->
 
 <div class="effect">
-    تاثيرات الفوتر  
+  تاثيرات الفوتر
 </div>
 
 <div class="footer-effects">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 text-right">
-                <span>اطار</span>
-                <span (click)="toggleBorder()" [ngClass]="border ? 'on' : 'off'"></span>                
-            </div>
-            <div class="col-md-6 text-right">
-                <span>ظل</span>
-                <span (click)="toggleShadow()" [ngClass]="shadow ? 'on' : 'off'"></span> 
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-right">
+        <span>اطار</span>
+        <span (click)="toggleBorder()" [ngClass]="border ? 'on' : 'off'"></span>
+      </div>
+      <div class="col-md-6 text-right">
+        <span>ظل</span>
+        <span (click)="toggleShadow()" [ngClass]="shadow ? 'on' : 'off'"></span>
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- end footer effect -->
@@ -24,170 +24,211 @@
 <!-- start footer section -->
 
 <div class="footer">
-    الفوتر
+  الفوتر
 </div>
 
 <div class="footer-component">
-    <div class="container">
-        <div class="row text-right">
+  <div class="container">
+    <div class="row text-right">
+      <!-- start footer color -->
 
-            <!-- start footer color -->
-
-            <div class="col-md-3">
-                الفوتر
-            </div>
-            <div class="col-md-9">
-                <span class="color-span">
-                    <input [(colorPicker)]="color" [style.background]="color"/>
-                </span>
-            </div>
-
-            <!-- end footer color -->
-
-            <!-- start font color -->
-
-            <div class="col-md-3">
-                    الخط
-            </div>
-            <div class="col-md-9">
-                <span class="color-span">
-                    <input [(colorPicker)]="fontColor" [style.background]="fontColor"/>
-                </span>
-            </div>
-    
-            <!-- end font color -->            
-
-            <!-- start name of main image -->
-
-            <div class="col-md-3">
-                    اسم صورة الرئيسية
-            </div>
-            <div class="col-md-9">
-                <input class="form-control" type="text" placeholder="الرئيسية">
-            </div>
-    
-            <!-- end name of main image --> 
-
-            <!-- start name of main image -->
-
-            <div class="col-md-3">
-                 صورة الرئيسية
-            </div>
-            <div class="col-md-9">
-                <input id="ts_main_image" class="form-control" type="file" #main  accept="image/*" (change)="showImage($event, main)">
-            </div>
-            <div *ngIf="mainImage != null" class="show-image">
-                <i class="far fa-times-circle" (click)="mainImage = null"></i>
-                <img [src]="mainImage" width="100%" />
-            </div>
-    
-            <!-- end name of main image -->
-            
-            <!-- start name of my orders image -->
-
-            <div class="col-md-3">
-                    اسم صورة طلباتي
-            </div>
-            <div class="col-md-9">
-                <input class="form-control" type="text" placeholder="طلباتي">
-            </div>
-    
-            <!-- end name of my orders image --> 
-            
-            <!-- start name of my orders image -->
-
-            <div class="col-md-3">
-                    صورة طلباتي
-            </div>
-            <div class="col-md-9">
-                <input id="ts_order_image" class="form-control" type="file" accept="image/*" #order (change)="showImage($event, order)">
-            </div>
-            <div *ngIf="orderImage != null" class="show-image">
-                <i class="far fa-times-circle" (click)="orderImage = null"></i>
-                <img [src]="orderImage" width="100%" />
-            </div>            
-       
-            <!-- end name of main image -->
-            
-            <!-- start name of offers image -->
-
-            <div class="col-md-3">
-                    اسم صورة عروض
-            </div>
-            <div class="col-md-9">
-                <input class="form-control" type="text" placeholder="عروض">
-            </div>
-    
-            <!-- end name of offers image --> 
-            
-            <!-- start name of offers image -->
-
-            <div class="col-md-3">
-                 صورة عروض
-            </div>
-            <div class="col-md-9">
-                <input id="ts_offer_image" class="form-control" type="file" accept="image/*" #offer (change)="showImage($event, offer)">
-            </div>
-            <div *ngIf="offerImage != null" class="show-image">
-                    <i class="far fa-times-circle" (click)="offerImage = null"></i>
-                    <img [src]="offerImage" width="100%" />
-            </div>     
-            <!-- end name of offers image --> 
-            
-            <!-- start name of notifications image -->
-
-            <div class="col-md-3">
-                    اسم صورة اشعارات
-            </div>
-            <div class="col-md-9">
-                <input class="form-control" type="text" placeholder="اشعارت">
-            </div>
-    
-            <!-- end name of notifications image -->            
-
-            <!-- start notifications image -->
-
-            <div class="col-md-3">
-                 صورة اشعارات
-            </div>
-            <div class="col-md-9">
-                <input id="ts_noti_image" class="form-control" type="file" #noti (change)="showImage($event, noti)">
-            </div>
-            <div *ngIf="notiImage != null" class="show-image">
-                <i class="far fa-times-circle" (click)="notiImage = null"></i>
-                <img [src]="notiImage" width="100%" />
-            </div>    
-
-            <!-- ends notifications image -->  
-
-            <!-- start name of more image -->
-
-            <div class="col-md-3">
-                    اسم صورة المزيد
-            </div>
-            <div class="col-md-9">
-                <input class="form-control" type="text" placeholder="المزيد">
-            </div>
-    
-            <!-- end name of more image -->  
-            
-            <!-- start more image -->
-
-            <div class="col-md-3">
-                    صورة المزيد
-            </div>
-            <div class="col-md-9">
-                <input id="ts_more_image" class="form-control" type="file" #more (change)="showImage($event, more)">
-            </div>
-            <div *ngIf="moreImage != null" class="show-image">
-                <i class="far fa-times-circle" (click)="moreImage = null"></i>
-                <img [src]="moreImage" width="100%" />
-            </div>        
-       
-            <!-- ends more image -->             
-
+      <div class="col-md-3">
+        الفوتر
+      </div>
+      <div class="col-md-9">
+        <div>
+          <span class="color-span" (click)="togglePalette()"> </span>
+          <color-sketch
+            [ngStyle]="show ? { display: 'block' } : { display: 'none' }"
+            [color]="color"
+            (onChangeComplete)="changeComplete($event)"
+          ></color-sketch>
         </div>
+      </div>
+
+      <!-- end footer color -->
+
+      <!-- start font color -->
+
+      <div class="col-md-3">
+        الخط
+      </div>
+      <div class="col-md-9">
+        <div>
+          <span class="color-span" (click)="togglePalette()"> </span>
+          <color-sketch
+            [ngStyle]="show ? { display: 'block' } : { display: 'none' }"
+            [color]="color"
+            (onChangeComplete)="changeComplete($event)"
+          ></color-sketch>
+        </div>
+      </div>
+
+      <!-- end font color -->
+
+      <!-- start name of main image -->
+
+      <div class="col-md-3">
+        اسم صورة الرئيسية
+      </div>
+      <div class="col-md-9">
+        <input class="form-control" type="text" placeholder="الرئيسية" />
+      </div>
+
+      <!-- end name of main image -->
+
+      <!-- start name of main image -->
+
+      <div class="col-md-3">
+        صورة الرئيسية
+      </div>
+      <div class="col-md-9">
+        <input
+          id="ts_main_image"
+          class="form-control"
+          type="file"
+          #main
+          accept="image/*"
+          (change)="showImage($event, main)"
+        />
+      </div>
+      <div *ngIf="mainImage != null" class="show-image">
+        <i class="far fa-times-circle" (click)="mainImage = null"></i>
+        <img [src]="mainImage" width="100%" />
+      </div>
+
+      <!-- end name of main image -->
+
+      <!-- start name of my orders image -->
+
+      <div class="col-md-3">
+        اسم صورة طلباتي
+      </div>
+      <div class="col-md-9">
+        <input class="form-control" type="text" placeholder="طلباتي" />
+      </div>
+
+      <!-- end name of my orders image -->
+
+      <!-- start name of my orders image -->
+
+      <div class="col-md-3">
+        صورة طلباتي
+      </div>
+      <div class="col-md-9">
+        <input
+          id="ts_order_image"
+          class="form-control"
+          type="file"
+          accept="image/*"
+          #order
+          (change)="showImage($event, order)"
+        />
+      </div>
+      <div *ngIf="orderImage != null" class="show-image">
+        <i class="far fa-times-circle" (click)="orderImage = null"></i>
+        <img [src]="orderImage" width="100%" />
+      </div>
+
+      <!-- end name of main image -->
+
+      <!-- start name of offers image -->
+
+      <div class="col-md-3">
+        اسم صورة عروض
+      </div>
+      <div class="col-md-9">
+        <input class="form-control" type="text" placeholder="عروض" />
+      </div>
+
+      <!-- end name of offers image -->
+
+      <!-- start name of offers image -->
+
+      <div class="col-md-3">
+        صورة عروض
+      </div>
+      <div class="col-md-9">
+        <input
+          id="ts_offer_image"
+          class="form-control"
+          type="file"
+          accept="image/*"
+          #offer
+          (change)="showImage($event, offer)"
+        />
+      </div>
+      <div *ngIf="offerImage != null" class="show-image">
+        <i class="far fa-times-circle" (click)="offerImage = null"></i>
+        <img [src]="offerImage" width="100%" />
+      </div>
+      <!-- end name of offers image -->
+
+      <!-- start name of notifications image -->
+
+      <div class="col-md-3">
+        اسم صورة اشعارات
+      </div>
+      <div class="col-md-9">
+        <input class="form-control" type="text" placeholder="اشعارت" />
+      </div>
+
+      <!-- end name of notifications image -->
+
+      <!-- start notifications image -->
+
+      <div class="col-md-3">
+        صورة اشعارات
+      </div>
+      <div class="col-md-9">
+        <input
+          id="ts_noti_image"
+          class="form-control"
+          type="file"
+          #noti
+          (change)="showImage($event, noti)"
+        />
+      </div>
+      <div *ngIf="notiImage != null" class="show-image">
+        <i class="far fa-times-circle" (click)="notiImage = null"></i>
+        <img [src]="notiImage" width="100%" />
+      </div>
+
+      <!-- ends notifications image -->
+
+      <!-- start name of more image -->
+
+      <div class="col-md-3">
+        اسم صورة المزيد
+      </div>
+      <div class="col-md-9">
+        <input class="form-control" type="text" placeholder="المزيد" />
+      </div>
+
+      <!-- end name of more image -->
+
+      <!-- start more image -->
+
+      <div class="col-md-3">
+        صورة المزيد
+      </div>
+      <div class="col-md-9">
+        <input
+          id="ts_more_image"
+          class="form-control"
+          type="file"
+          #more
+          (change)="showImage($event, more)"
+        />
+      </div>
+      <div *ngIf="moreImage != null" class="show-image">
+        <i class="far fa-times-circle" (click)="moreImage = null"></i>
+        <img [src]="moreImage" width="100%" />
+      </div>
+
+      <!-- ends more image -->
     </div>
+  </div>
 </div>
 
 <!-- end footer section -->

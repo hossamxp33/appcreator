@@ -12,6 +12,7 @@ export class EditCategoriesComponent implements OnInit {
   shadow = true;
   title = true;
   border = true;
+  show: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -21,10 +22,16 @@ export class EditCategoriesComponent implements OnInit {
     this.shadow = !this.shadow;
   }
   toggleTitle() {
-    
+
     this.title = !this.title;
   }
   toggleBorder() {
     this.border = !this.border;
+  }
+  changeComplete(event) {
+
+  }
+  togglePalette() {
+    this.show = !this.shadow;
   }
 }

@@ -45,14 +45,16 @@ export class SlidersComponent implements OnInit {
     console.log(this.id)
   }
   addImg(event) {
-    const file: File = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (event: any) => {
-      this.imgSrc = event.target.result;
-    };
-    reader.readAsDataURL(file);
+
+    // reader.onload = (event: any) => {
+    //   this.imgSrc = event.target.result;
+    // };
+
     if (event.target.files.length > 0) {
-      const file = event.target.files[0];
+      const file: File = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      // const file = event.target.files[0];
       console.log(file)
       const formData = new FormData();
       formData.append('photo', file);

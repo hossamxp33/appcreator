@@ -2,10 +2,6 @@ import { CoreModule } from './core/core.module';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { ApiPrefixInterceptor } from './core/interceptors/api-prefix.interceptor';
-import { ColorPickerModule } from 'ngx-color-picker';
-import { HeadersPageComponent } from './modules/home/headers-page/headers-page.component';
-import { SlidersComponent } from './modules/home/sliders/sliders.component';
-import { HeadersComponent } from './modules/home/headers/headers.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,9 +14,6 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { IonicModule } from '@ionic/angular';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AuthModule } from './modules/auth/auth.module';
-import { IonicsimulatorComponent } from './modules/home/ionicsimulator/ionicsimulator.component';
-import { CategoriesComponent } from './modules/home/categories/categories.component';
-import { EditCategoriesComponent } from './modules/home/edit-categories/edit-categories.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
@@ -54,14 +47,13 @@ export function provideConfig() {
     IonicModule.forRoot(),
     OwlModule,
     AuthModule,
-    ColorPickerModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
     CoreModule,
     SocialLoginModule
 
   ],
-  providers: [ {
+  providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: ApiPrefixInterceptor,
     multi: true

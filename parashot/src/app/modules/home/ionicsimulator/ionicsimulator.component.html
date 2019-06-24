@@ -95,7 +95,7 @@
       <div class="p-3">
         <h6 class="font-weight-bold mb-3">أشهر المنتجات</h6>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
@@ -115,7 +115,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
@@ -135,7 +135,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
@@ -155,7 +155,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-6">
             <div class="card">
               <img
                 class="card-img-top"
@@ -178,22 +178,26 @@
         </div>
       </div>
     </ion-content>
-    <ion-tab-bar *ngIf="!showSlideShow" slot="bottom">
+    <ion-tab-bar *ngIf="!showSlideShow && footer" slot="bottom">
       <ion-tab-button tab="home">
-        <i class="icon ion-md-home"></i>
-        <ion-label>الرئيسية</ion-label>
+        <!-- <i class="icon ion-md-home"></i> -->
+        <img [src]='footer.data.first_icon' >
+        <ion-label>{{footer.data.first_label}}</ion-label>
       </ion-tab-button>
       <ion-tab-button tab="speakers">
-        <i class="icon ion-md-cart"></i>
-        <ion-label>طلباتي</ion-label>
+        <!-- <i class="icon ion-md-cart"></i> -->
+        <img [src]='footer.data.second_icon' >
+        <ion-label>{{footer.data.second_label}}</ion-label>
       </ion-tab-button>
       <ion-tab-button tab="map">
-        <i class="icon ion-md-pricetags"></i>
-        <ion-label>عروض</ion-label>
+        <!-- <i class="icon ion-md-pricetags"></i> -->
+        <img [src]='footer.data.third_icon' >
+        <ion-label>{{footer.data.third_label}}</ion-label>
       </ion-tab-button>
       <ion-tab-button tab="about">
-        <i class="icon ion-md-code-working"></i>
-        <ion-label>المزيد</ion-label>
+        <!-- <i class="icon ion-md-code-working"></i> -->
+        <img [src]='footer.data.forth_icon' >
+        <ion-label>{{footer.data.forth_label}}</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </div>
@@ -373,21 +377,26 @@
         </div>
       </div>
     </ion-content>
-    <ion-tab-bar *ngIf="!showSlideShow" slot="bottom">
-      <ion-tab-button tab="more">
-        <i class="icon ion-ios-code-working"></i>
-        <ion-label>المزيد</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="offers">
-        <i class="icon ion-ios-pricetags"></i>
-        <ion-label>عروض</ion-label> </ion-tab-button
-      ><ion-tab-button tab="myorders">
-        <i class="icon ion-ios-cart"></i>
-        <ion-label>طلباتي</ion-label>
-      </ion-tab-button>
+    <ion-tab-bar *ngIf="!showSlideShow && footer" slot="bottom">
       <ion-tab-button tab="home">
-        <i class="icon ion-ios-home"></i>
-        <ion-label>الرئيسية</ion-label>
+        <!-- <i class="icon ion-md-home"></i> -->
+        <img [src]='footer.data.first_icon' >
+        <ion-label>{{footer.data.first_label}}</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="speakers">
+        <!-- <i class="icon ion-md-cart"></i> -->
+        <img [src]='footer.data.second_icon' >
+        <ion-label>{{footer.data.second_label}}</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="map">
+        <!-- <i class="icon ion-md-pricetags"></i> -->
+        <img [src]='footer.data.third_icon' >
+        <ion-label>{{footer.data.third_label}}</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="about">
+        <!-- <i class="icon ion-md-code-working"></i> -->
+        <img [src]='footer.data.forth_icon' >
+        <ion-label>{{footer.data.forth_label}}</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </div>
