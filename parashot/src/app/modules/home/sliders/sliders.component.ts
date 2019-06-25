@@ -49,12 +49,15 @@ export class SlidersComponent implements OnInit {
     // reader.onload = (event: any) => {
     //   this.imgSrc = event.target.result;
     // };
-
+    var mimeType = event.target.files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      // this.message = "Only images are supported.";
+      // return;
+    }
     if (event.target.files.length > 0) {
       const file: File = event.target.files[0];
       const reader = new FileReader();
       reader.readAsDataURL(file);
-      // const file = event.target.files[0];
       console.log(file)
       const formData = new FormData();
       formData.append('photo', file);

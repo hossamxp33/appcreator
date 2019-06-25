@@ -1,3 +1,4 @@
+import { Design } from './../../../helpers/design';
 import { DesignService } from 'src/app/services/design.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
@@ -11,12 +12,18 @@ export class HeadersPageComponent implements OnInit {
   // source = 'page';
   show: boolean = false;
   color;
-  constructor(private designService: DesignService) { }
+  logo;
+  public imagePath;
+  imgURL: any;
+  // public message: string;
+  constructor(private desigmService: DesignService) { }
 
   ngOnInit() {
-    this.designService.headerColor.subscribe(res => {
-      this.color = res
-    });
+    this.desigmService.getInitialDesign().subscribe(res => {
+      let mainDesign = new Design(res.data);
+      this.color = mainDesign.header.data.background
+    })
+
     $(document).mouseup(function (e) {
       var container = $("color-sketch");
       var span = $('.color-span');
@@ -33,10 +40,73 @@ export class HeadersPageComponent implements OnInit {
 
   }
   changeComplete(event) {
-    // console.log(event.color)
-    this.designService.headerColor.next(event.color.hex);
+    console.log(event.color)
+    $("ion-header").css("background", event.color.hex);
+  }
+  logo(event) {
+    console.log('up')
+    if (event.target.files.length === 0)
+      return;
+
+    var mimeType = event.target.files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      // this.message = "Only images are supported.";
+      return;
+    }
+
+    var reader = new FileReader();
+    this.imagePath = event.target.files;
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = e => {
+      this.imgURL = reader.result;
+      console.log(this.imgURL)
+      $(".ion-logo img").attr("src", this.imgURL);
+
+    }
 
   }
+  cart(event) {
+    console.log('up')
+    if (event.target.files.length === 0)
+      return;
 
+    var mimeType = event.target.files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      // this.message = "Only images are supported.";
+      return;
+    }
 
+    var reader = new FileReader();
+    this.imagePath = event.target.files;
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = e => {
+      this.imgURL = reader.result;
+      console.log(this.imgURL)
+      $(".cart img").attr("src", this.imgURL);
+
+    }
+
+  }
+  search(event) {
+    console.log('up')
+    if (event.target.files.length === 0)
+      return;
+
+    var mimeType = event.target.files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      // this.message = "Only images are supported.";
+      return;
+    }
+
+    var reader = new FileReader();
+    this.imagePath = event.target.files;
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = e => {
+      this.imgURL = reader.result;
+      console.log(this.imgURL)
+      $(".ion-logo img").attr("src", this.imgURL);
+
+    }
+
+  }
 }

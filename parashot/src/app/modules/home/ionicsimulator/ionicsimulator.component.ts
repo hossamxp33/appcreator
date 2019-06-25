@@ -84,7 +84,6 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         let mainDesign = new Design(res.data);
         this.header = mainDesign.header;
         $("ion-header").css("background", this.header.data.background);
-        this.design.headerColor.next(this.header.data.background);
         $(".ion-logo img").attr("src", this.header.data.logo);
         this.footer = mainDesign.footer;
         $('ion-tab-bar').css('--background', this.footer.data.background)
@@ -114,11 +113,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         this.ionSlider = res.sliders;
         console.log(this.ionSlider);
       }),
-      this.design.headerColor.subscribe(res => {
-        // console.log(res)
-        $("ion-header").css("background", res);
 
-      })
     );
 
 
@@ -170,5 +165,6 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   }
   skip() {
     this.showSlideShow = false;
+
   }
 }

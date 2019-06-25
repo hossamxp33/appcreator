@@ -1,3 +1,4 @@
+import { MainpageService } from './../../../services/mainpage.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class CategoriesComponent implements OnInit {
 
   imgSrc;
+  categories;
 
-  constructor() { }
+  constructor(private mainpageService: MainpageService) { }
 
   ngOnInit() {
+    this.mainpageService.getMainPage().subscribe(res => {
+      this.categories = res.category;
+      console.log(this.categories)
+    })
   }
 
   // show category image to user when choose an image

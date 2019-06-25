@@ -366,3 +366,21 @@ color-sketch {
   z-index: 1;
   display: none;
 }
+.cat .sliding {
+  margin: 0 !important;
+  .item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  .thumbnail-image {
+    text-align: center;
+
+    img {
+      width: 75px;
+      height: 75px;
+      margin: auto;
+    }
+  }
+}

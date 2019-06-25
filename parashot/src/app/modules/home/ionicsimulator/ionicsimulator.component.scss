@@ -91,9 +91,9 @@
 
 .cart {
   margin: 13px 25px 0 auto;
-  i {
-    font-size: 22px;
-    color: #fff;
+  img {
+    width: 25px;
+    height: 25px;
   }
   span {
     position: absolute;
@@ -110,11 +110,8 @@
 }
 .cart-ios {
   margin: 18px 19px 0 auto;
-  i {
-    font-size: 25px;
-  }
   span {
-    top: 57px;
+    top: 49px;
   }
 }
 .col {
