@@ -94,12 +94,7 @@
   </div>
 </div>
 <div class="sim-sliders" *ngIf="source === 'sim'">
-  <div
-    *ngIf="id == 1"
-    id="slide-1"
-    (click)="getSliderId(1)"
-    class="slider  mb-4"
-  >
+  <div *ngIf="id == 1" id="slide-1" class="slider  mb-4">
     <owl-carousel
       [options]="{
         items: 1,
@@ -119,24 +114,14 @@
       </div>
     </owl-carousel>
   </div>
-  <div
-    *ngIf="id == 2"
-    id="slide-2"
-    (click)="getSliderId(2)"
-    class="slider  mb-4 p-0"
-  >
+  <div *ngIf="id == 2" id="slide-2" class="slider  mb-4 p-0">
     <ion-slides pager="true" [options]="slideOpts">
       <ion-slide *ngFor="let image of ionImages; let i = index">
         <a><img src="{{ image.photo }}"/></a>
       </ion-slide>
     </ion-slides>
   </div>
-  <div
-    *ngIf="id == 3"
-    id="slide-3"
-    (click)="getSliderId(3)"
-    class="slider  mb-4 p-0"
-  >
+  <div *ngIf="id == 3" id="slide-3" class="slider  mb-4 p-0">
     <owl-carousel
       [options]="{
         items: 1,
@@ -157,12 +142,7 @@
       </div>
     </owl-carousel>
   </div>
-  <div
-    *ngIf="id == 4"
-    id="slide4"
-    (click)="getSliderId(4)"
-    class="slider  mb-4 p-0"
-  >
+  <div *ngIf="id == 4" id="slide4" class="slider  mb-4 p-0">
     <owl-carousel
       [options]="{
         items: 1,

@@ -185,3 +185,30 @@ h6 {
   font-size: 14px;
   margin-top: 10px;
 }
+.sim {
+  .first {
+    img {
+    }
+  }
+  .second {
+    .thumbnail-image {
+      img {
+        width: 50px;
+        height: 50px;
+        margin: auto;
+      }
+    }
+  }
+
+  .forth {
+    .category-1 img {
+      height: 40px;
+      width: 40px;
+      margin: auto;
+      display: block;
+    }
+  }
+  h6 {
+    font-size: 10px;
+  }
+}

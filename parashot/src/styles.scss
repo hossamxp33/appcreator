@@ -63,7 +63,7 @@ app-footer {
   margin-right: 10px;
 }
 .searchbar-input-container.sc-ion-searchbar-ios {
-  margin: 0 15px 0 0;
+  // margin: 0 15px 0 0;
 }
 .searchbar-input.sc-ion-searchbar-ios {
   text-align: right;
@@ -382,5 +382,10 @@ color-sketch {
       height: 75px;
       margin: auto;
     }
+  }
+}
+.sim {
+  owl-carousel-child {
+    margin: 0;
   }
 }

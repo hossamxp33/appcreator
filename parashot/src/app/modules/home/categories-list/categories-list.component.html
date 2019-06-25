@@ -1,0 +1,303 @@
+<div *ngIf="source == 'page'">
+  <div class="mx-auto cat " (click)="setId(1)">
+    <div class="py-3 row cate-1">
+      <div class="col">
+        <img src="../../assets/images/clothes.png" /><span>ملابس</span>
+      </div>
+      <div class="col">
+        <img src="../../assets/images/cell-phone.png" /><span>موبايلات</span>
+      </div>
+      <div class="col">
+        <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
+      </div>
+      <div class="col">
+        <img src="../../assets/images/home.png" /><span>المنزل و الحديقة</span>
+      </div>
+      <div class="col">
+        <img src="../../assets/images/glasses.png" /><span>نظارات</span>
+      </div>
+    </div>
+  </div>
+  <div class="my-3 mx-auto cat" (click)="setId(2)">
+    <div class="p-3 row cate-1">
+      <owl-carousel
+        style="width: 100%; margin: auto"
+        [options]="{
+          items: 3,
+          dots: false,
+          navigation: false,
+          rtl: true
+        }"
+        [items]="categories"
+        [carouselClasses]="['owl-theme', 'row', 'sliding']"
+      >
+        <div class="item" *ngFor="let category of categories; let i = index">
+          <div class="thumbnail-image">
+            <img [src]="category.photo" />
+            <h6>مطاعم</h6>
+          </div>
+        </div>
+      </owl-carousel>
+    </div>
+  </div>
+  <div class="mt-3 mx-auto cat" (click)="setId(3)">
+    <div class="p-1 row cate-1">
+      <div
+        *ngFor="let category of categories; let i = index"
+        class="col-md-6 col-6 pl-1"
+      >
+        <div
+          *ngIf="i > 1 && i < 8"
+          class="category p-2 my-1 d-flex justify-content-between"
+        >
+          <img [src]="category.photo" />
+          <h6 style="margin: auto 0">مطاعم</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="my-3 mx-auto cat" (click)="setId(4)">
+    <div class="p-3 row cate-1">
+      <div
+        *ngFor="let category of categories; let i = index"
+        class="col-md-4 col-4 p-0"
+      >
+        <div *ngIf="i > 1 && i < 9" class="category-1 p-2 m-2 ">
+          <img [src]="category.photo" />
+          <h6>مطاعم</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- start modal (category) -->
+
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between">
+          <h5 class="modal-title" id="exampleModalLabel">الاقسام</h5>
+          <label
+            class="add"
+            style="cursor: pointer;"
+            data-toggle="modal"
+            data-target="#newCatModal"
+          >
+            <img
+              src="../../../../assets/images/plus.png"
+              alt="plus"
+              width="30px"
+            />
+          </label>
+        </div>
+
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <!-- start showing curren category -->
+
+              <div class="col-md-6">
+                <div class="cat">
+                  <div class="cat-image">
+                    <img
+                      src="../../../../assets/images/electrons.jpeg"
+                      alt="electrons"
+                    />
+                  </div>
+                  <div class="cat-name">
+                    الكترونيات
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="cat">
+                  <div class="cat-image">
+                    <img
+                      src="../../../../assets/images/clothes.png"
+                      alt="clothes"
+                    />
+                  </div>
+                  <div class="cat-name">
+                    ملابس
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="cat">
+                  <div class="cat-image">
+                    <img
+                      src="../../../../assets/images/mobile.jpeg"
+                      alt="mobiles"
+                    />
+                  </div>
+                  <div class="cat-name">
+                    موبايلات
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="cat">
+                  <div class="cat-image">
+                    <img
+                      src="../../../../assets/images/clothes.png"
+                      alt="clothes"
+                    />
+                  </div>
+                  <div class="cat-name">
+                    ملابس
+                  </div>
+                </div>
+              </div>
+
+              <!-- end showing current category -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end modal (category) -->
+
+  <!-- start adding new category modal -->
+
+  <div
+    class="modal fade"
+    id="newCatModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between">
+          <h5 class="modal-title" id="exampleModalLabel">اضافة قسم جديد</h5>
+        </div>
+
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <!-- start form to add new category -->
+
+              <div class="col-md-12">
+                <form class="new-cat-form">
+                  <div>
+                    <input type="text" placeholder="اسم القسم" />
+                  </div>
+                  <div>
+                    <label class="addImage">
+                      <img
+                        src="../../../../assets/images/plus%20(1).png"
+                        alt="add"
+                        width="20px"
+                      />
+                      رفع صورة
+                      <input
+                        type="file"
+                        accept="image/*"
+                        class="d-none"
+                        #catImage
+                        (change)="showImage($event)"
+                      />
+                    </label>
+                  </div>
+                  <div *ngIf="imgSrc != null" class="img-box">
+                    <i class="far fa-times-circle" (click)="resetImg()"></i>
+                    <img [src]="imgSrc" width="100%" />
+                  </div>
+                </form>
+              </div>
+
+              <!-- end form to add new category -->
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">
+            حفظ
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end adding new category modal -->
+
+<div class="sim" *ngIf="source == 'sim'">
+  <div *ngIf="id == 1" class=" row first cate-1">
+    <div class="col">
+      <img src="../../assets/images/clothes.png" /><span>ملابس</span>
+    </div>
+    <div class="col">
+      <img src="../../assets/images/cell-phone.png" /><span>موبايلات</span>
+    </div>
+    <div class="col">
+      <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
+    </div>
+    <div class="col">
+      <img src="../../assets/images/home.png" /><span>المنزل و الحديقة</span>
+    </div>
+    <div class="col">
+      <img src="../../assets/images/glasses.png" /><span>نظارات</span>
+    </div>
+  </div>
+  <div *ngIf="id == 2" class=" row second  cate-1">
+    <owl-carousel
+      style="width: 100%; margin: auto"
+      [options]="{
+        items: 4,
+        dots: false,
+        navigation: false,
+        rtl: true
+      }"
+      [items]="categories"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']"
+    >
+      <div class="item" *ngFor="let category of categories; let i = index">
+        <div class="thumbnail-image">
+          <img [src]="category.photo" />
+          <h6>مطاعم</h6>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+  <div *ngIf="id == 3" class=" row third cate-1">
+    <div
+      *ngFor="let category of categories; let i = index"
+      class="col-md-6 col-6 pl-1"
+    >
+      <div
+        *ngIf="i > 1 && i < 8"
+        class="category p-2 my-1 d-flex justify-content-between"
+      >
+        <img [src]="category.photo" />
+        <h6 style="margin: auto 0">مطاعم</h6>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="id == 4" class="my-3 forth mx-auto">
+    <div class="row cate-1">
+      <div
+        *ngFor="let category of categories; let i = index"
+        class="col-md-4 col-4 p-0"
+      >
+        <div *ngIf="i > 1 && i < 9" class="category-1 p-2 m-1 ">
+          <img [src]="category.photo" />
+          <h6>مطاعم</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

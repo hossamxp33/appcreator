@@ -12,7 +12,7 @@ export class HeadersPageComponent implements OnInit {
   // source = 'page';
   show: boolean = false;
   color;
-  logo;
+  // logo;
   public imagePath;
   imgURL: any;
   // public message: string;
@@ -58,9 +58,9 @@ export class HeadersPageComponent implements OnInit {
     this.imagePath = event.target.files;
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = e => {
-      this.imgURL = reader.result;
-      console.log(this.imgURL)
-      $(".ion-logo img").attr("src", this.imgURL);
+      let imgURL = reader.result;
+      console.log(imgURL)
+      $(".ion-logo img").attr("src", imgURL);
 
     }
 
@@ -80,9 +80,9 @@ export class HeadersPageComponent implements OnInit {
     this.imagePath = event.target.files;
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = e => {
-      this.imgURL = reader.result;
-      console.log(this.imgURL)
-      $(".cart img").attr("src", this.imgURL);
+      let imgURL = reader.result;
+      console.log(imgURL)
+      $(".cart img").attr("src", imgURL);
 
     }
 
@@ -102,9 +102,9 @@ export class HeadersPageComponent implements OnInit {
     this.imagePath = event.target.files;
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = e => {
-      this.imgURL = reader.result;
-      console.log(this.imgURL)
-      $(".ion-logo img").attr("src", this.imgURL);
+      let imgURL = reader.result;
+      console.log(imgURL)
+      $("ion-searchbar img").attr("src", imgURL);
 
     }
 

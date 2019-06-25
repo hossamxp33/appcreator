@@ -24,7 +24,9 @@
   background-color: #341642 !important;
   color: white !important;
 }
-
+app-categories {
+  width: 100%;
+}
 .iphone-x {
   height: 745px;
   width: 90%;
@@ -44,6 +46,15 @@
     width: 87%;
     margin: auto;
     margin-top: 80px;
+    ion-searchbar {
+      img {
+        position: relative;
+        z-index: 2;
+        left: -230px;
+        width: 13px;
+        height: 13px;
+      }
+    }
   }
 }
 
@@ -69,6 +80,15 @@
     width: 87%;
     margin: auto;
     margin-top: 60px;
+    ion-searchbar {
+      img {
+        position: relative;
+        z-index: 2;
+        left: 10px;
+        width: 13px;
+        height: 13px;
+      }
+    }
   }
 }
 .skip {

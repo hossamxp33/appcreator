@@ -72,6 +72,10 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     private mainPageService: MainpageService,
   ) { }
   ngOnInit() {
+    this.design.sliderId.subscribe(res => {
+      this.sliderId = res;
+      // console.log(this.sliderId)
+    })
 
     this.subs.add(
       this.splashService.getSplashs().subscribe((res: Splash) => {
@@ -156,9 +160,9 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
             "background",
             `url(${this.splash.data[0].photo}) 100% 100% no-repeat`
           )
-          .prependTo($(".note8 .screen"));
-        $(".iphone-x").css("display", "none");
-        $(".note8").css("display", "block");
+          .prependTo($(".iphone-x .screen"));
+        $(".iphone-x").css("display", "block");
+        $(".note8").css("display", "none");
         this.loading.present();
 
       });

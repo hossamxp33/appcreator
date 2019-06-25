@@ -1,5 +1,6 @@
-import { SlideshowService } from './../../../services/slideshow.service';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { DesignService } from 'src/app/services/design.service';
+
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-headers',
@@ -16,7 +17,7 @@ export class HeadersComponent implements OnInit {
   @Input() source: string;
   @Input() imagesDisplay;
   @Input() ionImagesDisplay;
-  @Output() sliderId = new EventEmitter<number>();
+
   slideOpts = {
     autoplay: true,
     speed: 400,
@@ -107,7 +108,7 @@ export class HeadersComponent implements OnInit {
       }
     }
   };
-  constructor() { }
+  constructor(private desginService: DesignService) { }
 
   ngOnInit() {
     console.log(this.ionImagesDisplay)
@@ -130,7 +131,7 @@ export class HeadersComponent implements OnInit {
   }
   getSliderId(id) {
     // console.log(id);
-    this.sliderId.emit(id);
+    this.desginService.sliderId.next(id);
   }
 
 

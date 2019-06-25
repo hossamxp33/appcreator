@@ -23,6 +23,7 @@ import { ProductsComponent } from './products/products.component';
 import { BarRatingModule } from "ngx-bar-rating";
 import { SlideShowComponent } from './slide-show/slide-show.component';
 import { FormsModule } from '@angular/forms';
+import { CategoriesListComponent } from './categories-list/categories-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     FooterPageComponent,
     ProductsComponent,
     SlideShowComponent,
+    CategoriesListComponent
   ],
   imports: [
     CommonModule,
