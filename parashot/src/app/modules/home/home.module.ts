@@ -24,6 +24,7 @@ import { BarRatingModule } from "ngx-bar-rating";
 import { SlideShowComponent } from './slide-show/slide-show.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
+import { ProductsPageComponent } from './products-page/products-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { CategoriesListComponent } from './categories-list/categories-list.compo
     FooterPageComponent,
     ProductsComponent,
     SlideShowComponent,
-    CategoriesListComponent
+    CategoriesListComponent,
+    ProductsPageComponent,
+
   ],
   imports: [
     CommonModule,

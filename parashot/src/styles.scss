@@ -366,6 +366,9 @@ color-sketch {
   z-index: 1;
   display: none;
 }
+.sliding {
+  margin: 0 !important;
+}
 .cat .sliding {
   margin: 0 !important;
   .item {
@@ -378,8 +381,8 @@ color-sketch {
     text-align: center;
 
     img {
-      width: 75px;
-      height: 75px;
+      width: 42px;
+      height: 42px;
       margin: auto;
     }
   }
@@ -388,4 +391,7 @@ color-sketch {
   owl-carousel-child {
     margin: 0;
   }
+}
+app-categories-list {
+  width: 100%;
 }

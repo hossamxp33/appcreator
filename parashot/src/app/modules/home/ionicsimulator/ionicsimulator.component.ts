@@ -60,6 +60,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   bodydesign: any;
   main;
   slider;
+  productsId;
   private loading;
   splash: Splash;
   showSlideShow: boolean;
@@ -72,12 +73,17 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     private mainPageService: MainpageService,
   ) { }
   ngOnInit() {
-    this.design.sliderId.subscribe(res => {
-      this.sliderId = res;
-      // console.log(this.sliderId)
-    })
+
 
     this.subs.add(
+      this.design.productsId.subscribe(res => {
+        this.productsId = res;
+        console.log(this.productsId)
+      }),
+      this.design.sliderId.subscribe(res => {
+        this.sliderId = res;
+        // console.log(this.sliderId)
+      }),
       this.splashService.getSplashs().subscribe((res: Splash) => {
         this.splash = res;
         console.log(this.splash);

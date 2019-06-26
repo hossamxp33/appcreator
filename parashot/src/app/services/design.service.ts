@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class DesignService {
   sliderId = new BehaviorSubject<number>(3);
   categoryId = new BehaviorSubject<number>(1);
+  productsId = new BehaviorSubject<number>(1);
 
   constructor(private http: HttpClient) { }
 

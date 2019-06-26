@@ -95,7 +95,9 @@
       </div>
       <div class="p-3">
         <h6 class="font-weight-bold mb-3">أشهر المنتجات</h6>
-        <div class="row">
+                <app-products [source]='"ion-sim"' [productsId]='productsId'></app-products>
+
+        <!-- <div class="row">
           <div class="col-md-6 col-6">
             <div class="card">
               <img
@@ -176,7 +178,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </ion-content>
     <ion-tab-bar *ngIf="footer" [ngStyle]="showSlideShow ? { display: 'none' } : { display: 'flex' }" slot="bottom">
@@ -294,8 +296,9 @@
         </ion-slides> -->
       </div>
       <div class="p-3">
-        <h6 class="font-weight-bold mb-3">أشهر المنتجات</h6>
-        <div class="row">
+        <h6 class="font-weight-bold m-0">أشهر المنتجات</h6>
+        <app-products [source]='"ion-sim"' [productsId]='productsId'></app-products>
+        <!-- <div class="row">
           <div class="col-md-6 col-6">
             <div class="card">
               <img
@@ -376,7 +379,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </ion-content>
     <ion-tab-bar *ngIf="footer" [ngStyle]="showSlideShow ? { display: 'none' } : { display: 'flex' }" slot="bottom">
