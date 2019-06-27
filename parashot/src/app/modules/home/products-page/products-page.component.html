@@ -178,8 +178,7 @@
             </div>
             <div class="col-md-8">
               <div class="color-container" *ngFor="let item of items">
-                <span class="color-span">
-                  <div>
+
                     <span class="color-span" (click)="togglePalette()"> </span>
                     <color-sketch
                       [ngStyle]="
@@ -188,8 +187,7 @@
                       [color]="color"
                       (onChangeComplete)="changeComplete($event)"
                     ></color-sketch>
-                  </div>
-                </span>
+
                 <span class="color-clone">{{ item }}</span>
               </div>
             </div>

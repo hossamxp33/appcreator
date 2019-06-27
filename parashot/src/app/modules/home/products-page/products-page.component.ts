@@ -58,4 +58,8 @@ export class ProductsPageComponent implements OnInit {
   copySize() {
     this.sizes.push(this.sizes.length + 1);
   }
+  changeComplete(event) {
+    console.log(event.color)
+    // $("").css("background", event.color.hex);
+  }
 }
