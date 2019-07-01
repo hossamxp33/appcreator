@@ -1,29 +1,69 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment.prod";
+import { User } from "../../models";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthenticationService {
+  currentUser = new BehaviorSubject<User>(null);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) {
+    if (localStorage.getItem("currentUser")) {
+      this.currentUser.next(JSON.parse(localStorage.getItem("currentUser")))
+    }
+  }
 
   login(loginData) {
-    this.http.post<any>(environment.serverUrl + 'users/token.json', loginData).subscribe(res => {
-
-    },
-      err => {
-        console.log(err);
-
-      });
-
+    this.http
+      .post<any>(environment.serverUrl + "users/token.json", loginData)
+      .subscribe(
+        (res: User) => {
+          // store user details and token in local storage to keep user logged in between page refreshes
+          this.setToken(res.data.token);
+          this.currentUser.next(res);
+          this.router.navigate(['/']);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+  }
+  register(registerData) {
+    this.http
+      .post<any>(environment.serverUrl + "users/add.json", registerData)
+      .subscribe(
+        (res: User) => {
+          // store user details and token in local storage to keep user logged in between page refreshes
+          this.setToken(res.data.token);
+          this.currentUser.next(res);
+          this.router.navigate(['/']);
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
   getToken() {
-    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIxMywiZXhwIjoxNTYxOTc4Njk5fQ.bHgLGU5IyvMlmAqagMiX9ZPBe-dEzrD_D9_P8jvVDUI';
-    return token;
+    if (JSON.parse(localStorage.getItem("currentUser"))) {
+      const token = JSON.parse(localStorage.getItem("currentUser"));
+      return token;
+    } else {
+      const token = "";
+      return token;
+    }
   }
   setToken(token) {
+    localStorage.setItem("currentUser", JSON.stringify(token));
+  }
 
+
+  logOut() {
+    // remove user from local storage and set current user to null
+    localStorage.removeItem("currentUser");
+    this.currentUser.next(null);
   }
 }

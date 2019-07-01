@@ -1,4 +1,7 @@
 export class User {
-  username: string;
-  token: string;
+  success: boolean
+  data: {
+    id: number,
+    token: string
+  }
 }

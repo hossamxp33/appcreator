@@ -7,7 +7,10 @@
         <img class="logo" src="../../assets/images/logo.png" />
       </a>
       <!-- <button class="btn mt-3"><span>نشر</span></button> -->
-      <div class="col-md-4 col-6 flex-row-reverse auth-links text-left">
+      <div
+        *ngIf="cred"
+        class="col-md-4 col-6 flex-row-reverse auth-links text-left"
+      >
         <a routerLink="/auth/login" title="الدخول">
           <i class="fas fa-sign-in-alt"></i>
           <span>الدخول</span>
@@ -15,6 +18,15 @@
         <a routerLink="/auth/signup" title="التسجيل">
           <i class="fas fa-user-plus"></i>
           <span>التسجيل</span>
+        </a>
+      </div>
+      <div
+        *ngIf="!cred"
+        class="col-md-4 col-6 flex-row-reverse auth-links text-left"
+      >
+        <a (click)="logOut()" title="تسجيل خروج">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>تسجيل خروج</span>
         </a>
       </div>
     </div>

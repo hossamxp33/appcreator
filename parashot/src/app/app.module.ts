@@ -1,3 +1,4 @@
+import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 import { CoreModule } from './core/core.module';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
@@ -57,6 +58,11 @@ export function provideConfig() {
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: ApiPrefixInterceptor,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorHandlerInterceptor,
     multi: true
   },
   {
