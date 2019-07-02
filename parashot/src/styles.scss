@@ -101,7 +101,6 @@ app-footer {
     height: 7px;
   }
 }
-
 #slide4 {
   .owl-theme .owl-nav.disabled + .owl-dots {
     text-align: left;
@@ -142,6 +141,16 @@ app-footer {
     box-shadow: -1px 22px 31px -21px rgba(237, 130, 237, 1);
   }
 }
+.sim-sliders{
+
+#slide4 {
+  .owl-theme .owl-nav.disabled + .owl-dots {
+    top: 80px;
+  }
+
+}
+}
+
 
 .swiper-pagination-bullet {
   background: #341642 !important;

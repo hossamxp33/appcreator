@@ -64,6 +64,7 @@ export class AuthenticationService {
   logOut() {
     // remove user from local storage and set current user to null
     localStorage.removeItem("currentUser");
+    location.reload(true)
     this.currentUser.next(null);
   }
 }

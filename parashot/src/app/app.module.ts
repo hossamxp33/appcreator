@@ -22,11 +22,11 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
+    provider: new GoogleLoginProvider("967400515765-kel935i9i5umrlavfbn27cgkq4rtrm5c.apps.googleusercontent.com")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("Facebook-App-Id")
+    provider: new FacebookLoginProvider("664538330623923-App-Id")
   }
 ]);
 

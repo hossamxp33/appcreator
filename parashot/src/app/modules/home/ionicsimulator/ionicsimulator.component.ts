@@ -82,7 +82,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
       }),
       this.design.sliderId.subscribe(res => {
         this.sliderId = res;
-        // console.log(this.sliderId)
+        console.log(this.sliderId)
       }),
       this.splashService.getSplashs().subscribe((res: Splash) => {
         this.splash = res;

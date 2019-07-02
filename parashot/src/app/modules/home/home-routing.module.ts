@@ -16,40 +16,52 @@ const routes: Routes = [
       {
         path: 'headers',
         component: HeadersPageComponent,
+
       },
       {
         path: 'sliders',
         component: SlidersComponent,
+
       }
       ,
       {
         path: 'categories',
         component: CategoriesComponent,
+
       }
       ,
       {
         path: 'edit-categories',
         component: EditCategoriesComponent,
+
       }
       ,
       {
         path: 'products',
         component: ProductsPageComponent,
+
+
       }
       ,
       {
         path: 'footer-page',
         component: FooterPageComponent,
+
+
       }
       ,
       {
         path: 'splash',
         component: SplashComponent,
+
+
       }
       ,
       {
         path: 'slide-show',
         component: SlideShowComponent,
+
+
       }
     ]
   }

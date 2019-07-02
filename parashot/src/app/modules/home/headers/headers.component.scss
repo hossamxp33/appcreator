@@ -89,4 +89,14 @@
 
     }
   }
+  #slide4 .thumbnail-image {
+    img {
+      height: 100px;
+      object-fit: fill;
+      border-radius: 10px;
+    }
+  }
+  #slide-1 .thumbnail-image img:nth-child(1) {
+    height: 120px;
+}
 }

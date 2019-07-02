@@ -15,13 +15,17 @@ export class HeadersPageComponent implements OnInit {
   // logo;
   public imagePath;
   imgURL: any;
+  mainDesign;
   // public message: string;
-  constructor(private desigmService: DesignService) { }
+  constructor(private designService: DesignService) { }
 
   ngOnInit() {
-    this.desigmService.getInitialDesign().subscribe(res => {
-      let mainDesign = new Design(res.data);
-      this.color = mainDesign.header.data.background
+    this.designService.getInitialDesign().subscribe(res => {
+      this.mainDesign = new Design(res.data);
+      this.color = this.mainDesign.header.data.background;
+      console.log(this.mainDesign.header.type_id)
+      this.designService.sliderId.next(this.mainDesign.header.slider_template);
+    console.log(this.designService.sliderId.value)
     })
 
     $(document).mouseup(function (e) {
@@ -42,6 +46,9 @@ export class HeadersPageComponent implements OnInit {
   changeComplete(event) {
     console.log(event.color)
     $("ion-header").css("background", event.color.hex);
+    this.designService.editDesign({type_id: this.mainDesign.header.type_id, fieldname: "background", value:event.color.hex}).subscribe(res=>{
+      $("ion-header").css("background", event.color.hex);
+    })
   }
   logo(event) {
     console.log('up')
@@ -61,6 +68,9 @@ export class HeadersPageComponent implements OnInit {
       let imgURL = reader.result;
       console.log(imgURL)
       $(".ion-logo img").attr("src", imgURL);
+      this.designService.editDesign({type_id : this.mainDesign.header.type_id,
+      fieldname: "logo",
+    value : event.target.files[0] })
 
     }
 
