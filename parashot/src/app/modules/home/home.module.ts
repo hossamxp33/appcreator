@@ -1,5 +1,4 @@
 import { IonicsimulatorComponent } from './ionicsimulator/ionicsimulator.component';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ColorSketchModule } from 'ngx-color/sketch';
 
 import { AuthModule } from './../auth/auth.module';
@@ -52,7 +51,6 @@ import { ProductsPageComponent } from './products-page/products-page.component';
     IonicModule.forRoot(),
     OwlModule,
     AuthModule,
-    MatSlideToggleModule,
     BarRatingModule,
     FormsModule,
     ColorSketchModule

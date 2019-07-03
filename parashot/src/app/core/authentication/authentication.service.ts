@@ -25,7 +25,7 @@ export class AuthenticationService {
           // store user details and token in local storage to keep user logged in between page refreshes
           this.setToken(res.data.token);
           this.currentUser.next(res);
-          this.router.navigate(['/']);
+          // this.router.navigate(['/']);
         },
         err => {
           console.log(err);
@@ -64,7 +64,7 @@ export class AuthenticationService {
   logOut() {
     // remove user from local storage and set current user to null
     localStorage.removeItem("currentUser");
-    location.reload(true)
+    // location.reload(true)
     this.currentUser.next(null);
   }
 }

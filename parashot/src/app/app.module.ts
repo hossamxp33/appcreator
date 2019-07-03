@@ -11,12 +11,13 @@ import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { AppMaterialModule } from './app-material/app-material.module';
 
 import { IonicModule } from '@ionic/angular';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AuthModule } from './modules/auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ErrorPopupComponent } from './error-popup/error-popup.component';
 
 
 let config = new AuthServiceConfig([
@@ -37,6 +38,7 @@ export function provideConfig() {
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorPopupComponent,
 
   ],
   imports: [
@@ -50,9 +52,9 @@ export function provideConfig() {
     OwlModule,
     AuthModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
     CoreModule,
-    SocialLoginModule
+    SocialLoginModule,
+    AppMaterialModule
 
   ],
   providers: [{
@@ -70,6 +72,7 @@ export function provideConfig() {
     useFactory: provideConfig
   }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[ErrorPopupComponent]
 })
 export class AppModule { }
