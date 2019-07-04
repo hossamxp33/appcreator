@@ -27,7 +27,7 @@ export class ProductsPageComponent implements OnInit {
       if (!container.is(e.target) && !span.is(e.target) && container.has(e.target).length === 0) {
         container.hide();
         this.show = false;
-        console.log(this.show)
+        // console.log(this.show)
       } else if (span.is(e.target)) {
         container.show();
       }
@@ -59,7 +59,7 @@ export class ProductsPageComponent implements OnInit {
     this.sizes.push(this.sizes.length + 1);
   }
   changeComplete(event) {
-    console.log(event.color)
+    // console.log(event.color)
     // $("").css("background", event.color.hex);
   }
 }

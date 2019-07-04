@@ -28,7 +28,7 @@ export class AuthenticationService {
           // this.router.navigate(['/']);
         },
         err => {
-          console.log(err);
+          // console.log(err);
         }
       );
   }
@@ -43,7 +43,7 @@ export class AuthenticationService {
           this.router.navigate(['/']);
         },
         err => {
-          console.log(err);
+          // console.log(err);
         }
       );
   }
@@ -66,5 +66,10 @@ export class AuthenticationService {
     localStorage.removeItem("currentUser");
     // location.reload(true)
     this.currentUser.next(null);
+    location.reload()
+  }
+  passReset(email) {
+    return this.http
+      .post<any>(environment.serverUrl + "users/add.json", email);
   }
 }

@@ -6,9 +6,8 @@ export class Design {
   productsetting: any;
   bodydesign: any;
   main;
-  constructor(design: Designmodel["data"],) {
+  constructor(design: Designmodel["data"], ) {
     this.header = design.find(v => v.type === 'header');
-    console.log(this.header)
     this.footer = design.find(v => v.type === 'footer');
     this.categorydesign = design.find(v => v.type === 'categorydesign');
     this.productsetting = design.find(v => v.type === 'productsetting');

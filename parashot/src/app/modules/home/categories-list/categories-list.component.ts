@@ -14,7 +14,7 @@ export class CategoriesListComponent implements OnInit {
   constructor(private mainpageService: MainpageService, private design: DesignService) { }
 
   ngOnInit() {
-    console.log(this.source)
+    // console.log(this.source)
     this.mainpageService.getMainPage().subscribe(res => {
       this.categories = res.category;
       // console.log(this.categories)

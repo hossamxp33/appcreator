@@ -16,8 +16,8 @@ import { ErrorPopupComponent } from 'src/app/error-popup/error-popup.component';
 @Injectable()
 export class ErrorHandlerInterceptor implements HttpInterceptor {
   constructor(private authService: AuthenticationService,
-     private router : Router,
-     public dialog: MatDialog) { }
+    private router: Router,
+    public dialog: MatDialog) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError(err => {
       // if (err.status === 401) {
@@ -25,14 +25,14 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
       //   this.router.navigate(['/'])
       // }
       // console.log(err)
-        const dialogRef = this.dialog.open(ErrorPopupComponent, {
-          width: '250px',
-          data: {errorMessage: err.error.data.message}
-        });
+      const dialogRef = this.dialog.open(ErrorPopupComponent, {
+        width: '250px',
+        data: { errorMessage: err.error.data.message }
+      });
 
-        dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
-        });
+      dialogRef.afterClosed().subscribe(result => {
+        // console.log('The dialog was closed');
+      });
 
       const error = err.error.message || err.stateText;
       return throwError(error);

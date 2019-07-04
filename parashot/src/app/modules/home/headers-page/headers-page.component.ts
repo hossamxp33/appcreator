@@ -23,9 +23,8 @@ export class HeadersPageComponent implements OnInit {
     this.designService.getInitialDesign().subscribe(res => {
       this.mainDesign = new Design(res.data);
       this.color = this.mainDesign.header.data.background;
-      console.log(this.mainDesign.header.type_id)
       this.designService.sliderId.next(this.mainDesign.header.slider_template);
-    console.log(this.designService.sliderId.value)
+      $(".cart img").attr("src", this.mainDesign.header.data.left_icon);
     })
 
     $(document).mouseup(function (e) {
@@ -36,7 +35,7 @@ export class HeadersPageComponent implements OnInit {
       if (!container.is(e.target) && !span.is(e.target) && container.has(e.target).length === 0) {
         container.hide();
         this.show = false;
-        console.log(this.show)
+        // console.log(this.show)
       } else if (span.is(e.target)) {
         container.show();
       }
@@ -44,14 +43,14 @@ export class HeadersPageComponent implements OnInit {
 
   }
   changeComplete(event) {
-    console.log(event.color)
+    // console.log(event.color)
     $("ion-header").css("background", event.color.hex);
-    this.designService.editDesign({type_id: this.mainDesign.header.type_id, fieldname: "background", value:event.color.hex}).subscribe(res=>{
+    this.designService.editDesign({ type_id: this.mainDesign.header.type_id, fieldname: "background", value: event.color.hex }).subscribe(res => {
       $("ion-header").css("background", event.color.hex);
     })
   }
   logo(event) {
-    console.log('up')
+    // console.log('up')
     if (event.target.files.length === 0)
       return;
 
@@ -63,20 +62,27 @@ export class HeadersPageComponent implements OnInit {
 
     var reader = new FileReader();
     this.imagePath = event.target.files;
-    reader.readAsDataURL(event.target.files[0]);
+    const file: File = event.target.files[0];
+    reader.readAsDataURL(file);
+    const formData = new FormData();
+    formData.append('type_id', this.mainDesign.header.type_id);
+    formData.append('fieldname', "logo");
+    formData.append('value', file);
+
+    this.designService.editDesign(formData).subscribe(res => {
+      // console.log(res)
+    })
+
     reader.onload = e => {
       let imgURL = reader.result;
-      console.log(imgURL)
+      // console.log(imgURL)
       $(".ion-logo img").attr("src", imgURL);
-      this.designService.editDesign({type_id : this.mainDesign.header.type_id,
-      fieldname: "logo",
-    value : event.target.files[0] })
 
     }
 
   }
   cart(event) {
-    console.log('up')
+    // console.log('up')
     if (event.target.files.length === 0)
       return;
 
@@ -88,17 +94,27 @@ export class HeadersPageComponent implements OnInit {
 
     var reader = new FileReader();
     this.imagePath = event.target.files;
+    const file: File = event.target.files[0];
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = e => {
       let imgURL = reader.result;
-      console.log(imgURL)
+      // console.log(imgURL)
       $(".cart img").attr("src", imgURL);
 
     }
+    const formData = new FormData();
+    formData.append('type_id', this.mainDesign.header.type_id);
+    formData.append('fieldname', "left_icon");
+    formData.append('value', file);
+    this.designService.editDesign(formData).subscribe(res => {
+      // console.log(res)
+      // $(".cart img").attr("src", imgURL);
+    })
+
 
   }
   search(event) {
-    console.log('up')
+    // console.log('up')
     if (event.target.files.length === 0)
       return;
 
@@ -113,7 +129,7 @@ export class HeadersPageComponent implements OnInit {
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = e => {
       let imgURL = reader.result;
-      console.log(imgURL)
+      // console.log(imgURL)
       $("ion-searchbar img").attr("src", imgURL);
 
     }

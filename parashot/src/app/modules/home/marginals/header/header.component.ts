@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.authService.currentUser.subscribe((res: User) => {
-      console.log(res)
+      // console.log(res)
       if (res) {
         this.cred = false
       }

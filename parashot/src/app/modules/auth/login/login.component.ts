@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log($('.form-group').html())
 
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
@@ -52,7 +51,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     if (this.loginForm.valid) {
       this.loading = true;
-      console.log(this.loginForm.value)
+      // console.log(this.loginForm.value)
 
       this.authService.login(this.loginForm.value);
     }

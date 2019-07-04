@@ -1,4 +1,4 @@
-<div class="page-sliders" *ngIf="source === 'page'">
+<div class="page-sliders" *ngIf="source === 'page' && images">
   <div id="slide-1" (click)="getSliderId(1)" class="slider  mb-4">
     <!-- <div class="d-flex head justify-content-between">
       <img src="../../../../assets/images/user-icon.png" />
@@ -93,7 +93,7 @@
     </owl-carousel>
   </div>
 </div>
-<div class="sim-sliders" *ngIf="source === 'sim'">
+<div class="sim-sliders" *ngIf="source === 'sim' && ionImages">
   <div *ngIf="id == 1" id="slide-1" class="slider  mb-4">
     <owl-carousel
       [options]="{

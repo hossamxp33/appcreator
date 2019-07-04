@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
   constructor(private design: DesignService) { }
 
   ngOnInit() {
-    console.log(this.productsId)
+    // console.log(this.productsId)
     this.products = [{
       id: 1, photo: "../../../../assets/images/shirt.jpg", name: 'Saif Pharmacy', category: 'صيدليات'
     },
@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
   }
   setId(id) {
     this.design.productsId.next(id)
-    console.log(id)
+    // console.log(id)
 
 
   }
