@@ -10,14 +10,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeadersComponent implements OnInit {
   headerColor: any;
-  images: any;
-  ionImages;
-  // imagesDisplay: any;
   uploadedFile: any;
   @Input() id;
   @Input() source: string;
   @Input() imagesDisplay;
   @Input() ionImagesDisplay;
+  images;
 
   slideOpts = {
     autoplay: true,
@@ -113,15 +111,12 @@ export class HeadersComponent implements OnInit {
 
   ngOnInit() {
     // console.log(this.ionImagesDisplay)
-    // console.log(this.id , this.source);
+    console.log(this.id, this.source);
     if ((this.imagesDisplay && this.imagesDisplay.length > 0) || (this.ionImagesDisplay && this.ionImagesDisplay.length > 0)) {
 
-      this.images = this.imagesDisplay;
+      this.images = this.imagesDisplay || this.ionImagesDisplay;
 
-      this.ionImages = this.ionImagesDisplay
-
-      // console.log(this.ionImagesDisplay)
-      console.log(this.images)
+      console.log(this.ionImagesDisplay)
     }
     else {
       this.images = [{
@@ -130,7 +125,7 @@ export class HeadersComponent implements OnInit {
     }
     this.desginService.sliderId.subscribe(res => {
       this.id = res;
-      console.log(res, this.id)
+      console.log(res, this.id, this.source)
     })
 
   }
@@ -144,16 +139,16 @@ export class HeadersComponent implements OnInit {
     })
   }
   ngOnChanges() {
-    console.log(this.imagesDisplay);
+    // console.log(this.imagesDisplay);
 
-    if (this.imagesDisplay && this.imagesDisplay.length == 0) {
-      this.images = [{
-        photo: "../../../../assets/images/no-image.png"
-      }]
-    } else {
-      this.images = this.imagesDisplay;
-      this.slideshowService.sliderImages.next(this.imagesDisplay)
-    }
+    // if (this.imagesDisplay && this.imagesDisplay.length == 0) {
+    //   this.images = [{
+    //     photo: "../../../../assets/images/no-image.png"
+    //   }]
+    // } else {
+    //   this.images = this.imagesDisplay;
+    //   this.slideshowService.sliderImages.next(this.imagesDisplay)
+    // }
   }
 
 

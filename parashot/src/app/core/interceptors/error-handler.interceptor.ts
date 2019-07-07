@@ -20,11 +20,11 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
     public dialog: MatDialog) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError(err => {
-      // if (err.status === 401) {
-      //   this.authService.logOut();
-      //   this.router.navigate(['/'])
-      // }
-      // console.log(err)
+      if (err.error.data.message === 'Expired token') {
+        this.authService.logOut();
+        this.router.navigate(['/'])
+      }
+      console.log(err)
       const dialogRef = this.dialog.open(ErrorPopupComponent, {
         width: '250px',
         data: { errorMessage: err.error.data.message }

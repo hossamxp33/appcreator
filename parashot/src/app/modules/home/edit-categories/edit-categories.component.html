@@ -12,11 +12,18 @@
       <span class="col-md-5 col-5">لون الخلفية</span>
       <div class="col-md-6 col-6">
         <div>
-          <span class="color-span" [style.background]="color"> </span>
+          <span
+            (click)="openColorSketch(1)"
+            id="1"
+            class="color-span"
+            [style.background]="color"
+          >
+          </span>
           <color-sketch
+            id="sketch-1"
             [ngStyle]="show ? { display: 'block' } : { display: 'none' }"
             [color]="color"
-            (onChangeComplete)="changeComplete($event)"
+            (onChangeComplete)="changeComplete($event, 1)"
           ></color-sketch>
         </div>
       </div>
@@ -25,11 +32,18 @@
       <span class="col-md-5 col-5">لون الخط</span>
       <div class="col-md-6 col-6">
         <div>
-          <span class="color-span" [style.background]="color"> </span>
+          <span
+            (click)="openColorSketch(2)"
+            id="2"
+            class="color-span"
+            [style.background]="color"
+          >
+          </span>
           <color-sketch
+            id="sketch-2"
             [ngStyle]="show ? { display: 'block' } : { display: 'none' }"
             [color]="color"
-            (onChangeComplete)="changeComplete($event)"
+            (onChangeComplete)="changeComplete($event, 2)"
           ></color-sketch>
         </div>
       </div>
@@ -38,69 +52,64 @@
       <span class="col-md-5 col-5">ظل الأقسام</span>
       <div class="col-md-6 col-6">
         <span (click)="toggleShadow()" [ngClass]="shadow ? 'on' : 'off'">
-          <!-- <mat-slide-toggle
-            class="example-margin"
-            [color]="color"
-            [checked]="checked"
-            [disabled]="disabled"
-          >
-          </mat-slide-toggle
-        > -->
+        </span>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <span class="col-md-5 col-5">وضع إطار للأقسام</span>
+      <div class="col-md-6 col-6">
+        <span (click)="toggleBorder()" [ngClass]="border ? 'on' : 'off'">
         </span>
       </div>
     </div>
     <div class="row mt-4">
       <span class="col-md-5 col-5">إتاحة عنوان للأقسام</span>
       <div class="col-md-6 col-6">
-        <span (click)="toggleTitle()" [ngClass]="title ? 'on' : 'off'">
-          <!-- <mat-slide-toggle
-            class="example-margin"
-            [color]="color"
-            [checked]="checked"
-            [disabled]="disabled"
-          >
-          </mat-slide-toggle
-        > -->
-        </span>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <span class="col-md-5 col-5">وضع إطار للأقسام</span>
-      <div class="col-md-6 col-6">
-        <span (click)="toggleBorder()" [ngClass]="border ? 'on' : 'off'">
-          <!-- <mat-slide-toggle
-            class="example-margin"
-            [color]="color"
-            [checked]="checked"
-            [disabled]="disabled"
-          >
-          </mat-slide-toggle
-        > -->
-        </span>
+        <span (click)="toggleTitle()" [ngClass]="title ? 'on' : 'off'"> </span>
       </div>
     </div>
     <div class="row mt-4">
       <span class="col-md-5 col-5">عنوان الأقسام</span>
-      <div class="col-md-6 col-6"><input type="text" /></div>
+      <div class="col-md-6 col-6">
+        <input id="catTitleInput" type="text" [disabled]="!title" />
+      </div>
     </div>
     <div class="row mt-4">
       <span class="col-md-5 col-5">حجم عنوان الأقسام</span>
-      <div class="col-md-6 col-6"><input type="number" min="0" /></div>
+      <div class="col-md-6 col-6">
+        <input
+          id="catTitleSize"
+          type="number"
+          min="0"
+          max="72"
+          [disabled]="!title"
+        />
+      </div>
     </div>
     <div class="row mt-4">
       <span class="col-md-5 col-5">حجم خط الأقسام</span>
-      <div class="col-md-6 col-6"><input type="number" min="0" /></div>
+      <div class="col-md-6 col-6">
+        <input id="fontSize" type="number" min="0" max="72" />
+      </div>
     </div>
 
     <div class="row mt-4">
       <span class="col-md-5 col-5">لون الاطار</span>
       <div class="col-md-6 col-6">
         <div>
-          <span class="color-span" [style.background]="color"> </span>
+          <span
+            (click)="openColorSketch(3)"
+            id="3"
+            class="color-span"
+            [style.background]="color"
+          >
+          </span>
           <color-sketch
+            id="sketch-3"
             [ngStyle]="show ? { display: 'block' } : { display: 'none' }"
             [color]="color"
-            (onChangeComplete)="changeComplete($event)"
+            (onChangeComplete)="changeComplete($event, 3)"
           ></color-sketch>
         </div>
       </div>

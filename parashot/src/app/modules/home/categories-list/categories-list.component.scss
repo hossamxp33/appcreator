@@ -15,7 +15,7 @@
 
 .cate-1 {
   margin: auto;
-  background: #e6eaed;
+
   border-radius: 10px;
 
   & > img {
@@ -30,6 +30,7 @@
   border: 1px solid #efefef;
   padding: 10px;
   border-radius: 10px;
+  background: #e6eaed;
 }
 
 .palette {
@@ -66,6 +67,7 @@ h6 {
   margin-top: 10px;
 }
 .sim {
+  border: 1px solid transparent;
   .first {
     img {
     }

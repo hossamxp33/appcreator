@@ -23,7 +23,7 @@ export class HeadersPageComponent implements OnInit {
     this.designService.getInitialDesign().subscribe(res => {
       this.mainDesign = new Design(res.data);
       this.color = this.mainDesign.header.data.background;
-      this.designService.sliderId.next(this.mainDesign.header.slider_template);
+      this.designService.sliderId.next(this.mainDesign.header.data.slider_template);
       $(".cart img").attr("src", this.mainDesign.header.data.left_icon);
     })
 

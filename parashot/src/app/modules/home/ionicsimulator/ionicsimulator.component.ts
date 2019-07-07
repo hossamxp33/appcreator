@@ -99,10 +99,6 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         console.log(this.header.data.slider_template);
         this.design.sliderId.next(this.header.data.slider_template);
         this.sliderId = this.header.data.slider_template;
-        this.design.sliderId.subscribe(res => {
-          this.sliderId = res;
-          console.log(this.sliderId)
-        })
 
         if (this.main.data.slideshow === "true") {
           // console.log(this.main.data.slideshow);
@@ -129,23 +125,24 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         console.log(this.productsId)
       })
       ,
-      this.slideshowService.sliderImages.subscribe(res => {
-        if (!res) {
-          console.log('sss')
-          this.slideshowService.getSlideShows().subscribe(res => {
-            console.log(res);
-
-            this.ionSlider = res.data
-          });
-        }
-        else {
-          console.log('ddd')
-          this.ionSlider = res
-        }
-      })
-,
-
     );
+    if (this.slideshowService.sliderImages.value == null) {
+
+      console.log('sss');
+      this.slideshowService.getSlideShows().subscribe(res => {
+        console.log(res);
+
+        this.ionSlider = res.data;
+      });
+    } else {
+      console.log('ddd');
+      this.slideshowService.sliderImages.subscribe(res => {
+        this.ionSlider = res;
+      });
+    }
+
+
+
 
 
 
