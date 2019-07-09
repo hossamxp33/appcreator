@@ -57,8 +57,8 @@
         <div>
           <span class="color-span" (click)="togglePalette()"> </span>
           <color-sketch
-            [ngStyle]="show ? { display: 'block' } : { display: 'none' }"
-            [color]="color"
+            [ngStyle]="shadowFont  ? { display: 'block' } : { display: 'none' }"
+            [color]="fontColor"
             (onChangeComplete)="changeComplete($event)"
           ></color-sketch>
         </div>

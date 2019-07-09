@@ -12,6 +12,7 @@ export class FooterPageComponent implements OnInit {
   fontColor = '#942994';
   border;
   shadow;
+  shadowFont;
   mainImage;
   orderImage;
   offerImage;

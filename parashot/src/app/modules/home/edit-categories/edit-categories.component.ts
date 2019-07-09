@@ -11,7 +11,7 @@ export class EditCategoriesComponent implements OnInit {
   color = '#d02e2e';
   checked = false;
   disabled = false;
-  shadow;
+  shadow = false;
   title;
   border;
   show: boolean = false;
@@ -51,6 +51,11 @@ export class EditCategoriesComponent implements OnInit {
       this.border = this.categoryDesign.data.border;
       this.shadow = this.categoryDesign.data.shadow;
       console.log(this.shadow)
+      if (this.shadow) {
+        $(".appCat .px-3 .sim .row .col").css("box-shadow", '1px 1px 5px rgba(0,0,0,.5)');
+      }else{
+        $(".appCat .px-3 .sim .row .col").css("box-shadow", 'none');
+      }
       if (this.categoryDesign.data.title == '') {
         this.title = false
         $('.sim> span').hide();
@@ -64,6 +69,12 @@ export class EditCategoriesComponent implements OnInit {
   toggleShadow() {
 
     this.shadow = !this.shadow;
+    if (this.shadow) {
+      $(".appCat .px-3 .sim .row .col").css("box-shadow", '1px 1px 5px rgba(0,0,0,.5)');
+    }else {
+      $(".appCat .px-3 .sim .row .col").css("box-shadow", 'none');
+    }
+
   }
   toggleTitle() {
 
@@ -75,7 +86,7 @@ export class EditCategoriesComponent implements OnInit {
   changeComplete(event, i) {
     console.log(i)
     if (i === 1) {
-      $(".appCat").css("background", event.color.hex);
+      $(".appCat .px-3 .sim .row .col").css("background", event.color.hex);
       $('#1').css('background', event.color.hex);
       this.design.editDesign({ type_id: 3, fieldname: 'background', value: event.color.hex }).subscribe(res => {
         console.log(res)
