@@ -1,122 +1,146 @@
 <!-- start logo -->
-
-<div class="logo">
+<div class="container">
+  <div class="logo">
     <div class="container">
       <div class="logo-box">
-        <img src="../../assets/images/logo.png"  />
+        <a routerLink="/"> <img src="../../assets/images/logo.png"/></a>
       </div>
     </div>
   </div>
-  
-  
+
   <!-- end logo -->
-  
+
   <!-- start message -->
-  
+
   <div class="message">
-    <h3 class="text-center">تسجيل الدخول</h3>
-    <p class="text-center">
-      اذا لم يكن لديك حساب <a href="../auth/signup">فقم بانشاء حساب</a>
-    </p>
+    <h2 class="text-center">تسجيل الدخول</h2>
+    <h4 class="text-center">
+      اذا لم يكن لديك حساب <a routerLink="/auth/signup">فقم بإنشاء حساب</a>
+    </h4>
   </div>
-  
+
   <!-- end message -->
-  
+
   <!-- start form -->
-  
+
   <div class="login-box">
     <div class="container">
       <div class="row">
-  
         <!-- start place holder -->
-  
-        <div class="col-md-2 hide"></div>
-  
+
         <!-- end place holder -->
-  
+
         <!-- start form field -->
-  
-        <div class="col-lg-3 col-md-5">
-          <form class="login-form">
-  
-            <div class="name-field">
-              <input id="ts_username" type="text" placeholder="اسم المستخدم" />
-            </div>
-  
-            
-            <div class="pwp-field">
-                <input id="ts_pwp" type="password" placeholder="كلمة المرور" />
-            </div>
-            
-            <div class="row">
 
-              <div class="col-3">
-                <a class="login-link" href="#">
-                    تذكرني
-                </a>
+        <div class="col-lg-5 col-md-5 col-12 pt-5 mt-5">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <!-- <label for="username"></label> -->
+              <input
+                type="text"
+                placeholder="اسم المستخدم"
+                formControlName="username"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+              />
+              <div
+                *ngIf="submitted && f.username.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.username.errors.required">
+                  قم بإدخال اسم المستخدم
+                </div>
               </div>
-    
-              <div class="col-9">
-                <a class="login-link" href="#">
-                      هل نسيت كلمة المرور؟
-                </a>
+            </div>
+            <div class="form-group">
+              <!-- <label for="password"></label> -->
+              <input
+                type="password"
+                formControlName="password"
+                class="form-control"
+                placeholder="كلمة المرور"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              />
+              <div
+                *ngIf="submitted && f.password.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.password.errors.required">
+                  قم بإدخال كلمة المرور
+                </div>
+                <div *ngIf="f.password.errors.minLength">
+                  قم بإدخال كلمة المرور
+                </div>
               </div>
-
-            </div>            
-            
-            <div class="btn-field">
-                <input (click)="getUser()" type="submit" value="تسجيل الدخول" />
-            </div>          
-  
+            </div>
+            <div class="text-left pt-3">
+              <a
+                routerLink="/auth/forget-password"
+                routerLinkActive="router-link-active"
+                class="login-link"
+                href="#"
+              >
+                هل نسيت كلمة المرور؟
+              </a>
+            </div>
+            <div class="form-group text-center pt-5">
+              <button [disabled]="loading" class="btn btn-primary col-md-6 p-2">
+                <span
+                  *ngIf="loading"
+                  class="spinner-border spinner-border-sm mr-1"
+                ></span>
+                تسجيل دخول
+              </button>
+            </div>
           </form>
+
+          <!-- end form field -->
+
+          <!-- start line -->
         </div>
-  
-        <!-- end form field -->
-  
-        <!-- start line -->
-  
         <div class="col-md-2">
-            <div class="line sm-hide"></div>
+          <div class="line sm-hide"></div>
         </div>
-    
-        <!-- end line --> 
-          
+
+        <!-- end line -->
+
         <!-- start register by social media -->
-  
-        <div class="col-lg-3 col-md-5">
-            <div class="btn-container">
-              <div class="boxes">
-                <a href="#">
-                  <div class="fb-box">
-                    <span>Continue with Facebook</span>
-                    <i class="fab fa-facebook-f"></i>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="g-box">
-                    <span style="position: relative; top: 3px">Continue with Google</span>
-                    <img src="../../assets/images/google.png" style="width: 43px; margin-right: 20px" />
-                  </div> 
-                </a>
-              </div>           
+
+        <div class="col-lg-5 col-md-5 col-12 pt-5 mt-5 pb-5 ">
+          <div class="btn-container col-md-8 col-12">
+            <div class="boxes">
+              <a (click)="signInWithFB()">
+                <div class="fb-box">
+                  <span>Continue with Facebook</span>
+                  <i class="fab fa-facebook-f"></i>
+                </div>
+              </a>
+              <a (click)="signInWithGoogle()">
+                <div class="g-box">
+                  <span>Continue with Google</span>
+                  <img
+                    src="../../assets/images/google.png"
+                    style="width: 43px; margin-right: 20px"
+                  />
+                </div>
+              </a>
             </div>
+          </div>
         </div>
-    
-        <!-- end register by social media -->         
-  
+
+        <!-- end register by social media -->
+
         <!-- start place holder -->
-  
+
         <div class="col-md-2"></div>
-  
-        <!-- end place holder -->      
-  
+
+        <!-- end place holder -->
       </div>
     </div>
-  </div>
-  
-  <!-- end form -->
 
-<!--<form>
+    <!-- end form -->
+
+    <!--<form>
   <div class="form-group">
     <label for="name" class="col-form-label">الاسم</label>
     <input type="text" class="form-control" id="name" />
@@ -145,3 +169,5 @@
   </button>
   <button type="button" class="btn btn-primary">سجل</button>
 </form>-->
+  </div>
+</div>

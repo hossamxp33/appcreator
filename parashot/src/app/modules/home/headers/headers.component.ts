@@ -1,5 +1,7 @@
-import { SlideshowService } from './../../../services/slideshow.service';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { SlideshowService } from 'src/app/services/slideshow.service';
+import { DesignService } from 'src/app/services/design.service';
+
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-headers',
@@ -8,15 +10,13 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class HeadersComponent implements OnInit {
   headerColor: any;
-  images: any;
-  ionImages;
-  // imagesDisplay: any;
   uploadedFile: any;
-  @Input() id: number = 1;
+  @Input() id;
   @Input() source: string;
   @Input() imagesDisplay;
   @Input() ionImagesDisplay;
-  @Output() sliderId = new EventEmitter<number>();
+  images;
+
   slideOpts = {
     autoplay: true,
     speed: 400,
@@ -107,32 +107,49 @@ export class HeadersComponent implements OnInit {
       }
     }
   };
-  constructor() { }
+  constructor(private desginService: DesignService, private slideshowService: SlideshowService) { }
 
   ngOnInit() {
-    console.log(this.ionImagesDisplay)
-    // console.log(this.id , this.source);
+    // console.log(this.ionImagesDisplay)
+    console.log(this.id, this.source);
     if ((this.imagesDisplay && this.imagesDisplay.length > 0) || (this.ionImagesDisplay && this.ionImagesDisplay.length > 0)) {
 
-      this.images = this.imagesDisplay;
+      this.images = this.imagesDisplay || this.ionImagesDisplay;
 
-      this.ionImages = this.ionImagesDisplay
-      console.log(this.images)
       console.log(this.ionImagesDisplay)
-
     }
     else {
       this.images = [{
         photo: "../../../../assets/images/no-image.png"
       }]
     }
+    this.desginService.sliderId.subscribe(res => {
+      this.id = res;
+      console.log(res, this.id, this.source)
+    })
 
   }
   getSliderId(id) {
     // console.log(id);
-    this.sliderId.emit(id);
+    this.desginService.sliderId.next(id);
+    this.desginService.editDesign({
+      type_id: 1,
+      fieldname: "slider_template",
+      value: id
+    })
   }
+  ngOnChanges() {
+    // console.log(this.imagesDisplay);
 
+    // if (this.imagesDisplay && this.imagesDisplay.length == 0) {
+    //   this.images = [{
+    //     photo: "../../../../assets/images/no-image.png"
+    //   }]
+    // } else {
+    //   this.images = this.imagesDisplay;
+    //   this.slideshowService.sliderImages.next(this.imagesDisplay)
+    // }
+  }
 
 
 

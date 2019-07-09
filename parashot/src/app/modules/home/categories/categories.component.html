@@ -1,168 +1,17 @@
 <div class="d-flex justify-content-between head">
   <div><i class="dep"></i><span>الاقسام</span></div>
-  <i class="img-ico" data-toggle="modal" data-target="#exampleModal" title="الاقسام" style="cursor: pointer;"></i>
+  <i
+    class="img-ico"
+    data-toggle="modal"
+    data-target="#exampleModal"
+    title="الاقسام"
+    style="cursor: pointer;"
+  ></i>
 </div>
 <div class="tail">
   <div class="d-flex justify-content-between tail-head">
     <span>اختر تصميم الأقسام</span>
     <a routerLink="/edit-categories"><i class="palette"></i></a>
   </div>
-  <div class="mx-auto cat">
-    <div class="py-3 row cate-1">
-      <div class="col">
-        <img src="../../assets/images/clothes.png" /><span>ملابس</span>
-      </div>
-      <div class="col">
-        <img src="../../assets/images/cell-phone.png" /><span>موبايلات</span>
-      </div>
-      <div class="col">
-        <img src="../../assets/images/laptop.png" /><span>الكترونيات</span>
-      </div>
-      <div class="col">
-        <img src="../../assets/images/home.png" /><span>المنزل و الحديقة</span>
-      </div>
-      <div class="col">
-        <img src="../../assets/images/glasses.png" /><span>نظارات</span>
-      </div>
-    </div>
-  </div>
-  <div class="mt-3 mx-auto cat">
-    <div class="py-3 row cate-1">
-      <img src="../../assets/images/3.jpg" alt="" />
-    </div>
-  </div>
-  <div class="my-3 mx-auto cat" style="height: 200px"></div>
+  <app-categories-list [source]="'page'"></app-categories-list>
 </div>
-
-<!-- start modal (category) -->
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          
-        <div class="modal-header d-flex justify-content-between">
-          <h5 class="modal-title" id="exampleModalLabel">الاقسام</h5>
-          <label class="add" style="cursor: pointer;" data-toggle="modal" data-target="#newCatModal">
-            <img src="../../../../assets/images/plus.png" alt="plus" width="30px" />
-          </label>
-        </div>
-          
-        <div class="modal-body">            
-
-            <div class="container">
-                <div class="row">
-                    
-                    <!-- start showing curren category -->                
-                    
-                    <div class="col-md-6">
-                        <div class="cat">
-                            <div class="cat-image">
-                                <img src="../../../../assets/images/electrons.jpeg" alt="electrons" />
-                            </div>
-                            <div class="cat-name">
-                                الكترونيات
-                            </div>
-                        </div>
-                    </div> 
-                    
-                    <div class="col-md-6">
-                        <div class="cat">
-                            <div class="cat-image">
-                                <img src="../../../../assets/images/clothes.png" alt="clothes" />
-                            </div>
-                            <div class="cat-name">
-                                ملابس
-                            </div>
-                        </div>
-                    </div> 
-                    
-                    <div class="col-md-6">
-                        <div class="cat">
-                            <div class="cat-image">
-                                <img src="../../../../assets/images/mobile.jpeg" alt="mobiles" />
-                            </div>
-                            <div class="cat-name">
-                                موبايلات
-                            </div>
-                        </div>
-                    </div>                     
-                    
-                    <div class="col-md-6">
-                        <div class="cat">
-                            <div class="cat-image">
-                                <img src="../../../../assets/images/clothes.png" alt="clothes" />
-                            </div>
-                            <div class="cat-name">
-                                ملابس
-                            </div>
-                        </div>
-                    </div>                                       
-                    
-                    <!-- end showing current category -->
-                    
-                </div>
-            </div>            
-
-        </div>
-          
-      </div>
-        
-    </div>
-</div>
-
-<!-- end modal (category) -->
-
-<!-- start adding new category modal -->
-
-<div class="modal fade" id="newCatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          
-        <div class="modal-header d-flex justify-content-between">
-          <h5 class="modal-title" id="exampleModalLabel">اضافة قسم جديد</h5>
-        </div>
-          
-        <div class="modal-body">            
-
-            <div class="container">
-                <div class="row">
-                    
-                    <!-- start form to add new category -->                
-                                                          
-                    <div class="col-md-12">
-                        <form class="new-cat-form">
-                            <div>
-                                <input type="text" placeholder="اسم القسم" />
-                            </div>
-                            <div>
-                                <label class="addImage">
-                                    <img src="../../../../assets/images/plus%20(1).png" alt="add" width="20px" /> رفع صورة
-                                    <input type="file" accept="image/*" class="d-none" #catImage (change)="showImage($event)" />
-                                </label>                                
-                            </div>
-                            <div *ngIf="imgSrc != null" class="img-box">
-                                <i class="far fa-times-circle" (click)="resetImg()"></i>
-                                <img [src]="imgSrc" width="100%" />
-                            </div>
-                        </form>
-                    </div>
-                    
-                    <!-- end form to add new category -->
-                    
-                </div>
-            </div>            
-
-        </div>
-          
-        <div class="modal-footer">          
-          <button type="button" class="btn btn-primary">
-            حفظ
-          </button>
-        </div>          
-          
-      </div>
-        
-    </div>
-</div>
-
-<!-- end adding new category modal -->

@@ -14,10 +14,10 @@
 
   <div class="tail">
     <div class="col-md-11 my-5 mx-auto">
-      <div *ngIf="imagesDisplay">
+      <div *ngIf="imagesDisplayed">
         <app-headers
           [source]="source"
-          [imagesDisplay]="imagesDisplay"
+          [imagesDisplay]="imagesDisplayed"
         ></app-headers>
         <!-- (sliderId)="getId($event)"
           -->
@@ -45,7 +45,7 @@
           aria-label="Close"
         >
         </button> -->
-          <label class="add" (click)="addImg($event)">
+          <label class="add">
             <input
               #imagesInput
               type="file"
@@ -58,8 +58,11 @@
         > -->
           </label>
         </div>
-        <div *ngIf="imagesDisplay" class="modal-body">
-          <div class="item" *ngFor="let image of imagesDisplay; let i = index">
+        <div *ngIf="imagesDisplayed" class="modal-body">
+          <div
+            class="item"
+            *ngFor="let image of imagesDisplayed; let i = index"
+          >
             <div class="text-center">
               <div class="thumbnail-img img-{{ i + 1 }} d-flex">
                 <img src="{{ image.photo }}" /><span
@@ -75,11 +78,7 @@
               </div>
             </div>
           </div>
-          <label
-            *ngIf="imagesDisplay.length == 0"
-            class="upload"
-            (click)="addImg($event)"
-          >
+          <label *ngIf="imagesDisplayed.length == 0" class="upload">
             <input
               #imagesInput
               type="file"

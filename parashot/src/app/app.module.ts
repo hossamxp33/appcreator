@@ -1,11 +1,8 @@
+import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 import { CoreModule } from './core/core.module';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { ApiPrefixInterceptor } from './core/interceptors/api-prefix.interceptor';
-import { ColorPickerModule } from 'ngx-color-picker';
-import { HeadersPageComponent } from './modules/home/headers-page/headers-page.component';
-import { SlidersComponent } from './modules/home/sliders/sliders.component';
-import { HeadersComponent } from './modules/home/headers/headers.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,25 +11,23 @@ import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { AppMaterialModule } from './app-material/app-material.module';
 
 import { IonicModule } from '@ionic/angular';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AuthModule } from './modules/auth/auth.module';
-import { IonicsimulatorComponent } from './modules/home/ionicsimulator/ionicsimulator.component';
-import { CategoriesComponent } from './modules/home/categories/categories.component';
-import { EditCategoriesComponent } from './modules/home/edit-categories/edit-categories.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ErrorPopupComponent } from './error-popup/error-popup.component';
 
 
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
+    provider: new GoogleLoginProvider("967400515765-kel935i9i5umrlavfbn27cgkq4rtrm5c.apps.googleusercontent.com")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("Facebook-App-Id")
+    provider: new FacebookLoginProvider("664538330623923-App-Id")
   }
 ]);
 
@@ -42,7 +37,9 @@ export function provideConfig() {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorPopupComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -54,16 +51,20 @@ export function provideConfig() {
     IonicModule.forRoot(),
     OwlModule,
     AuthModule,
-    ColorPickerModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
     CoreModule,
-    SocialLoginModule
+    SocialLoginModule,
+    AppMaterialModule
 
   ],
-  providers: [ {
+  providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: ApiPrefixInterceptor,
+    multi: true
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ErrorHandlerInterceptor,
     multi: true
   },
   {
@@ -71,6 +72,7 @@ export function provideConfig() {
     useFactory: provideConfig
   }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[ErrorPopupComponent]
 })
 export class AppModule { }

@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
 export class ApiPrefixInterceptor implements HttpInterceptor {
   constructor(private auth: AuthenticationService) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     request = request.clone({
       setHeaders: {
         Authorization: this.auth.getToken() ? `Bearer ${this.auth.getToken()}` : ' '

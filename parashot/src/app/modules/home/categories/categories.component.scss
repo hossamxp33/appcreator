@@ -37,7 +37,7 @@
   }
 
   img {
-    width: 50px;
+    width: 42px;
   }
 }
 
@@ -72,108 +72,143 @@ a {
 
 /* start current categories model */
 
-#exampleModal{
-    
-    .modal-dialog {
-        
-        .modal-body{
-            
-            .cat{
-                text-align: center;
-                margin-bottom: 15px;
-                border: none;
-            }
-            
-        }
-        
+#exampleModal {
+  .modal-dialog {
+    .modal-body {
+      .cat {
+        text-align: center;
+        margin-bottom: 15px;
+        border: none;
+      }
     }
-    
-}   
+  }
+}
 
 /* end current categories model */
 
 /* start new cat */
 
-#newCatModal{
-    
-    .modal-dialog{
-        
-        .modal-content{
-            
-            .modal-body{
-                
-                .new-cat-form{
-                    
-                    div{
-                        
-                        input, label{
-                            display: block;
-                            text-align: center;
-                            padding: 20px;
-                            margin-bottom: 15px;
-                            width: 70%;
-                            margin: auto;
-                            border-radius: 10px;
-                            border: 1px solid #c4c4c4;
-                            
-                        }
-                        
-                        input{
-                            
-                            &::placeholder{
-                                color: #000;
-                            }
-                            
-                        }
-                        
-                        label{
-                            position: relative;
-                            margin-top: 15px;
-                            
-                            img{
-                              margin-bottom: -7px;
-                            }
-                        }
-                        
-                    }
-                    
-                    .img-box{
-                        position: relative;
-                        margin-top: 15px;
-                        
-                        i{
-                            position: absolute;
-                            top: -17px;
-                            right: -10px;
-                            color: red;
-                            cursor: pointer;
-                        }
-                    }
-                    
-                }
-                
+#newCatModal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        .new-cat-form {
+          div {
+            input,
+            label {
+              display: block;
+              text-align: center;
+              padding: 20px;
+              margin-bottom: 15px;
+              width: 70%;
+              margin: auto;
+              border-radius: 10px;
+              border: 1px solid #c4c4c4;
             }
-            
+
+            input {
+              &::placeholder {
+                color: #000;
+              }
+            }
+
+            label {
+              position: relative;
+              margin-top: 15px;
+
+              img {
+                margin-bottom: -7px;
+              }
+            }
+          }
+
+          .img-box {
+            position: relative;
+            margin-top: 15px;
+
+            i {
+              position: absolute;
+              top: -17px;
+              right: -10px;
+              color: red;
+              cursor: pointer;
+            }
+          }
         }
-        
+      }
     }
-    
+  }
 }
 
 /* end new cat */
 
 /* start bootstrap modal */
 
-#newCatModal{
-  background-color: rgba(0, 0, 0, .5);
+#newCatModal {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal.show{
-
-  .modal-dialog{
+.modal.show {
+  .modal-dialog {
     max-width: 650px;
   }
-  
 }
 
 /* end bootstrap modal */
+.category {
+  background: #fff;
+  img {
+    height: 50px;
+    width: 50px;
+    margin: auto 0;
+  }
+  span {
+    margin: auto 0;
+  }
+}
+
+.category-1 {
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  img {
+    height: 42px;
+    width: 42px;
+    margin: auto;
+    display: block;
+  }
+  span {
+    margin: auto;
+  }
+}
+h6 {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.sim {
+  .first {
+    img {
+    }
+  }
+  .second {
+    .thumbnail-image {
+      img {
+        width: 50px;
+        height: 50px;
+        margin: auto;
+      }
+    }
+  }
+
+  .forth {
+    .category-1 img {
+      height: 40px;
+      width: 40px;
+      margin: auto;
+      display: block;
+    }
+  }
+  h6 {
+    font-size: 10px;
+  }
+}

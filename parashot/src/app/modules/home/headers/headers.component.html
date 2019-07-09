@@ -1,4 +1,4 @@
-<div class="page-sliders" *ngIf="source === 'page'">
+<div class="page-sliders" *ngIf="source === 'page' && images">
   <div id="slide-1" (click)="getSliderId(1)" class="slider  mb-4">
     <!-- <div class="d-flex head justify-content-between">
       <img src="../../../../assets/images/user-icon.png" />
@@ -93,13 +93,8 @@
     </owl-carousel>
   </div>
 </div>
-<div class="sim-sliders" *ngIf="source === 'sim'">
-  <div
-    *ngIf="id == 1"
-    id="slide-1"
-    (click)="getSliderId(1)"
-    class="slider  mb-4"
-  >
+<div class="sim-sliders" *ngIf="source === 'sim' && images">
+  <div *ngIf="id == 1" id="slide-1" class="slider  mb-4">
     <owl-carousel
       [options]="{
         items: 1,
@@ -111,7 +106,7 @@
       [items]="images"
       [carouselClasses]="['owl-carousel owl-theme sliding']"
     >
-      <div class="item" *ngFor="let image of ionImages; let i = index">
+      <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
           <a><img src="{{ image.photo }}"/></a>
           <img src="{{ image.photo }}" />
@@ -119,24 +114,14 @@
       </div>
     </owl-carousel>
   </div>
-  <div
-    *ngIf="id == 2"
-    id="slide-2"
-    (click)="getSliderId(2)"
-    class="slider  mb-4 p-0"
-  >
+  <div *ngIf="id == 2" id="slide-2" class="slider  mb-4 p-0">
     <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide *ngFor="let image of ionImages; let i = index">
+      <ion-slide *ngFor="let image of images; let i = index">
         <a><img src="{{ image.photo }}"/></a>
       </ion-slide>
     </ion-slides>
   </div>
-  <div
-    *ngIf="id == 3"
-    id="slide-3"
-    (click)="getSliderId(3)"
-    class="slider  mb-4 p-0"
-  >
+  <div *ngIf="id == 3" id="slide-3" class="slider  mb-4 p-0">
     <owl-carousel
       [options]="{
         items: 1,
@@ -149,7 +134,7 @@
       [items]="images"
       [carouselClasses]="['owl-theme sliding']"
     >
-      <div class="item" *ngFor="let image of ionImages; let i = index">
+      <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
           <a><img src="{{ image.photo }}"/></a>
           <img src="{{ image.photo }}" />
@@ -157,12 +142,7 @@
       </div>
     </owl-carousel>
   </div>
-  <div
-    *ngIf="id == 4"
-    id="slide4"
-    (click)="getSliderId(4)"
-    class="slider  mb-4 p-0"
-  >
+  <div *ngIf="id == 4" id="slide4" class="slider  mb-4 p-0">
     <owl-carousel
       [options]="{
         items: 1,
@@ -179,7 +159,7 @@
       [items]="images"
       [carouselClasses]="['owl-theme sliding']"
     >
-      <div class="item" *ngFor="let image of ionImages; let i = index">
+      <div class="item" *ngFor="let image of images; let i = index">
         <div class="thumbnail-image">
           <a><img src="{{ image.photo }}"/></a>
         </div>

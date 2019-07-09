@@ -24,7 +24,9 @@
   background-color: #341642 !important;
   color: white !important;
 }
-
+app-categories {
+  width: 100%;
+}
 .iphone-x {
   height: 745px;
   width: 90%;
@@ -69,6 +71,15 @@
     width: 87%;
     margin: auto;
     margin-top: 60px;
+    ion-searchbar {
+      img {
+        position: relative;
+        z-index: 2;
+        left: 10px;
+        width: 13px;
+        height: 13px;
+      }
+    }
   }
 }
 .skip {
@@ -91,30 +102,27 @@
 
 .cart {
   margin: 13px 25px 0 auto;
-  i {
-    font-size: 22px;
-    color: #fff;
+  img {
+    width: 25px;
+    height: 25px;
   }
   span {
     position: absolute;
     border-radius: 50%;
     background: red;
     color: #fff;
-    top: 43px;
-    width: 20px;
-    height: 20px;
+    top: 40px;
+    width: 15px;
+    height: 15px;
     left: 14px;
     text-align: center;
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 .cart-ios {
-  margin: 18px 19px 0 auto;
-  i {
-    font-size: 25px;
-  }
+  margin: 9px 19px 0 auto;
   span {
-    top: 57px;
+    top: 40px;
   }
 }
 .col {
@@ -145,8 +153,19 @@
 .ion-logo {
   text-align: center;
   img {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
   }
+}
+
+ion-tab-button {
+  img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+}
+.sc {
+  height: 45px;
 }

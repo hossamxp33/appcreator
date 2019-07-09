@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CategoriesComponent } from './modules/home/categories/categories.component';
 import { EditCategoriesComponent } from './modules/home/edit-categories/edit-categories.component';
+import { AuthGuard } from './core/guards';
 
 const routes: Routes = [
 
@@ -13,12 +14,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: "./modules/home/home.module#HomeModule"
-  }
+    loadChildren: "./modules/home/home.module#HomeModule",
+    canActivate : [AuthGuard]
+
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers : [AuthGuard]
 })
 export class AppRoutingModule { }

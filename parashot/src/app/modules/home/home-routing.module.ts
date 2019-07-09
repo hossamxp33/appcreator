@@ -1,3 +1,4 @@
+import { ProductsPageComponent } from './products-page/products-page.component';
 import { EditCategoriesComponent } from './edit-categories/edit-categories.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HeadersPageComponent } from './headers-page/headers-page.component';
@@ -6,9 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SplashComponent } from './splash/splash.component';
 import { SlidersComponent } from './sliders/sliders.component';
 import { StoreComponent } from './store/store.component';
-import { FooterComponent } from './marginals/footer/footer.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
-import { ProductsComponent } from './products/products.component';
 import { SlideShowComponent } from './slide-show/slide-show.component';
 
 const routes: Routes = [
@@ -17,41 +16,53 @@ const routes: Routes = [
       {
         path: 'headers',
         component: HeadersPageComponent,
+
       },
       {
         path: 'sliders',
         component: SlidersComponent,
+
       }
       ,
       {
         path: 'categories',
         component: CategoriesComponent,
+
       }
       ,
       {
         path: 'edit-categories',
         component: EditCategoriesComponent,
+
       }
       ,
       {
         path: 'products',
-        component: ProductsComponent,
-      }      
+        component: ProductsPageComponent,
+
+
+      }
       ,
       {
         path: 'footer-page',
         component: FooterPageComponent,
+
+
       }
       ,
       {
         path: 'splash',
         component: SplashComponent,
+
+
       }
       ,
       {
         path: 'slide-show',
         component: SlideShowComponent,
-      }             
+
+
+      }
     ]
   }
 

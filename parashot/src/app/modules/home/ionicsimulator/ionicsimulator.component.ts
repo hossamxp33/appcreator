@@ -1,3 +1,4 @@
+import { HeadersPageComponent } from './../headers-page/headers-page.component';
 import { MainpageService } from "./../../../services/mainpage.service";
 import { SlideshowService } from "./../../../services/slideshow.service";
 import { Design } from "./../../../helpers/design";
@@ -27,7 +28,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     this.slides.slideNext();
   }
   @Input() headerColor: any;
-  @Input() sliderId: number = 3;
+  @Input() sliderId;
   source = "sim";
   color = "#1e56a0";
   rate = 5;
@@ -39,14 +40,18 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     loop: true,
     autoplay: true
   };
-  xOptions ={ slidesPerView: 5, loop: true , autoplay : true}
+  xOptions = {
+    slidesPerView: 5,
+    loop: true,
+    autoplay: true
+  }
 
   text$ = new BehaviorSubject<string | null>("Initial Text");
   colorHeader = "#1e56a0";
   colorSearch = "#fff";
   subs = new SubSink();
-  iosClass: boolean = false;
-  mdClass: boolean = true;
+  iosClass: boolean = true;
+  mdClass: boolean = false;
   // mainDesign: any;
   header: any;
   footer: any;
@@ -55,6 +60,7 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
   bodydesign: any;
   main;
   slider;
+  productsId;
   private loading;
   splash: Splash;
   showSlideShow: boolean;
@@ -64,14 +70,16 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
     private design: DesignService,
     public loadingController: LoadingController,
     private slideshowService: SlideshowService,
-    private mainPageService: MainpageService
-  ) {}
+    private mainPageService: MainpageService,
+  ) { }
   ngOnInit() {
 
+
     this.subs.add(
+
       this.splashService.getSplashs().subscribe((res: Splash) => {
         this.splash = res;
-        console.log(this.splash);
+        // console.log(this.splash);
         this.splashLoader();
 
       }),
@@ -81,13 +89,19 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
         $("ion-header").css("background", this.header.data.background);
         $(".ion-logo img").attr("src", this.header.data.logo);
         this.footer = mainDesign.footer;
+        $('ion-tab-bar').css('--background', this.footer.data.background)
+        $('ion-tab-bar ion-label').css('--background', this.footer.data.font_color)
         this.bodydesign = mainDesign.bodydesign;
+        $('ion-content').css('--background', this.bodydesign.data.background)
         this.categorydesign = mainDesign.categorydesign;
         this.productsetting = mainDesign.productsetting;
         this.main = mainDesign.main;
+        console.log(this.header.data.slider_template);
+        this.design.sliderId.next(this.header.data.slider_template);
+        this.sliderId = this.header.data.slider_template;
 
         if (this.main.data.slideshow === "true") {
-          console.log(this.main.data.slideshow);
+          // console.log(this.main.data.slideshow);
           this.showSlideShow = true;
 
           // this.mainPageService.getMainPage().subscribe((res: MainPageModel) => {
@@ -95,17 +109,43 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
           this.slideshowService.getSlideShows().subscribe(res => {
             console.log(res);
             this.slider = res.data;
+            this.ionSlider = res.data
           });
         } else {
           this.showSlideShow = false;
         }
       }),
-      this.mainPageService.getMainPage().subscribe(res => {
-        console.log(res);
-        this.ionSlider = res.sliders;
-        console.log(this.ionSlider);
+      // this.mainPageService.getMainPage().subscribe(res => {
+      //   // console.log(res);
+      //   this.ionSlider = res.sliders;
+      //   // console.log(this.ionSlider);
+      // }),
+      this.design.productsId.subscribe(res => {
+        this.productsId = res;
+        console.log(this.productsId)
       })
+      ,
     );
+    if (this.slideshowService.sliderImages.value == null) {
+
+      console.log('sss');
+      this.slideshowService.getSlideShows().subscribe(res => {
+        console.log(res);
+
+        this.ionSlider = res.data;
+      });
+    } else {
+      console.log('ddd');
+      this.slideshowService.sliderImages.subscribe(res => {
+        this.ionSlider = res;
+      });
+    }
+
+
+
+
+
+
   }
 
   ios() {
@@ -138,20 +178,22 @@ export class IonicsimulatorComponent implements OnInit, OnDestroy {
       })
       .then(overlay => {
         this.loading = overlay;
-        console.log(this.splash.data[0].photo);
+        // console.log(this.splash.data[0].photo);
         $("ion-loading")
           .css(
             "background",
-            `url(${this.splash.data[1].photo}) 100% 100% no-repeat`
+            `url(${this.splash.data[0].photo}) 100% 100% no-repeat`
           )
-          .prependTo($(".note8 .screen"));
-        $(".iphone-x").css("display", "none");
-        $(".note8").css("display", "block");
+          .prependTo($(".iphone-x .screen"));
+        $(".iphone-x").css("display", "block");
+        $(".note8").css("display", "none");
         this.loading.present();
 
       });
   }
   skip() {
     this.showSlideShow = false;
+
   }
+
 }

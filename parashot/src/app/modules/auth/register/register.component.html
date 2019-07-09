@@ -1,85 +1,112 @@
 <!-- start logo -->
-
-<div class="logo">
-  <div class="container">
+<div class="container">
+  <div class="logo">
     <div class="logo-box">
-      <img src="../../assets/images/logo.png"  />
+      <img src="../../assets/images/logo.png" />
     </div>
   </div>
-</div>
 
+  <!-- end logo -->
 
-<!-- end logo -->
+  <!-- start message -->
 
-<!-- start message -->
+  <div class="message">
+    <h3 class="text-center">التسجيل</h3>
+    <p class="text-center">
+      اذا كان لديك حساب بالفعل <a routerLink="/auth/login">سجل الدخول</a>
+    </p>
+  </div>
 
-<div class="message">
-  <h3 class="text-center">التسجيل</h3>
-  <p class="text-center">
-    اذا كان لديك حساب بالفعل <a href="../auth/login">سجل الدخول</a>
-  </p>
-</div>
+  <!-- end message -->
 
-<!-- end message -->
+  <!-- start form -->
 
-<!-- start form -->
+  <div class="register-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-12 pt-5 mt-5">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <input
+                placeholder="اسم المستخدم"
+                type="text"
+                formControlName="username"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+              />
+              <div
+                *ngIf="submitted && f.username.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.username.errors.required">
+                  قم بإدخال اسم المستخدم
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                placeholder="الإيميل"
+                type="text"
+                formControlName="email"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+              />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">
+                  قم بإدخال الايميل
+                </div>
+                <div *ngIf="f.email.errors.email">
+                  قم بإدخال الايميل الصحيح
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                placeholder="كلمة المرور"
+                type="password"
+                formControlName="password"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              />
+              <div
+                *ngIf="submitted && f.password.errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f.password.errors.required">
+                  قم بإدخال كلمة المرور
+                </div>
+                <div *ngIf="f.password.errors.minlength">
+                  كلمة المرور الصحيحة لا تقل عن 8 رموز
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button [disabled]="loading" class="btn btn-primary">
+                <span
+                  *ngIf="loading"
+                  class="spinner-border spinner-border-sm mr-1"
+                ></span>
+                التسجيل
+              </button>
+              <a (click)="cancel()" class="btn btn-link">إلغاء</a>
+            </div>
+          </form>
+        </div>
 
-<div class="register-box">
-  <div class="container">
-    <div class="row">
+        <!-- end form field -->
 
-      <!-- start place holder -->
+        <!-- start line -->
 
-      <div class="col-md-2 hide"></div>
-
-      <!-- end place holder -->
-
-      <!-- start form field -->
-
-      <div class="col-lg-3 col-md-5">
-        <form class="register-form">
-
-          <div class="name-field">
-            <input type="text" placeholder="اسم المستخدم" />
-          </div>
-
-          <div class="email-field">
-              <input type="email" placeholder="الايميل" />
-          </div>
-
-          <div class="number-field">
-              <input type="text" pattern="[0-9]*" placeholder="رقم الهاتف" />
-          </div> 
-          
-          <div class="pwp-field">
-              <input type="password" placeholder="كلمة المرور" />
-          </div>
-          
-          <div class="re-pwp-field">
-              <input type="password" placeholder="تأكيد كلمة المرور" />
-          </div>
-          
-          <div class="btn-field">
-              <input (click)="addNewUser()" type="submit" value="تسجيل الدخول" />
-          </div>          
-
-        </form>
-      </div>
-
-      <!-- end form field -->
-
-      <!-- start line -->
-
-      <div class="col-md-2">
+        <div class="col-md-2">
           <div class="line sm-hide"></div>
-      </div>
-  
-      <!-- end line --> 
-        
-      <!-- start register by social media -->
+        </div>
 
-      <div class="col-lg-3 col-md-5">
-          <div class="btn-container">
+        <!-- end line -->
+
+        <!-- start register by social media -->
+
+        <div class="col-lg-5 col-md-5 col-12 pt-5 mt-5 pb-5 ">
+          <div class="btn-container col-md-8 col-12">
             <div class="boxes">
               <a href="#">
                 <div class="fb-box">
@@ -89,29 +116,31 @@
               </a>
               <a href="#">
                 <div class="g-box">
-                  <span style="position: relative; top: 3px">Continue with Google</span>
-                  <img src="../../assets/images/google.png" style="width: 43px; margin-right: 20px" />
-                </div> 
+                  <span>Continue with Google</span>
+                  <img
+                    src="../../assets/images/google.png"
+                    style="width: 43px; margin-right: 20px"
+                  />
+                </div>
               </a>
-            </div>           
+            </div>
           </div>
+        </div>
+
+        <!-- end register by social media -->
+
+        <!-- start place holder -->
+
+        <div class="col-md-2"></div>
+
+        <!-- end place holder -->
       </div>
-  
-      <!-- end register by social media -->         
-
-      <!-- start place holder -->
-
-      <div class="col-md-2"></div>
-
-      <!-- end place holder -->      
-
     </div>
   </div>
-</div>
 
-<!-- end form -->
+  <!-- end form -->
 
-<!--<form>
+  <!--<form>
   <div class="form-group">
     <label for="name" class="col-form-label">الاسم</label>
     <input type="text" class="form-control" id="name" />
@@ -144,3 +173,4 @@
   </button>
   <button type="button" class="btn btn-primary">سجل</button>
 </form>-->
+</div>

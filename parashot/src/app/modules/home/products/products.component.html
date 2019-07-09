@@ -1,370 +1,570 @@
-<!-- start section header -->
-
-<div class="d-flex justify-content-between head">
-    <div><i class="dep"></i><span>المنتجات</span></div>
-    <label class="add" style="cursor: pointer; margin-bottom: 0;" data-toggle="modal" data-target="#newProduct">
-        <img src="../../../../assets/images/plus.png" alt="plus" width="25px" />
-    </label>
-</div>
-
-<!-- end section header -->
-
-<!-- start section body -->
-
-<div class="tail">
-  <div class="container">
-    <div class="row">
-
-        <div class="col-md-6">
-            <div class="product-box">
-              <div class="product-image">
-                <img src="../../../../assets/images/shirt-2.jpg" width="100%" />
-              </div>
-              <div class="product-title">
-                <h4>
-                  القطن قصير الاكمام فضفاضة تي شيرت مجسم
-                </h4>
-              </div>
-              <div class="product-details">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="product-price">
-                        <h6>
-                          230 ر.ع
-                        </h6>
-                      </div>
-                    </div>
-                    <div class="col-md-8 text-left">
-                        <div class="product-stars">                        
-                          <img src="../../../../assets/images/stars.jpg" alt="stars" width="60px" >
-                          <span>(342)</span>
-                        </div>
-                    </div>                  
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div> 
-
-      <div class="col-md-6">
-          <div class="product-box">
-            <div class="product-image">
-              <img src="../../../../assets/images/shirt-3.jpg" width="100%" />
-            </div>
-            <div class="product-title">
-              <h4>
-                القطن قصير الاكمام فضفاضة تي شيرت مجسم
-              </h4>
-            </div>
-            <div class="product-details">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="product-price">
-                      <h6>
-                        230 ر.ع
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="col-md-8 text-left">
-                      <div class="product-stars">                        
-                        <img src="../../../../assets/images/stars.jpg" alt="stars" width="60px" >
-                        <span>(342)</span>
-                      </div>
-                  </div>                  
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>       
-
-      <div class="col-md-6">
-          <div class="product-box">
-            <div class="product-image">
-              <img src="../../../../assets/images/shirt-2.jpg" width="100%" />
-            </div>
-            <div class="product-title">
-              <h4>
-                القطن قصير الاكمام فضفاضة تي شيرت مجسم
-              </h4>
-            </div>
-            <div class="product-details">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="product-price">
-                      <h6>
-                        230 ر.ع
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="col-md-8 text-left">
-                      <div class="product-stars">                        
-                        <img src="../../../../assets/images/stars.jpg" alt="stars" width="60px" >
-                        <span>(342)</span>
-                      </div>
-                  </div>                  
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>      
-
-      <div class="col-md-6" style="padding-bottom: 30px;">
-          <div class="product-box">
-            <div class="product-image">
-              <img src="../../../../assets/images/shirt-3.jpg" width="100%" />
-            </div>
-            <div class="product-title">
-              <h4>
-                القطن قصير الاكمام فضفاضة تي شيرت مجسم
-              </h4>
-            </div>
-            <div class="product-details">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="product-price">
-                      <h6>
-                        230 ر.ع
-                      </h6>
-                    </div>
-                  </div>
-                  <div class="col-md-8 text-left">
-                      <div class="product-stars">                        
-                        <img src="../../../../assets/images/stars.jpg" alt="stars" width="60px" >
-                        <span>(342)</span>
-                      </div>
-                  </div>                  
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>      
-
-    </div>
-  </div>   
-</div>
-
-<!-- end section body -->
-
-<!-- start adding new product modal -->
-
-<div class="modal fade" id="newProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          
-        <div class="modal-header d-flex justify-content-between">
-          <h5 class="modal-title" id="exampleModalLabel">اضافة منتج جديد</h5>
+<div class="pro-Page" *ngIf="source == 'products-page'">
+  <h6 class="font-weight-bold mt-3 m-0">أشهر المنتجات</h6>
+  <div class="row px-5" (click)="setId(1)">
+    <div class="col-md-6 col-6  px-1">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-2.jpg" width="100%" />
         </div>
-          
-        <div class="modal-body">            
-
-            <div class="container">
-                <div class="row">
-
-                  <!-- start product image -->
-
-                  <div class="col-md-2">
-                    <label>
-                        صورة المنتج
-                    </label>
-                  </div>
-                  <div class="col-md-10">
-                    <label class="addImage">
-                        <img src="../../../../assets/images/plus%20(1).png" alt="add" width="20px" /> رفع صورة
-                        <input type="file" accept="image/*" class="d-none"  (change)="showImage($event)" />
-                    </label>
-                    <div *ngIf="imgSrc != null" class="img-box">
-                        <i class="far fa-times-circle" (click)="imgSrc = null"></i>
-                        <img [src]="imgSrc" width="100%" />
-                    </div>                     
-                  </div>
-
-                  <!-- end product image -->
-                  
-                  <!-- start product name -->
-
-                  <div class="col-md-2">
-                    <label>
-                      اسم المنتج
-                    </label>
-                  </div>
-                  <div class="col-md-10">
-                    <input type="text" class="form-control" />
-                  </div>
-
-                  <!-- end product name -->
-
-                  <!-- start product description -->
-
-                  <div class="col-md-2">
-                    <label>
-                      وصف المنتج
-                    </label>
-                  </div>
-                  <div class="col-md-10">
-                    <textarea class="form-control" ></textarea>
-                  </div>
-  
-                  <!-- end product description -->  
-                  
-                  <!-- start category -->
-
-                  <div class="col-md-2">
-                    <label>
-                      القسم الرئيسي
-                    </label>
-                  </div>
-                  <div class="col-md-10">
-                    <select class="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                    </select>
-                  </div>
-    
-                  <!-- end category -->                   
-                    
-                  <!-- start sub category -->
-
-                  <div class="col-md-2">
-                      <label>
-                        القسم الفرعي
-                      </label>
-                    </div>
-                    <div class="col-md-10">
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-                    </div>
-      
-                    <!-- end sub category -->
-
-                  <!-- start product brand -->
-
-                  <div class="col-md-2">
-                    <label>
-                      البراند
-                    </label>
-                  </div>
-                  <div class="col-md-10">
-                    <input type="text" class="form-control" />
-                  </div>
-  
-                  <!-- end product brand -->                    
-
-                  <!-- start product quantity -->
-
-                  <div class="col-md-2">
-                    <label>
-                      الكمية المتوفرة
-                    </label>
-                  </div>
-                  <div class="col-md-10">
-                    <input type="text" class="form-control" />
-                  </div>
-    
-                  <!-- end product quantity -->
-
-                  <!-- start product price -->
-
-                  <div class="col-md-2">
-                    <label>
-                      سعر المنتج
-                    </label>
-                  </div>
-                  <div class="col-md-10">
-                    <input type="text" class="form-control" />
-                  </div>
-      
-                  <!-- end product price -->
-
-                  <!-- start product color -->
-
-                  <div class="col-md-2">
-                    <label>
-                      اللون
-                    </label>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="color-container" *ngFor="let item of items">
-                        <span class="color-span">                        
-                            <input [(colorPicker)]="color" [style.background]="color"/>                        
-                        </span>
-                        <span class="color-clone">{{item}}</span>
-                    </div>
-                  </div>
-                  <div class="col-md-2 text-left">
-                    <button class="btn btn-primary" (click)="copyColor()">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-        
-                  <!-- end product color -->
-
-                  <!-- start product size -->
-
-                  <div class="col-md-2">
-                    <label>
-                      المقاس
-                    </label>
-                  </div>
-                  <div class="col-md-8">
-                    <div class="size-container" *ngFor="let size of sizes">
-                        <input type="text" class="form-control" />
-                        <span class="size-clone">{{size}}</span>
-                    </div>                    
-                  </div>
-                  <div class="col-md-2 text-left">
-                    <button class="btn btn-primary" (click)="copySize()">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-        
-                  <!-- end product size --> 
-                  
-                  <!-- start guarantee -->
-
-                  <div class="col-md-2">
-                    مرخص
-                  </div>
-                  <div class="col-md-10">
-                    <input type="checkbox" class="form-control" style="width: 35px" />
-                  </div>
-
-                  <!-- end guarantee -->
-
-                  <!-- start visible -->
-
-                  <div class="col-md-2">
-                      مرئي
-                  </div>
-                  <div class="col-md-10">
-                    <input type="checkbox" class="form-control" style="width: 35px" />
-                  </div>
-  
-                  <!-- end visible -->                  
-
-                </div>
-            </div>            
-
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
         </div>
-          
-        <div class="modal-footer">          
-          <button type="button" class="btn btn-primary">
-            اضافة
-          </button>
-        </div>          
-          
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-2 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-        
     </div>
+
+    <div class="col-md-6 col-6  px-1">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-3.jpg" width="100%" />
+        </div>
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
+        </div>
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-2 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-6  px-1">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-2.jpg" width="100%" />
+        </div>
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
+        </div>
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-2 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-6  px-1" style="padding-bottom: 30px;">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-3.jpg" width="100%" />
+        </div>
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
+        </div>
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-2 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-3" (click)="setId(2)">
+    <owl-carousel
+      style="width: 100%; margin: auto"
+      [options]="{
+        items: 3,
+        dots: false,
+        navigation: false,
+        rtl: true,
+        loop: true
+      }"
+      [items]="products"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']"
+    >
+      <div class="item m-1 p-2" *ngFor="let product of products; let i = index">
+        <div class="thumbnail-image">
+          <img [src]="product.photo" />
+          <span>{{ product.category }}</span>
+          <h6>{{ product.name }}</h6>
+
+          <div class="product-stars d-flex">
+            <img
+              src="../../../../assets/images/stars.jpg"
+              alt="stars"
+              width="60px"
+            />
+            <span>(342)</span>
+          </div>
+        </div>
+      </div>
+    </owl-carousel>
+    <h6 class="mt-3">أفضل العروض</h6>
+    <owl-carousel
+      style="width: 100%; margin: auto"
+      [options]="{
+        items: 3,
+        dots: false,
+        navigation: false,
+        rtl: true,
+        loop: true
+      }"
+      [items]="products"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']"
+    >
+      <div class="item m-1 p-2" *ngFor="let product of products; let i = index">
+        <div class="thumbnail-image">
+          <img [src]="product.photo" />
+          <span>{{ product.category }}</span>
+          <h6>{{ product.name }}</h6>
+
+          <div class="product-stars d-flex">
+            <img
+              src="../../../../assets/images/stars.jpg"
+              alt="stars"
+              width="60px"
+            />
+            <span>(342)</span>
+          </div>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+  <div class="p-3" (click)="setId(3)">
+    <owl-carousel
+      style="width: 100%; margin: auto"
+      [options]="{
+        items: 3,
+        dots: false,
+        navigation: false,
+        rtl: true,
+        loop: true
+      }"
+      [items]="products"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']"
+    >
+      <div class="item m-1 p-2" *ngFor="let product of products; let i = index">
+        <div class="thumbnail-image">
+          <img [src]="product.photo" />
+          <span>{{ product.category }}</span>
+          <h6>{{ product.name }}</h6>
+
+          <div class="product-stars d-flex">
+            <img
+              src="../../../../assets/images/stars.jpg"
+              alt="stars"
+              width="60px"
+            />
+            <span>(342)</span>
+          </div>
+        </div>
+      </div>
+    </owl-carousel>
+    <div>
+      <h6 class="my-3">تصفح حسب الفئة</h6>
+      <div class="row division">
+        <div class="grand col-md-6 col-6  px-1">
+          <img
+            src="../../../../assets/images/58933461_2232195253524681_5787888431916908544_n.jpg"
+            alt=""
+          />
+          <span></span>
+        </div>
+        <div class="col-md-6 col-6  px-1">
+          <div class="row">
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/60136386_2261895037221369_2823275448987811840_n.png"
+                alt=""
+              />
+              <span></span>
+            </div>
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/60364039_2261449820599224_7930565118159486976_n.png"
+                alt=""
+              />
+              <span></span>
+            </div>
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/pink-spring-outfit-ideas.png"
+                alt=""
+              />
+              <span></span>
+            </div>
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/nike-vapormax-2019-womens-pink-white-ar6632-105-3.jpg"
+                alt=""
+              />
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- end adding new product modal -->
+<div class="sim-page pt-2" *ngIf="source == 'ion-sim'">
+  <h6 class="font-weight-bold m-0">أشهر المنتجات</h6>
+  <div class="row" *ngIf="productsId == 1">
+    <div class="col-md-6 col-6  px-1">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-2.jpg" width="100%" />
+        </div>
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
+        </div>
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-1 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-6  px-1">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-3.jpg" width="100%" />
+        </div>
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
+        </div>
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-1 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-6  px-1">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-2.jpg" width="100%" />
+        </div>
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
+        </div>
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-1 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-6  px-1" style="padding-bottom: 30px;">
+      <div class="product-box">
+        <div class="product-image">
+          <img src="../../../../assets/images/shirt-3.jpg" width="100%" />
+        </div>
+        <div class="product-title">
+          <h4>
+            القطن قصير الاكمام فضفاضة تي شيرت مجسم
+          </h4>
+        </div>
+        <div class="product-details">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 my-auto">
+                <div class="product-price">
+                  <h6>
+                    230 ر.ع
+                  </h6>
+                </div>
+              </div>
+              <div class="col-md-7 p-1 text-left">
+                <div class="product-stars">
+                  <img
+                    src="../../../../assets/images/stars.jpg"
+                    alt="stars"
+                    width="60px"
+                  />
+                  <span>(342)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide slide mt-2" *ngIf="productsId == 2">
+    <owl-carousel
+      style="width: 100%; margin: auto"
+      [options]="{
+        items: 3,
+        dots: false,
+        navigation: false,
+        rtl: true,
+        loop: true
+      }"
+      [items]="products"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']"
+    >
+      <div class="item m-1 p-1" *ngFor="let product of products; let i = index">
+        <div class="thumbnail-image">
+          <img [src]="product.photo" />
+          <span>{{ product.category }}</span>
+          <h6>{{ product.name }}</h6>
+
+          <div class="product-stars d-flex">
+            <img
+              src="../../../../assets/images/stars.jpg"
+              alt="stars"
+              width="60px"
+            />
+            <span>(342)</span>
+          </div>
+        </div>
+      </div>
+    </owl-carousel>
+    <h6 class="mt-3">أفضل العروض</h6>
+    <owl-carousel
+      style="width: 100%; margin: auto"
+      [options]="{
+        items: 3,
+        dots: false,
+        navigation: false,
+        rtl: true,
+        loop: true
+      }"
+      [items]="products"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']"
+    >
+      <div class="item m-1 p-2" *ngFor="let product of products; let i = index">
+        <div class="thumbnail-image">
+          <img [src]="product.photo" />
+          <span>{{ product.category }}</span>
+          <h6>{{ product.name }}</h6>
+
+          <div class="product-stars d-flex">
+            <img
+              src="../../../../assets/images/stars.jpg"
+              alt="stars"
+              width="60px"
+            />
+            <span>(342)</span>
+          </div>
+        </div>
+      </div>
+    </owl-carousel>
+  </div>
+    <div class="slide slide mt-2" *ngIf="productsId == 3">
+    <owl-carousel
+      style="width: 100%; margin: auto"
+      [options]="{
+        items: 3,
+        dots: false,
+        navigation: false,
+        rtl: true,
+        loop: true
+      }"
+      [items]="products"
+      [carouselClasses]="['owl-theme', 'row', 'sliding']"
+    >
+      <div class="item m-1 p-1" *ngFor="let product of products; let i = index">
+        <div class="thumbnail-image">
+          <img [src]="product.photo" />
+          <span>{{ product.category }}</span>
+          <h6>{{ product.name }}</h6>
+
+          <div class="product-stars d-flex">
+            <img
+              src="../../../../assets/images/stars.jpg"
+              alt="stars"
+              width="60px"
+            />
+            <span>(342)</span>
+          </div>
+        </div>
+      </div>
+    </owl-carousel>
+    <div>
+      <h6 class="my-3">تصفح حسب الفئة</h6>
+      <div class="row division">
+        <div class="grand col-md-6 col-6  px-1">
+          <img
+            src="../../../../assets/images/58933461_2232195253524681_5787888431916908544_n.jpg"
+            alt=""
+          />
+          <span></span>
+        </div>
+        <div class="col-md-6 col-6  px-1">
+          <div class="row">
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/60136386_2261895037221369_2823275448987811840_n.png"
+                alt=""
+              />
+              <span></span>
+            </div>
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/60364039_2261449820599224_7930565118159486976_n.png"
+                alt=""
+              />
+              <span></span>
+            </div>
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/pink-spring-outfit-ideas.png"
+                alt=""
+              />
+              <span></span>
+            </div>
+            <div class="col-md-6 col-6  px-1">
+              <img
+                src="../../../../assets/images/nike-vapormax-2019-womens-pink-white-ar6632-105-3.jpg"
+                alt=""
+              />
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,15 +11,15 @@ export class SlidersComponent implements OnInit {
 
   id: number = -1;
   source = 'page';
-  imagesDisplay;
+  imagesDisplayed;
   delete: boolean = false;
   imgSrc;
   constructor(private slidesService: SlideshowService) { }
 
   ngOnInit() {
     this.slidesService.getSlideShows().subscribe(res => {
-      this.imagesDisplay = res.data;
-      console.log(this.imagesDisplay);
+      this.imagesDisplayed = res.data;
+      console.log(this.imagesDisplayed);
     })
 
   }
@@ -32,7 +32,7 @@ export class SlidersComponent implements OnInit {
       if (res) {
         console.log('resfound')
         this.slidesService.getSlideShows().subscribe(res => {
-          this.imagesDisplay = res.data;
+          this.imagesDisplayed = res.data;
           console.log(res);
 
         })
@@ -45,14 +45,19 @@ export class SlidersComponent implements OnInit {
     console.log(this.id)
   }
   addImg(event) {
-    const file: File = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (event: any) => {
-      this.imgSrc = event.target.result;
-    };
-    reader.readAsDataURL(file);
+
+    // reader.onload = (event: any) => {
+    //   this.imgSrc = event.target.result;
+    // };
+    var mimeType = event.target.files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      // this.message = "Only images are supported.";
+      // return;
+    }
     if (event.target.files.length > 0) {
-      const file = event.target.files[0];
+      const file: File = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
       console.log(file)
       const formData = new FormData();
       formData.append('photo', file);
@@ -61,8 +66,8 @@ export class SlidersComponent implements OnInit {
         console.log(res)
         if (res) {
           this.slidesService.getSlideShows().subscribe(res => {
-            this.imagesDisplay = res.data;
-            console.log(this.imagesDisplay)
+            this.imagesDisplayed = res.data;
+            console.log(this.imagesDisplayed)
           })
         }
 

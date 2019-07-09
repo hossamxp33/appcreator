@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { MainpageService } from './../../../services/mainpage.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { DesignService } from 'src/app/services/design.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class CategoriesComponent implements OnInit {
 
   imgSrc;
+  categories;
+  id;
 
-  constructor() { }
+  source: string = 'page';
+  constructor(private mainpageService: MainpageService, private design: DesignService) { }
 
   ngOnInit() {
+
+
   }
 
   // show category image to user when choose an image
